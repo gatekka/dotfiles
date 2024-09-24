@@ -1,0 +1,35 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# My Plugins
+# source ~/Github\ Repositories/zsh-autocomplete/zsh-autocomplete.plugin.zsh # added zsh auto complete 2024-03-19
+source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh # zsh auto suggestions
+source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh # zsh syntax highlighting
+[ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh # autojump
+
+export PATH=$PATH:/Users/chris/.spicetify
+source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
+source /opt/homebrew/opt/chruby/share/chruby/auto.sh
+chruby ruby-3.1.3 # run chruby to see actual version
+
+# My Custom Default Prompt That I Customized :)
+# The default is = PS1="%n@%m %1~ %# "
+# Color Schemes Below
+PS1="%F{03}%n%f %F{02}%1~%f %F{198}>>%f " # Fruitful
+# PS1="%F{03}%n%f %F{03}%1~%f %F{03}>>%f " # Simple Yellow
+# PS1="%F{03}%n%f %1~ %F{03}>>%f " # Simple Yellow Gapped
+# PS1="%F{192}%n%f %F{02}%1~%f %F{198}>>%f " # Gecko
+# PS1="%F{03}%n%f %F{210}%1~%f >> " # Pastel Blood Orange
+# PS1="%F{192}%n%f %F{02}%1~%f %F{003}>>%f " # Gecko Laid back
+export CLICOLOR=1
+# alias ls="ls -G"
+alias ll="ls -l"
+source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
