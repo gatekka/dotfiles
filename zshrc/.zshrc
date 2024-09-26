@@ -28,7 +28,8 @@ PS1="%F{03}%n%f %F{02}%1~%f %F{198}>>%f " # Fruitful
 export CLICOLOR=1
 # alias ls="ls -G"
 alias ll="ls -l"
-source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
+
+source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme # p10k theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
