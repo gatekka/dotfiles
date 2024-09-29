@@ -5,7 +5,7 @@ STOW_DIRS = zsh kitty nvim
 stow:
 	@echo "Simulating stow operation for directories: $(STOW_DIRS)"
 	@stow -n --verbose $(STOW_DIRS)  # Dry-run
-	@read -p "Proceed with stow? (y/n): " choice; \
+	@read -p "Proceed with stow and modify filesystem? (y/n): " choice; \
 	if [ $$choice = "y" ]; then \
 		stow $(STOW_DIRS); \
 	else \
@@ -16,7 +16,7 @@ stow:
 stow-delete:
 	@echo "Simulating stow-delete operation for directories: $(STOW_DIRS)"
 	@stow -n --verbose --delete $(STOW_DIRS)  # Dry-run
-	@read -p "Proceed with stow-delete? (y/n): " choice; \
+	@read -p "Proceed with stow-delete and modify filesystem? (y/n): " choice; \
 	if [ $$choice = "y" ]; then \
 		stow --delete $(STOW_DIRS); \
 	else \
