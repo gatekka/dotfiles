@@ -27,6 +27,7 @@ PS1="%F{03}%n%f %F{02}%1~%f %F{198}>>%f " # Fruitful
 # PS1="%F{192}%n%f %F{02}%1~%f %F{003}>>%f " # Gecko Laid back
 export CLICOLOR=1
 # alias ls="ls -G"
+alias ls="ls -a"
 alias ll="ls -l"
 
 source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme # p10k theme
