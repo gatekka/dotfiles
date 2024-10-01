@@ -9,7 +9,7 @@ fi
 # source ~/Github\ Repositories/zsh-autocomplete/zsh-autocomplete.plugin.zsh # added zsh auto complete 2024-03-19
 source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh # zsh auto suggestions
 source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh # zsh syntax highlighting
-[ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh # autojump
+[ -f $HOMEBREW_PREFIX/etc/profile.d/autojump.sh ] && . $HOMEBREW_PREFIX/etc/profile.d/autojump.sh # autojump
 
 export PATH=$PATH:/Users/chris/.spicetify
 source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
