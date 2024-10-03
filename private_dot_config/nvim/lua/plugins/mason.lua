@@ -4,6 +4,9 @@ return {
     opts = {
       ensure_installed = {
         "typescript-language-server",
+        "css-lsp",
+        "marksman",
+        "shellcheck",
       },
     },
   },
