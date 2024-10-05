@@ -13,3 +13,8 @@ vim.keymap.set("i", "<A-k>", "<Esc>:m .-2<CR>==gi")
 -- Move lines in visual mode
 vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv")
+
+-- Plugins
+vim.keymap.set("n", "<leader>pmd", ":MarkdownPreviewToggle<CR>", { desc = "Toggle Markdown Preview" })
+vim.keymap.set("n", "<leader>pfs", ":FiveServer start<CR>", { desc = "Start FiveServer" })
+vim.keymap.set("n", "<leader>rn", ":IncRename<CR>", { desc = "Inc Rename w/ LSP" })
