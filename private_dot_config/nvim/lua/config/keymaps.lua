@@ -17,4 +17,4 @@ vim.keymap.set("v", "<A-Up>", ":m '<-2<CR>gv=gv")
 -- Plugins
 vim.keymap.set("n", "<leader>pmd", ":MarkdownPreviewToggle<CR>", { desc = "Toggle Markdown Preview" })
 vim.keymap.set("n", "<leader>pfs", ":FiveServer start<CR>", { desc = "Start FiveServer" })
-vim.keymap.set("n", "<leader>rn", ":IncRename<CR>", { desc = "Inc Rename w/ LSP" })
+vim.keymap.set("n", "<leader>rn", ":IncRename ", { desc = "Inc Rename w/ LSP" })
