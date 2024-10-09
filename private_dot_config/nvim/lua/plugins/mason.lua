@@ -12,6 +12,7 @@ return {
         "html-lsp",
         "css-lsp",
         "marksman",
+        "json-lsp",
       },
     },
   },
