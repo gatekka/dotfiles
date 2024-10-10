@@ -2,17 +2,26 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
--- Move lines in normal mode
-vim.keymap.set("n", "<A-Down>", ":m .+1<CR>==")
-vim.keymap.set("n", "<A-Up>", ":m .-2<CR>==")
+-- Moving lines
+-- vim.keymap.set("n", "<A-Down>", ":m .+1<CR>==", { desc = "Move line down" })
+-- vim.keymap.set("n", "<A-Up>", ":m .-2<CR>==", { desc = "Move line up" })
+--
+-- vim.keymap.set("i", "<A-Down>", "<Esc>:m .+1<CR>==gi", { desc = "Move line down" })
+-- vim.keymap.set("i", "<A-Up>", "<Esc>:m .-2<CR>==gi", { desc = "Move line up" })
+--
+-- vim.keymap.set("v", "<A-Down>", ":m '>+1<CR>gv=gv", { desc = "Move line down" })
+-- vim.keymap.set("v", "<A-Up>", ":m '<-2<CR>gv=gv", { desc = "Move line up" })
 
--- Move lines in insert mode
-vim.keymap.set("i", "<A-Down>", "<Esc>:m .+1<CR>==gi")
-vim.keymap.set("i", "<A-Up>", "<Esc>:m .-2<CR>==gi")
+-- Switch between buffers
+vim.keymap.set("n", "<Tab>", "<CMD>bnext<CR>", { desc = "Next buffer" })
+vim.keymap.set("n", "<S-Tab>", "<CMD>bprevious<CR>", { desc = "Previous buffer" })
 
--- Move lines in visual mode
-vim.keymap.set("v", "<A-Down>", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "<A-Up>", ":m '<-2<CR>gv=gv")
+-- Moving between words
+vim.keymap.set("n", "L", "w", { desc = "Move to next word" })
+vim.keymap.set("n", "H", "b", { desc = "Move to previous word" })
+
+vim.keymap.set("v", "L", "w", { desc = "Move to next word" })
+vim.keymap.set("v", "H", "b", { desc = "Move to previous word" })
 
 -- Plugins
 vim.keymap.set("n", "<leader>pmd", ":MarkdownPreviewToggle<CR>", { desc = "Toggle Markdown Preview" })
