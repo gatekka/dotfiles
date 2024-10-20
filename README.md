@@ -4,6 +4,13 @@ All dotfiles are managed with [Chezmoi](https://chezmoi.io).
 
 ## Getting Started
 
+Make sure `$HOME/.local/bin` is in PATH:
+
+```bash
+grep -qxF 'export PATH="$HOME/.local/bin:$PATH"' $HOME/.bashrc || echo 'export PATH="$HOME/.local/bin:$PATH"' >> $HOME/.bashrc
+source $HOME/.bashrc
+```
+
 To install, initialize, and apply these dotfiles with Chezmoi, run the following commands:
 ```bash
 sh -c "$(curl -fsLS get.chezmoi.io)" -- -b $HOME/.local/bin
@@ -11,24 +18,23 @@ chezmoi init --apply https://github.com/gatekka/dotfiles.git
 ```
 You can visit the [official Chezmoi installation page](https://chezmoi.io/install) for more options and details.
 
-## Starting From Scratch
-
 ### Install Dependencies
+
+In order for my dotfiles to work correctly, the following packages/dependencies are required:
 
 ```bash
 apt update
 apt upgrade -y
 apt install -y sudo curl git wget fd-find unzip build-essential
-```
 
-### Configure Environment
-
-```bash
-grep -qxF 'export PATH="$HOME/.local/bin:$PATH"' $HOME/.bashrc || echo 'export PATH="$HOME/.local/bin:$PATH"' >> $HOME/.bashrc
+# Install nvm (Node Version Manager)
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
 source $HOME/.bashrc
+# Download and Install Node.js (you may need to restart the terminal)
+nvm install 23
 ```
 
-### Install Neovim
+### Installing Neovim
 
 ```bash
 export INSTALL_DIR="$HOME/.local/bin"
