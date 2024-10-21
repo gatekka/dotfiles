@@ -25,14 +25,29 @@ In order for my dotfiles to work correctly, the following packages/dependencies 
 ```bash
 apt update
 apt upgrade -y
-apt install -y sudo curl git wget fd-find unzip build-essential
+apt install -y sudo curl git wget fd-find unzip build-essential zsh libreadline-dev
 
 # Install nvm (Node Version Manager)
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
 source $HOME/.bashrc
 # Download and Install Node.js (you may need to restart the terminal)
 nvm install 23
+# Set zsh as default shell
+sudo chsh -s $(which zsh) $USER
 ```
+
+### Install zsh plugins
+
+To install zsh plugins run the following commands:
+
+```bash
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting
+git clone https://github.com/wting/autojump ~/.zsh/autojump && cd ~/.zsh/autojump/ && ./install.py
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+```
+
+You may need to logout and log back in for zsh to take effect.
 
 ### Installing Neovim
 
