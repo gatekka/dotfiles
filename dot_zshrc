@@ -6,14 +6,23 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # My Plugins
-# source ~/Github\ Repositories/zsh-autocomplete/zsh-autocomplete.plugin.zsh # added zsh auto complete 2024-03-19
-source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh # zsh auto suggestions
-source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh # zsh syntax highlighting
-[ -f $HOMEBREW_PREFIX/etc/profile.d/autojump.sh ] && . $HOMEBREW_PREFIX/etc/profile.d/autojump.sh # autojump
+# source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh # zsh auto suggestions
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh # zsh syntax highlighting
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# [ -f $HOMEBREW_PREFIX/etc/profile.d/autojump.sh ] && . $HOMEBREW_PREFIX/etc/profile.d/autojump.sh # autojump
+[[ -s $HOME/.autojump/etc/profile.d/autojump.sh ]] && source $HOME/.autojump/etc/profile.d/autojump.sh
+autoload -U compinit && compinit -u
 
 export PATH=$PATH:/Users/chris/.spicetify
-source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
-source /opt/homebrew/opt/chruby/share/chruby/auto.sh
+
+# Chruby
+if [[ -f "$HOMEBREW_PREFIX/opt/chruby/share/chruby/chruby.sh" ]]; then
+  source "$HOMEBREW_PREFIX/opt/chruby/share/chruby/chruby.sh"
+fi
+if [[ -f "$HOMEBREW_PREFIX/opt/chruby/share/chruby/auto.sh" ]]; then
+  source "$HOMEBREW_PREFIX/opt/chruby/share/chruby/auto.sh"
+fi
 chruby ruby-3.1.3 # run chruby to see actual version
 
 # My Custom Default Prompt That I Customized :)
@@ -35,4 +44,15 @@ source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme # p10k theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
-. "$HOME/.deno/env"
+source ~/powerlevel10k/powerlevel10k.zsh-theme
+
+# Deno env
+if [[ -f "$HOME/.deno/env" ]]; then
+  source "$HOME/.deno/env"
+fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+clear
