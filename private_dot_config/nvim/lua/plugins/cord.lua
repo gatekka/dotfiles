@@ -5,6 +5,16 @@ return {
     build = "./build || .\\build",
     event = "VeryLazy",
     opts = {
+      editor = {
+        tooltip = "Neovim",
+      },
+      display = {
+        show_repository = true,
+        show_cursor_position = true,
+      },
+      lsp = {
+        show_problem_count = true,
+      },
       text = {
         viewing = "Viewing file",
         editing = "Editing file",
@@ -13,10 +23,6 @@ return {
         lsp_manager = "Configuring LSP",
         vcs = "Commiting changes",
         workspace = "In workspace",
-      },
-      display = {
-        show_repository = true,
-        show_cursor_position = true,
       },
     }, -- calls require('cord').setup()
   },
