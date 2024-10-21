@@ -16,7 +16,7 @@
 vim.keymap.set("n", "<Tab>", "<CMD>bnext<CR>", { desc = "Next buffer" })
 vim.keymap.set("n", "<S-Tab>", "<CMD>bprevious<CR>", { desc = "Previous buffer" })
 
--- -- Moving between words
+-- Moving between words
 -- vim.keymap.set("n", "L", "w", { desc = "Move to next word" })
 -- vim.keymap.set("n", "H", "b", { desc = "Move to previous word" })
 --

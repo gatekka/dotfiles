@@ -5,7 +5,7 @@
 local opt = vim.opt
 
 opt.shiftwidth = 2 -- Size of an indent
-opt.relativenumber = false -- Relative line numbers
+opt.relativenumber = true -- Relative line numbers
 
 -- Neovide Begin (More info at https://neovide.dev/configuration.html)
 if vim.g.neovide then
