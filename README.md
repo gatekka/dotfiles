@@ -41,10 +41,16 @@ sudo chsh -s $(which zsh) $USER
 To install zsh plugins run the following commands:
 
 ```bash
+# Install zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+# Install zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting
+# Install autojump
 git clone https://github.com/wting/autojump ~/.zsh/autojump && cd ~/.zsh/autojump/ && ./install.py
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+# Install Starship
+curl -sS https://starship.rs/install.sh | sh
+# Install powerlevel10k
+# git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 ```
 
 You may need to logout and log back in for zsh to take effect.
