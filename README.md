@@ -25,7 +25,7 @@ In order for my dotfiles to work correctly, the following packages/dependencies 
 ```bash
 apt update
 apt upgrade -y
-apt install -y sudo curl git wget fd-find unzip build-essential zsh libreadline-dev
+apt install -y sudo curl git wget fd-find unzip build-essential zsh tmux
 
 # Install nvm (Node Version Manager)
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
