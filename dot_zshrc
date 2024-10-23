@@ -42,9 +42,12 @@ alias ll="ls --color -l"
 source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme # p10k theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
-source ~/powerlevel10k/powerlevel10k.zsh-theme
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
+# source ~/powerlevel10k/powerlevel10k.zsh-theme
+
+# Starship
+eval "$(starship init zsh)"
 
 # Deno env
 if [[ -f "$HOME/.deno/env" ]]; then
