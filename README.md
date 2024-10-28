@@ -32,8 +32,8 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
 source $HOME/.bashrc
 # Download and Install Node.js (you may need to restart the terminal)
 nvm install 23
-# Set zsh as default shell
-sudo chsh -s $(which zsh) $USER
+# Set zsh as default shell (You need to reboot for zsh to take effect)
+chsh -s $(which zsh)
 ```
 
 ### Install zsh plugins

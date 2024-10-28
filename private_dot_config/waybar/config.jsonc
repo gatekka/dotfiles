@@ -1,0 +1,36 @@
+{
+  "layer": "top",
+  "modules-left": [
+    "hyprland/workspaces",
+    "hyprland/mode",
+    "hyprland/window"
+  ],
+  // "modules-center": [],
+  "modules-right": [
+    "cpu",
+    "battery",
+    "clock"
+  ],
+  "hyprland/window": {
+    "max-length": 50
+  },
+  "battery": {
+    "format": "{capacity}% {icon}",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "clock": {
+    "interval": 1,
+    "format": "{:%I:%M:%S %p}",
+    "format-alt": "{:%a, %d. %b  %H:%M}",
+    "tooltip": false
+  },
+  "cpu": {
+    "format": "CPU:{usage}%"
+  }
+}
