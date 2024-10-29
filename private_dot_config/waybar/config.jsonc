@@ -12,11 +12,14 @@
     "battery",
     "clock"
   ],
-  "pulseaudio": {
-    "format": "Volume:{volume}%"
+  "hyprland/workspaces": {
+    "show-special": true
   },
   "hyprland/window": {
     "max-length": 50
+  },
+  "pulseaudio": {
+    "format": "Volume:{volume}%"
   },
   "battery": {
     "format": "{capacity}% {icon}",
