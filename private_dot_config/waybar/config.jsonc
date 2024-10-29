@@ -8,9 +8,13 @@
   // "modules-center": [],
   "modules-right": [
     "cpu",
+    "pulseaudio",
     "battery",
     "clock"
   ],
+  "pulseaudio": {
+    "format": "Volume:{volume}%"
+  },
   "hyprland/window": {
     "max-length": 50
   },
