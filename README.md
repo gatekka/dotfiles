@@ -102,10 +102,9 @@ Commands can be ran in a docker container. Deploy the container with:
 docker run --platform linux/amd64 -it ubuntu /bin/bash
 ```
 
-# Incomplete Guides
+## Archlinux (Hyprland)
 
-## Arch Linux (Hyprland)
-
+To install Archlinux Hyprland dotfiles run the following commands:
 ```bash
 # Install yay
 sudo pacman -S --needed --noconfirm git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
@@ -119,3 +118,4 @@ chezmoi init --apply https://github.com/gatekka/dotfiles.git
 # Installing OhMyZsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
+You may need to reboot to apply changes.
