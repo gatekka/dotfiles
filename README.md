@@ -101,3 +101,24 @@ Commands can be ran in a docker container. Deploy the container with:
 ```bash
 docker run --platform linux/amd64 -it ubuntu /bin/bash
 ```
+
+# Incomplete Guides
+
+## Arch Linux (Hyprland)
+
+```bash
+# Install yay
+sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+```
+```bash
+# Install packages with yay
+yay -S autojump base base-devel chezmoi fastfetch firefox git hyprland hyprpaper hyprshot kitty lazygit linux linux-firmware nemo neovim networkmanager noto-fonts noto-fonts-emoji noto-fonts-extra npm nvidia nwg-look pipewire pipewire-alsa pipewire-audio pipewire-pulse reflector ripgrep rofi-wayland spotify-launcher starship unzip vesktop vim waybar wl-clipboard xdg-desktop-portal-hyprland xdg-utils yay yay-debug zsh zsh-autosuggestions
+```
+```bash
+# Installing OhMyZsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+```bash
+# Run chezmoi
+chezmoi init --apply https://github.com/gatekka/dotfiles.git
+```
