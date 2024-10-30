@@ -112,6 +112,8 @@ sudo pacman -S --needed --noconfirm git base-devel && git clone https://aur.arch
 # Install packages with yay
 yay -S --needed --noconfirm autojump base base-devel chezmoi fastfetch firefox git hyprland hyprpaper hyprshot kitty lazygit linux linux-firmware nemo neovim networkmanager noto-fonts noto-fonts-emoji noto-fonts-extra npm nvidia nwg-look pipewire pipewire-alsa pipewire-audio pipewire-pulse reflector ripgrep rofi-wayland spotify-launcher starship unzip vesktop vim waybar wl-clipboard xdg-desktop-portal-hyprland xdg-utils yay yay-debug zsh zsh-autosuggestions zsh-syntax-highlighting
 
+rustup default stable # run this for cord.nvim plugin or it'll cry about not building properly
+
 # Run chezmoi
 chezmoi init --apply https://github.com/gatekka/dotfiles.git
 
