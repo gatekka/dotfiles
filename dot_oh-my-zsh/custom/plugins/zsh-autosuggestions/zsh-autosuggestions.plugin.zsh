@@ -1,6 +1,7 @@
 declare -a plugin_paths
 plugin_paths=(
   /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+  /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 )
 
 for file in $plugin_paths; do

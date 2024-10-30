@@ -1,6 +1,7 @@
 declare -a plugin_paths
 plugin_paths=(
   /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 )
 
 for file in $plugin_paths; do
