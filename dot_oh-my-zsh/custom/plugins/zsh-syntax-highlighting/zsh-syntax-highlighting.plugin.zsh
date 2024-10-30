@@ -1,7 +1,8 @@
 declare -a plugin_paths
 plugin_paths=(
-  /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-  /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh # Instaling with homebrew
+  /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh # Installing with apt
+  /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh # Installing with pacman
 )
 
 for file in $plugin_paths; do
