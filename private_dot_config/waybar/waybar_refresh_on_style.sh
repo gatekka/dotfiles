@@ -27,4 +27,5 @@ while true; do
     current_checksum_config=$new_checksum_config
     current_checksum_style=$new_checksum_style
   fi
+  sleep 1
 done
