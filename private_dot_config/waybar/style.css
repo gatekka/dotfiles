@@ -1,15 +1,10 @@
+@import "colors.css";
+
 * {
   border: none;
-  border-radius: 0;
+  border-radius: 10;
   font-family: FiracodeNerdFont;
-  /*font-size: 13px;*/
   min-height: 0;
-}
-
-window#waybar {
-  background: rgba(43, 48, 59, 0.5);
-  border-bottom: 3px solid rgba(100, 114, 125, 0.5);
-  color: white;
 }
 
 tooltip {
@@ -21,41 +16,60 @@ tooltip label {
   color: white;
 }
 
-#workspaces button.visible {
-  background: #64727D
-}
-
-#workspaces button.empty {
-  background: black;
-}
-
-#workspaces button {
-  padding: 0 5px;
+window#waybar {
   background: transparent;
   color: white;
-  border-bottom: 3px solid transparent;
+}
+
+window#waybar.empty #window {
+  opacity: 0;
 }
 
 #pulseaudio,
 #mode,
 #clock,
-#window,
 #custom-disk_root,
 #memory,
 #privacy,
+#window,
 #mpris,
+#workspaces button,
 #cpu {
-  padding: 0 10px;
+  background-color: @base;
+  margin: 3px 3px 3px 3px;
+  padding: 4px 10px 0px 10px;
+  border-bottom: 3px solid rgba(100, 114, 125, 0.5);
+  color: white;
 }
 
-#mode {
+#workspaces button.visible {
   /*background: #64727D;*/
-  /*border-bottom: 3px solid white;*/
+  color: orange;
 }
 
-#clock {
-  /*background-color: #64727D;*/
+#workspaces button.empty {
+  /*background: black;*/
+  color: rgba(150, 20, 90, 1);
 }
+
+/*#workspaces button {*/
+/*align-items: center;*/
+/*padding-right: 10px;*/
+/*padding-left: 10px;*/
+/*}*/
+
+/*#workspaces {*/
+/*  background-color: @base;*/
+/*}*/
+
+/*#mode {*/
+/*  background: #64727D;*/
+/*  border-bottom: 3px solid white;*/
+/*}*/
+
+/*#clock {*/
+/*background-color: #64727D;*/
+/*}*/
 
 /*Clock Module*/
 
