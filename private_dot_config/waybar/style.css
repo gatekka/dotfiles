@@ -40,6 +40,10 @@ tooltip label {
 #mode,
 #clock,
 #window,
+#custom-disk_root,
+#memory,
+#privacy,
+#mpris,
 #cpu {
   padding: 0 10px;
 }
@@ -81,3 +85,26 @@ tooltip label {
 /*  animation-iteration-count: infinite;*/
 /*  animation-direction: alternate;*/
 /*}*/
+
+#pulseaudio-slider slider {
+  min-height: 0px;
+  min-width: 0px;
+  opacity: 0;
+  background-image: none;
+  border: none;
+  border-radius: 100%;
+  box-shadow: none;
+}
+
+#pulseaudio-slider trough {
+  min-height: 10px;
+  min-width: 80px;
+  border-radius: 5px;
+  background-color: black;
+}
+
+#pulseaudio-slider highlight {
+  min-width: 10px;
+  border-radius: 5px;
+  background-color: black;
+}

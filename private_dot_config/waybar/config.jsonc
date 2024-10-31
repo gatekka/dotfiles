@@ -1,12 +1,17 @@
 {
   "layer": "top",
+  "reload_style_on_change": true,
   "modules-left": [
     "hyprland/workspaces",
     "hyprland/mode",
     "hyprland/window"
   ],
-  // "modules-center": [],
+  "modules-center": [],
   "modules-right": [
+    "mpris",
+    "custom/disk_root",
+    "memory",
+    "custom/spotify",
     "cpu",
     "pulseaudio",
     "battery",
@@ -18,8 +23,97 @@
   "hyprland/window": {
     "max-length": 50
   },
+  "mpris": {
+    "interval": 1,
+    "format": "{player_icon} {title}",
+    "title-len": 15,
+    "player-icons": {
+      "default": "▶",
+      "spotify": " ",
+      "mpv": "🎵"
+    },
+    "status-icons": {
+      "paused": "⏸"
+    },
+    "ignored-players": [
+      "firefox"
+    ]
+  },
+  "custom/disk_home": {
+    "format": "🏠{} ",
+    "interval": 30,
+    "exec": "df -h --output=avail $HOME | tail -1 | tr -d ' '"
+  },
+  "custom/disk_root": {
+    // "format": "💽{}",
+    "format": "{}",
+    "interval": 30,
+    "exec": "df -h --output=avail / | tail -1 | tr -d ' '"
+  },
+  "memory": {
+    // "format": "💾RAM:{used:0.1f}G"
+    "format": "{used:0.1f}G"
+  },
+  "network": {
+    "family": "ipv6",
+    // "interface": "wlp2*", // (Optional) To force the use of this interface
+    "format-wifi": "<span color='#589df6'></span> <span color='gray'>{essid}</span> {frequency} <span color='#589df6'>{signaldBm} dB</span> <span color='#589df6'>⇵</span> {bandwidthUpBits}/{bandwidthDownBits}",
+    "format-ethernet": "Connected Ethernet",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "Disconnected ⚠",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}",
+    "interval": 5
+  },
+  "custom/spotify-metadata": {
+    "format": "{}  ",
+    "max-length": 60,
+    "interval": 30,
+    "return-type": "json",
+    "exec": "~/.config/waybar/custom/spotify/metadata.sh",
+    "on-click": "~/.config/waybar/custom/spotify/controls.sh",
+    "on-scroll-up": "~/.config/waybar/custom/spotify/controls.sh next",
+    "on-scroll-down": "~/.config/waybar/custom/spotify/controls.sh previous",
+    "signal": 5,
+    "smooth-scrolling-threshold": 1.0
+  },
+  "pulseaudio/slider": {
+    "orientation": "horizontal"
+  },
+  "bluetooth": {
+    "format": " {status}",
+    "format-connected": " {device_alias}",
+    "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+    // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
+    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+  },
   "pulseaudio": {
-    "format": "Volume:{volume}%"
+    "format": "{icon}{volume}%",
+    // "format-muted": " {volume}%",
+    "format-muted": "{volume}%",
+    "format-bluetooth": "{volume}% {icon}",
+    "format-icons": {
+      "alsa_output.pci-0000_00_1f.3.analog-stereo": "",
+      "alsa_output.pci-0000_00_1f.3.analog-stereo-muted": "",
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "phone-muted": "",
+      "portable": "",
+      "car": "",
+      // "default": [
+      //   " ",
+      //   " "
+      // ]
+      "default": [
+        "",
+        "",
+        ""
+      ]
+    }
   },
   "battery": {
     "format": "{capacity}% {icon}",
@@ -38,6 +132,6 @@
     "tooltip": false
   },
   "cpu": {
-    "format": "CPU:{usage}%"
+    "format": "{usage}%"
   }
 }
