@@ -19,7 +19,7 @@
   ],
   "hyprland/workspaces": {
     "show-special": true,
-    "format": "{windows}",
+    "format": "{name}:{windows}",
     "window-rewrite-default": " ",
     "window-rewrite": {
       "class<firefox>": " ", // Windows whose classes are "firefox"
@@ -28,7 +28,7 @@
       "class<kitty>": " ",
       "class<kitty> title<nvim>": " ", // Windows that contain "foot" in either class or title. For optimization reasons, it will only match against a title if at least one other window explicitly matches against a title.
       "discord": " ",
-      "spotify": " ",
+      "spotify": " ",
       "code": "󰨞 "
     },
     // "format": "{name} {icon} ",

@@ -38,7 +38,7 @@ window#waybar.empty #window {
   background-color: @base;
   margin: 3px 3px 3px 3px;
   padding: 4px 10px 0px 10px;
-  border-bottom: 3px solid rgba(100, 114, 125, 0.5);
+  border-bottom: 2px solid rgba(100, 114, 125, 0.5);
   color: white;
 }
 
