@@ -6,7 +6,9 @@
     "hyprland/mode",
     "hyprland/window"
   ],
-  "modules-center": [],
+  "modules-center": [
+    "clock"
+  ],
   "modules-right": [
     "mpris",
     "custom/disk_root",
@@ -14,8 +16,7 @@
     "custom/spotify",
     "cpu",
     "pulseaudio",
-    "battery",
-    "clock"
+    "battery"
   ],
   "hyprland/workspaces": {
     "show-special": true,
@@ -55,7 +56,7 @@
   "mpris": {
     "interval": 1,
     "format": "{player_icon} {title}",
-    "title-len": 15,
+    "title-len": 18,
     "player-icons": {
       "default": "▶",
       "spotify": " ",
@@ -120,7 +121,6 @@
   },
   "pulseaudio": {
     "format": "{icon}{volume}%",
-    // "format-muted": " {volume}%",
     "format-muted": "{volume}%",
     "format-bluetooth": "{volume}% {icon}",
     "format-icons": {
@@ -133,16 +133,21 @@
       "phone-muted": "",
       "portable": "",
       "car": "",
-      // "default": [
-      //   " ",
-      //   " "
-      // ]
       "default": [
         "",
         "",
         ""
       ]
     }
+  },
+  "clock": {
+    "interval": 1,
+    "format": " {:%I:%M:%S %p}",
+    "format-alt": "{:%A, %B %d, %Y (%R:%S %p)}",
+    "tooltip": false
+  },
+  "cpu": {
+    "format": "{usage}%"
   },
   "battery": {
     "format": "{capacity}% {icon}",
@@ -153,14 +158,5 @@
       "",
       ""
     ]
-  },
-  "clock": {
-    "interval": 1,
-    "format": "{:%I:%M:%S %p}",
-    "format-alt": "{:%a, %d. %b  %H:%M}",
-    "tooltip": false
-  },
-  "cpu": {
-    "format": "{usage}%"
   }
 }
