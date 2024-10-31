@@ -11,15 +11,18 @@
   ],
   "modules-right": [
     "mpris",
+    "custom/cava-internal",
+    "cava",
+    "pulseaudio",
     "custom/disk_root",
     "memory",
-    "custom/spotify",
     "cpu",
-    "pulseaudio",
+    // "custom/spotify",
     "battery"
   ],
   "hyprland/workspaces": {
     "show-special": true,
+    "special-visible-only": false,
     "format": "{name}:{windows}",
     "window-rewrite-default": " ",
     "window-rewrite": {
@@ -32,7 +35,8 @@
       "spotify": " ",
       "code": "󰨞 ",
       "obs": " ",
-      "nemo": " "
+      "nemo": " ",
+      "hyprwall": " "
     },
     // "format": "{name} {icon} ",
     // "format-icons": {
@@ -51,7 +55,8 @@
     }
   },
   "hyprland/window": {
-    "max-length": 50
+    "max-length": 30,
+    "format": "󱂬 {class}"
   },
   "mpris": {
     "interval": 1,
@@ -69,6 +74,45 @@
       "firefox"
     ]
   },
+  "custom/cava-internal": {
+    "exec": "bash ~/.config/waybar/scripts/cava.sh",
+    "format": "{}",
+    "tooltip": false,
+    // "on-click": "swaymsg reload & pkill waybar & waybar",
+    "layer": "top",
+    "output": "all"
+  },
+  // "cava": {
+  //   // "cava_config": "~/.config/cava/config",
+  //   "framerate": 30,
+  //   "autosens": 1,
+  //   "sensitivity": 100,
+  //   "bars": 14,
+  //   "lower_cutoff_freq": 50,
+  //   "higher_cutoff_freq": 10000,
+  //   "method": "raw",
+  //   "source": "auto",
+  //   "stereo": true,
+  //   "reverse": false,
+  //   "bar_delimiter": 0,
+  //   "monstercat": false,
+  //   "waves": false,
+  //   "noise_reduction": 0.77,
+  //   "input_delay": 2,
+  //   "format-icons": [
+  //     "▁",
+  //     "▂",
+  //     "▃",
+  //     "▄",
+  //     "▅",
+  //     "▆",
+  //     "▇",
+  //     "█"
+  //   ],
+  //   "actions": {
+  //     "on-click-right": "mode"
+  //   }
+  // },
   "custom/disk_home": {
     "format": "🏠{} ",
     "interval": 30,
