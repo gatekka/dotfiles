@@ -6,7 +6,7 @@ killall cava 2>/dev/null
 start_cava() {
   is_cava_ServerExist=$(pgrep -x cava | wc -l)
   if [ "$is_cava_ServerExist" -eq 0 ]; then
-    # echo "Starting cava..."
+    #Starting cava
     cava -p ~/.config/cava/config1 | sed -u 's/;//g;s/0/▁/g;s/1/▂/g;s/2/▃/g;s/3/▄/g;s/4/▅/g;s/5/▆/g;s/6/▇/g;s/7/█/g;' &
   fi
 }
@@ -21,28 +21,29 @@ stop_cava() {
   # fi
 }
 
-while true; do
-  # Check if Spotify is running
-  if pgrep -x "spotify" >/dev/null; then
-    # echo "Spotify is running"
+checkIfCorked() {
+  # Check if any sink-input is corked
+  if pactl list sink-inputs | grep -q 'Corked: no'; then
     start_cava
   else
-    # echo "Spotify is not running; stopping cava if active"
-    # pkill cava
     stop_cava
   fi
+}
 
-  # Wait before checking again
-  # sleep 1
+isSpotifyOpen() {
+  # Check if Spotify is running
+  if pgrep -x "spotify" >/dev/null; then
+    #Spotify is running
+    start_cava
+  else
+    #Spotify is not running. Stopping cava if active"
+    stop_cava
+  fi
+}
+
+while true; do
+  checkIfCorked
 done
-
-# Check if Spotify is running
-# if pgrep -x "spotify" >/dev/null; then
-#   echo "Spotify is running"
-#   # Place your code here
-# else
-#   echo "Spotify is not running"
-# fi
 
 # is_cava_ServerExist=$(ps -ef | grep -m 1 cava | grep -v "grep" | wc -l)
 # if [ "$is_cava_ServerExist" = "0" ]; then
