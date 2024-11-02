@@ -1,3 +1,6 @@
+/*@import "colors.css";*/
+@import url('../../.cache/wal/colors-waybar.css');
+
 * {
   border: none;
   border-radius: 0;
@@ -21,8 +24,9 @@ tooltip label {
   color: white;
 }
 
-#workspaces button.visible {
-  background: #64727D
+window#waybar {
+  background: transparent;
+  /*background-color: @color4;*/
 }
 
 #workspaces button.empty {
@@ -41,16 +45,22 @@ tooltip label {
 #clock,
 #window,
 #cpu {
-  padding: 0 10px;
+  background-color: @color1;
+  margin: 3px 3px 3px 3px;
+  padding: 4px 10px 0px 10px;
+  /*border-bottom: 2px solid @color2;*/
+  color: @foreground;
 }
 
 #mode {
   /*background: #64727D;*/
-  /*border-bottom: 3px solid white;*/
+  color: rgba(255, 255, 255, 0.7);
 }
 
-#clock {
-  /*background-color: #64727D;*/
+#workspaces button.empty {
+  /*background: black;*/
+  /*color: rgba(150, 20, 90, 1);*/
+  color: @color15;
 }
 
 /*Clock Module*/
