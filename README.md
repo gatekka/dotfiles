@@ -110,7 +110,7 @@ To install Archlinux Hyprland dotfiles run the following commands:
 sudo pacman -S --needed --noconfirm git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 
 # Install packages with yay
-yay -S --needed --noconfirm autojump base base-devel btop cava chezmoi dunst fastfetch ffmpegthumbnailer firefox git hypridle hyprland hyprlock hyprpaper hyprpolkitagent-git hyprshot hyprutils-git hyprwall kitty lazygit linux linux-firmware mpv nemo neovim networkmanager noto-fonts noto-fonts-emoji noto-fonts-extra npm ntfs-3g nvidia nwg-look pipewire pipewire-alsa pipewire-audio pipewire-pulse reflector ripgrep rofi-wayland spotify-launcher starship unzip vesktop vim waybar wl-clipboard xdg-desktop-portal-hyprland xdg-utils yay yay-debug zsh zsh-autosuggestions zsh-syntax-highlighting
+yay -S --needed --noconfirm autojump base base-devel btop cava chezmoi dunst fastfetch ffmpegthumbnailer firefox git hypridle hyprland hyprlock hyprpaper hyprpolkitagent-git hyprshot hyprutils-git hyprwall inotify-tools kitty lazygit linux linux-firmware mpv nemo neovim networkmanager noto-fonts noto-fonts-emoji noto-fonts-extra npm ntfs-3g nvidia nwg-look obs-studio overskride pavucontrol pipewire pipewire-alsa pipewire-audio pipewire-pulse python-pywal qt5-wayland reflector ripgrep rofi-wayland spotify-launcher starship unzip vesktop vim waybar wl-clipboard xdg-desktop-portal-hyprland xdg-utils yay yay-debug zsh zsh-autosuggestions zsh-syntax-highlighting
 
 rustup default stable # run this for cord.nvim plugin or it'll cry about not building properly
 
