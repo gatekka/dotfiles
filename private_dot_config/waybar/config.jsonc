@@ -23,6 +23,8 @@
     "show-special": true,
     "special-visible-only": false,
     "format": "{name}:{windows}",
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
     "window-rewrite-default": " ",
     "window-rewrite": {
       "class<firefox>": " ", // Windows whose classes are "firefox"
@@ -121,7 +123,8 @@
     // "format": "💽{}",
     "format": "{}",
     "interval": 30,
-    "exec": "df -h --output=avail / | tail -1 | tr -d ' '"
+    "exec": "df -h --output=avail / | tail -1 | tr -d ' '",
+    "on-click": "nemo"
   },
   "memory": {
     // "format": "💾RAM:{used:0.1f}G"
@@ -166,6 +169,7 @@
     "format": "{icon}{volume}%",
     "format-muted": "{volume}%",
     "format-bluetooth": "{volume}% {icon}",
+    "on-click": "pavucontrol",
     "format-icons": {
       "alsa_output.pci-0000_00_1f.3.analog-stereo": "",
       "alsa_output.pci-0000_00_1f.3.analog-stereo-muted": "",
