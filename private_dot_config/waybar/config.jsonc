@@ -138,8 +138,9 @@
     "format-ethernet": "󰈀 Ethernet",
     "format-linked": "{ifname} (No IP) ",
     "format-disconnected": "Disconnected ⚠",
-    "format-alt": "{ifname}: {ipaddr}/{cidr}",
-    "interval": 5
+    // "format-alt": "{ifname}: {ipaddr}/{cidr}",
+    "interval": 5,
+    "on-click": "iwgtk"
   },
   "custom/spotify-metadata": {
     "format": "{}  ",
