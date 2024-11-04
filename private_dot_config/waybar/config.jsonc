@@ -18,6 +18,7 @@
     "cpu",
     // "custom/spotify",
     "network",
+    "custom/wlogout",
     "battery"
   ],
   "hyprland/workspaces": {
@@ -126,6 +127,10 @@
     "interval": 30,
     "exec": "df -h --output=avail / | tail -1 | tr -d ' '",
     "on-click": "nemo"
+  },
+  "custom/wlogout": {
+    "format": "󰐦 Power",
+    "on-click": "wlogout"
   },
   "memory": {
     // "format": "💾RAM:{used:0.1f}G"
