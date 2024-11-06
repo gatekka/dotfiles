@@ -35,26 +35,12 @@
       "class<kitty>": " ",
       "class<kitty> title<.*nvim.*>": " ",
       "discord": " ",
-      "spotify": " ",
-      "code": "󰨞 ",
-      "obs": " ",
-      "nemo": " ",
-      "hyprwall": " "
-    },
-    // "format": "{name} {icon} ",
-    // "format-icons": {
-    //   // "1": "",
-    //   // "2": "",
-    //   // "3": "",
-    //   // "4": "",
-    //   // "5": "",
-    //   "active": "",
-    //   "default": "",
-    //   "special": ""
-    // },
-    "persistent-workspaces": {
-      // "*": 5 // 5 workspaces by default on every monitor
-      // "HDMI-A-1": 3 // but only three on HDMI-A-1
+      "class<spotify>": " ",
+      "class<code>": "󰨞 ",
+      "class<com.obsproject.studio>": " ",
+      "class<nemo>": " ",
+      "class<nnyyxxxx.hyprwall>": " ",
+      "class<org.pulseaudio.pavucontrol>": " "
     }
   },
   "hyprland/window": {
