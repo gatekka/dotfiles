@@ -40,7 +40,8 @@
       "class<com.obsproject.studio>": " ",
       "class<nemo>": " ",
       "class<nnyyxxxx.hyprwall>": " ",
-      "class<org.pulseaudio.pavucontrol>": " "
+      "class<org.pulseaudio.pavucontrol>": " ",
+      "class<com.stremio.stremio>": " "
     }
   },
   "hyprland/window": {
