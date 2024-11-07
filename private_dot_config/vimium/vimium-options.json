@@ -1,0 +1,15 @@
+{
+  "keyMappings": "# Insert your preferred key mappings here.\nunmapAll\n\nmap j scrollDown\nmap k scrollUp\nmap <C-d> scrollPageDown\nmap <C-u> scrollPageUp\nmap <space>wq removeTab\nmap <space>bd removeTab\nmap <space>fr Vomnibar.activateInNewTab\n\nmap u restoreTab\n\nmap <S-Tab> previousTab\nmap <Tab> nextTab\n\nmap H goBack\nmap L goForward\n\nmap yy copyCurrentUrl\nmap / enterFindMode\nmap f LinkHints.activateMode\nmap m Marks.activateCreateMode\nmap ` Marks.activateGotoMode",
+  "searchUrl": "https://duckduckgo.com/?q=",
+  "settingsVersion": "2.1.2",
+  "exclusionRules": [
+    {
+      "passKeys": "",
+      "pattern": "https?://mail.google.com/*"
+    },
+    {
+      "passKeys": "jklf",
+      "pattern": "https?://www.youtube.com/watch?*"
+    }
+  ]
+}
