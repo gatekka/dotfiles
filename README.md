@@ -110,7 +110,7 @@ To install Archlinux Hyprland dotfiles run the following commands:
 sudo pacman -S --needed --noconfirm git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 
 # Install packages with yay
-yay -S --needed --noconfirm autojump base base-devel btop cava chezmoi dunst fastfetch ffmpegthumbnailer firefox git hypridle hyprland hyprlock hyprpaper hyprpolkitagent-git hyprshot hyprutils-git hyprwall inotify-tools iwgtk kitty lazygit linux linux-firmware mpv nemo neovim networkmanager noto-fonts noto-fonts-emoji noto-fonts-extra npm ntfs-3g nvidia nwg-look obs-studio overskride pavucontrol pipewire pipewire-alsa pipewire-audio pipewire-pulse python-pywal qt5-wayland reflector ripgrep rofi-wayland spotify-launcher starship unzip vesktop vim waybar wl-clipboard wlogout xdg-desktop-portal-hyprland xdg-utils yay yay-debug zsh zsh-autosuggestions zsh-syntax-highlighting
+yay -S --needed --noconfirm autojump base base-devel btop cava chezmoi dunst fastfetch ffmpegthumbnailer firefox git hypridle hyprland hyprlock hyprpaper hyprpolkitagent-git hyprshot hyprutils-git hyprwall inotify-tools iwgtk kitty lazygit linux linux-firmware mpv nemo neovim networkmanager noto-fonts noto-fonts-emoji noto-fonts-extra npm ntfs-3g nvidia nwg-look obs-studio overskride pavucontrol pipewire pipewire-alsa pipewire-audio pipewire-pulse python-pywal qt5-wayland reflector ripgrep rofi-wayland spotify-launcher starship timeshift unzip vesktop vim waybar wl-clipboard wlogout xdg-desktop-portal-hyprland xdg-utils xorg-xhost yay yay-debug zsh zsh-autosuggestions zsh-syntax-highlighting
 
 rustup default stable # run this for cord.nvim plugin or it'll cry about not building properly
 
@@ -121,3 +121,13 @@ chezmoi init --apply https://github.com/gatekka/dotfiles.git
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 You may need to reboot to apply changes.
+
+### Enable FN mode toggle on Nuphy Halo 75 keyboard
+
+For Halo 75 users, the FN mode doesn't work natively on Linux. [Thanks to this post](https://www.reddit.com/r/NuPhy/comments/1dyjkqy/comment/lc9i17p/), to fix this run the following commands: 
+```bash
+# Set fnmode=2
+echo options hid_apple fnmode=2 | sudo tee -a /etc/modprobe.d/hid_apple.conf
+# Reboot to apply changes
+reboot
+```
