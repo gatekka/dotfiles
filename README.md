@@ -2,7 +2,7 @@
 
 All dotfiles are managed with [Chezmoi](https://chezmoi.io).
 
-![Desktop](https://i.imgur.com/gTuuziY.png)
+![Image of Desktop](https://i.imgur.com/Tx1Psc3.png)
 
 ## Getting Started
 
