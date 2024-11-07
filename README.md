@@ -2,6 +2,8 @@
 
 All dotfiles are managed with [Chezmoi](https://chezmoi.io).
 
+![Desktop](https://i.imgur.com/gTuuziY.png)
+
 ## Getting Started
 
 Make sure `$HOME/.local/bin` is in PATH:
