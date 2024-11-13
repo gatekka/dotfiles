@@ -96,17 +96,18 @@ outer.right =      10
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
 # alt-comma = 'layout tiles horizontal vertical'
-alt-t = 'layout tiles horizontal vertical'
-# alt-period = 'fullscreen'
 alt-f = 'fullscreen'
+alt-t = 'layout tiles horizontal vertical'
 alt-v = 'layout floating tiling' # Toggle between floating and tiling layout
-# alt-slash = 'layout accordion horizontal vertical'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
 alt-h = 'focus left'
 alt-j = 'focus down'
 alt-k = 'focus up'
 alt-l = 'focus right'
+
+# Close window https://nikitabobko.github.io/AeroSpace/commands#close
+alt-q = 'close'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move
 alt-shift-h = 'move left'
