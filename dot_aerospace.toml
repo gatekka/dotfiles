@@ -94,6 +94,13 @@ outer.right =      10
 # end tell'
 # '''
 
+# Open application shortcuts
+alt-enter = 'exec-and-forget open -n /Applications/kitty.app/'
+
+# Disable hide shortcut binds
+cmd-h = [] # Disable "hide application"
+cmd-alt-h = [] # Disable "hide others"
+
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
 # alt-comma = 'layout tiles horizontal vertical'
 alt-f = 'fullscreen'
