@@ -122,11 +122,6 @@ alt-shift-j = 'move down'
 alt-shift-k = 'move up'
 alt-shift-l = 'move right'
 
-alt-cmd-shift-h = 'move-node-to-monitor left --focus-follows-window'
-alt-cmd-shift-j = 'move-node-to-monitor down --focus-follows-window'
-alt-cmd-shift-k = 'move-node-to-monitor up --focus-follows-window'
-alt-cmd-shift-l = 'move-node-to-monitor right --focus-follows-window'
-
 # See: https://nikitabobko.github.io/AeroSpace/commands#resize
 alt-shift-minus = 'resize smart -50'
 alt-shift-equal = 'resize smart +50'
@@ -201,6 +196,28 @@ alt-shift-9 = 'move-node-to-workspace 9'
 # alt-tab = 'workspace-back-and-forth'
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
 # alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
+
+# alt-left = 'focus-monitor left'
+# alt-down = 'focus-monitor down'
+# alt-up = 'focus-monitor up'
+# alt-right = 'focus-monitor right'
+# alt-shift-left = 'move-node-to-monitor left --focus-follows-window'
+# alt-shift-down = 'move-node-to-monitor down --focus-follows-window'
+# alt-shift-up = 'move-node-to-monitor up --focus-follows-window'
+# alt-shift-right = 'move-node-to-monitor right --focus-follows-window'
+
+# alt-cmd-h = 'focus-monitor left'
+alt-cmd-j = 'focus-monitor down'
+alt-cmd-k = 'focus-monitor up'
+alt-cmd-l = 'focus-monitor right'
+alt-cmd-shift-h = 'move-node-to-monitor left --focus-follows-window'
+alt-cmd-shift-j = 'move-node-to-monitor down --focus-follows-window'
+alt-cmd-shift-k = 'move-node-to-monitor up --focus-follows-window'
+alt-cmd-shift-l = 'move-node-to-monitor right --focus-follows-window'
+# alt-shift-cmd-h = 'move-node-to-monitor left --focus-follows-window'
+# alt-cmd-shift-j = 'move-node-to-monitor down --focus-follows-window'
+# alt-shift-cmd-k = 'move-node-to-monitor up --focus-follows-window'
+# alt-shift-cmd-l = 'move-node-to-monitor right --focus-follows-window'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 alt-shift-semicolon = 'mode service'
