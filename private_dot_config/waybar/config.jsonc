@@ -43,7 +43,9 @@
       "class<nemo>": " ",
       "class<nnyyxxxx.hyprwall>": " ",
       "class<org.pulseaudio.pavucontrol>": " ",
-      "class<com.stremio.stremio>": " "
+      "class<com.stremio.stremio>": " ",
+      "class<mpv>": " ",
+      "class<org.telegram.desktop": " "
     }
   },
   "hyprland/window": {
