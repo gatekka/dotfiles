@@ -116,11 +116,12 @@ yay -S --needed --noconfirm autojump base base-devel bitwarden blueberry btop bu
 
 rustup default stable # run this for cord.nvim plugin or it'll cry about not building properly
 
-# Run chezmoi
-chezmoi init --apply https://github.com/gatekka/dotfiles.git
-
 # Installing OhMyZsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+```bash
+# Apply dotfiles with chezmoi
+chezmoi init --apply https://github.com/gatekka/dotfiles.git
 ```
 You may need to reboot to apply changes.
 
