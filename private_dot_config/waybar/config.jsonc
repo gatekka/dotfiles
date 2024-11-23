@@ -11,18 +11,36 @@
     "custom/cava"
   ],
   "modules-right": [
+    // "custom/spotify",
     "mpris",
     "pulseaudio",
-    "custom/disk_root",
-    "memory",
-    "cpu",
-    // "custom/spotify",
-    // "tray",
-    "network",
-    "bluetooth",
-    "custom/wlogout",
-    "battery"
+    "tray",
+    "battery",
+    "group/hardware",
+    "group/power"
   ],
+  "group/power": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "custom/wlogout",
+      "network",
+      "bluetooth"
+    ]
+  },
+  "group/hardware": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "cpu",
+      "custom/disk_root",
+      "memory"
+    ]
+  },
   "battery": {
     "format": "{capacity}% {icon}",
     "format-icons": [
