@@ -17,64 +17,46 @@
     "memory",
     "cpu",
     // "custom/spotify",
+    // "tray",
     "network",
     "bluetooth",
     "custom/wlogout",
     "battery"
   ],
-  "hyprland/workspaces": {
-    "show-special": true,
-    "special-visible-only": false,
-    "format": "{name}:{windows}",
-    "on-scroll-up": "hyprctl dispatch workspace e+1",
-    "on-scroll-down": "hyprctl dispatch workspace e-1",
-    "window-rewrite-default": " ",
-    "window-rewrite": {
-      "class<firefox>": " ", // Windows whose classes are "firefox"
-      "class<firefox> title<.*github.*>": " ", // Windows whose class is "firefox" and title contains "github". Note that "class" always comes first.
-      "class<firefox> title<.*youtube.*>": " ", // Windows whose titles contain "youtube"
-      "class<neovide>": " ",
-      "class<kitty>": " ",
-      "class<kitty> title<.*nvim.*>": " ",
-      "discord": " ",
-      "class<spotify>": " ",
-      "class<code>": "󰨞 ",
-      "class<com.obsproject.studio>": " ",
-      "class<nemo>": " ",
-      "class<nnyyxxxx.hyprwall>": " ",
-      "class<org.pulseaudio.pavucontrol>": " ",
-      "class<com.stremio.stremio>": " ",
-      "class<mpv>": " ",
-      "class<org.telegram.desktop": " "
-    }
-  },
-  "hyprland/window": {
-    "max-length": 30,
-    "format": "󱂬 {class}"
-  },
-  "mpris": {
-    "interval": 1,
-    "format": "{player_icon} {title}",
-    "title-len": 18,
-    "player-icons": {
-      "default": "▶",
-      "spotify": " ",
-      "mpv": "🎵"
-    },
-    "status-icons": {
-      "paused": "⏸"
-    },
-    "ignored-players": [
-      "firefox"
+  "battery": {
+    "format": "{capacity}% {icon}",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
     ]
   },
-  "custom/cava": {
-    "exec": "bash ~/.config/waybar/scripts/cava.sh",
-    "format": "{}",
-    "tooltip": false,
-    // "on-click": "swaymsg reload & pkill waybar & waybar",
-    "layer": "top",
-    "output": "all"
+  "bluetooth": {
+    "format": " {status}",
+    // "format-connected": " {device_alias}",
+    "format-connected": " Connected",
+    "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+    // "format-device-preference": [
+    //   "device1",
+    //   "device2"
+    // ], // preference list deciding the displayed device
+    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+    "on-click": "blueberry"
+  },
+  "clock": {
+    "interval": 1,
+    "format": " {:%I:%M:%S %p}",
+    "format-alt": "{:%A, %B %d, %Y (%R:%S %p)}",
+    "tooltip": false
+  },
+  "cpu": {
+    "format": "{usage}%",
+    "on-click": "kitty btop"
   },
   // "cava": {
   //   // "cava_config": "~/.config/cava/config",
@@ -107,6 +89,14 @@
   //     "on-click-right": "mode"
   //   }
   // },
+  "custom/cava": {
+    "exec": "bash ~/.config/waybar/scripts/cava.sh",
+    "format": "{}",
+    "tooltip": false,
+    // "on-click": "swaymsg reload & pkill waybar & waybar",
+    "layer": "top",
+    "output": "all"
+  },
   "custom/disk_home": {
     "format": "🏠{} ",
     "interval": 30,
@@ -118,26 +108,6 @@
     "interval": 30,
     "exec": "df -h --output=avail / | tail -1 | tr -d ' '",
     "on-click": "nemo"
-  },
-  "custom/wlogout": {
-    "format": "󰐦 Power",
-    "on-click": "wlogout"
-  },
-  "memory": {
-    // "format": "💾RAM:{used:0.1f}G"
-    "format": "{used:0.1f}G",
-    "on-click": "kitty btop"
-  },
-  "network": {
-    "family": "ipv6",
-    // "interface": "wlp2*", // (Optional) To force the use of this interface
-    "format-wifi": "<span color='#589df6'></span> <span color='gray'>{essid}</span> {frequency} <span color='#589df6'>{signaldBm} dB</span> <span color='#589df6'>⇵</span> {bandwidthUpBits}/{bandwidthDownBits}",
-    "format-ethernet": "󰈀 Ethernet",
-    "format-linked": "{ifname} (No IP) ",
-    "format-disconnected": "Disconnected ⚠",
-    // "format-alt": "{ifname}: {ipaddr}/{cidr}",
-    "interval": 5,
-    "on-click": "iwgtk"
   },
   "custom/spotify-metadata": {
     "format": "{}  ",
@@ -151,23 +121,78 @@
     "signal": 5,
     "smooth-scrolling-threshold": 1.0
   },
+  "custom/wlogout": {
+    "format": "󰐦 Power",
+    "on-click": "wlogout"
+  },
+  "hyprland/window": {
+    "max-length": 30,
+    // "format": "󱂬 {class}",
+    "format": "| {class}",
+    "icon": true,
+    "icon-size": 18
+  },
+  "hyprland/workspaces": {
+    "active-only": false,
+    "format": "{name}: {windows}",
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "show-special": true,
+    "special-visible-only": false,
+    "window-rewrite-default": " ",
+    "window-rewrite": {
+      "class<firefox>": " ", // Windows whose classes are "firefox"
+      "class<firefox> title<.*github.*>": " ", // Windows whose class is "firefox" and title contains "github". Note that "class" always comes first.
+      "class<firefox> title<.*youtube.*>": " ", // Windows whose titles contain "youtube"
+      "class<neovide>": " ",
+      "class<kitty>": " ",
+      "class<kitty> title<.*nvim.*>": " ",
+      "discord": " ",
+      "class<spotify>": " ",
+      "class<code>": "󰨞 ",
+      "class<com.obsproject.studio>": " ",
+      "class<nemo>": " ",
+      "class<nnyyxxxx.hyprwall>": " ",
+      "class<org.pulseaudio.pavucontrol>": " ",
+      "class<com.stremio.stremio>": " ",
+      "class<mpv>": " ",
+      "class<org.telegram.desktop": " "
+    }
+  },
+  "memory": {
+    // "format": "💾RAM:{used:0.1f}G"
+    "format": "{used:0.1f}G",
+    "on-click": "kitty btop"
+  },
+  "mpris": {
+    "interval": 1,
+    "format": "{player_icon} {title}",
+    "title-len": 18,
+    "player-icons": {
+      "default": "▶",
+      "spotify": " ",
+      "mpv": "🎵"
+    },
+    "status-icons": {
+      "paused": "⏸"
+    },
+    "ignored-players": [
+      "firefox"
+    ]
+  },
+  "network": {
+    "family": "ipv6",
+    // "interface": "wlp2*", // (Optional) To force the use of this interface
+    "format-wifi": "<span color='#589df6'></span> <span color='gray'>{essid}</span> {frequency} <span color='#589df6'>{signaldBm} dB</span> <span color='#589df6'>⇵</span> {bandwidthUpBits}/{bandwidthDownBits}",
+    "format-ethernet": "󰈀 Ethernet",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "Disconnected ⚠",
+    // "format-alt": "{ifname}: {ipaddr}/{cidr}",
+    "interval": 5,
+    "on-click": "iwgtk"
+  },
   "pulseaudio/slider": {
     "orientation": "horizontal"
-  },
-  "bluetooth": {
-    "format": " {status}",
-    // "format-connected": " {device_alias}",
-    "format-connected": " Connected",
-    "format-connected-battery": " {device_alias} {device_battery_percentage}%",
-    // "format-device-preference": [
-    //   "device1",
-    //   "device2"
-    // ], // preference list deciding the displayed device
-    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
-    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
-    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
-    "on-click": "blueberry"
   },
   "pulseaudio": {
     "format": "{icon}{volume}%",
@@ -191,24 +216,10 @@
       ]
     }
   },
-  "clock": {
-    "interval": 1,
-    "format": " {:%I:%M:%S %p}",
-    "format-alt": "{:%A, %B %d, %Y (%R:%S %p)}",
-    "tooltip": false
-  },
-  "cpu": {
-    "format": "{usage}%",
-    "on-click": "kitty btop"
-  },
-  "battery": {
-    "format": "{capacity}% {icon}",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      ""
-    ]
+  "tray": {
+    "icon-size": 18,
+    "show-passive-items": false,
+    "spacing": 6,
+    "reverse-direction": true
   }
 }
