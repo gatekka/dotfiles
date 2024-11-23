@@ -2,8 +2,8 @@
 main() {
   while true; do
     config_file="$HOME/.config/hyprwall/config.ini"
-    getWallpaperPath="$(grep -oP "$HOME/.wallpapers/[^\"]+" "$config_file")"
-    cp "$getWallpaperPath" "$HOME/.config/hyprwall/wallpaper.jpg"
+    getWallpaperPath="$(grep -oP ".wallpapers/[^\"]+" "$config_file")"
+    cp "$HOME/$getWallpaperPath" "$HOME/.config/hyprwall/wallpaper.jpg"
     inotifywait -e modify "$config_file"
     # echo "$getWallpaperPath"
   done
