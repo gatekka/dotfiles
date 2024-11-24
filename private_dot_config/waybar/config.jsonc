@@ -1,15 +1,8 @@
 {
   "layer": "top",
   "reload_style_on_change": false,
-  "modules-left": [
-    "hyprland/workspaces",
-    "hyprland/mode",
-    "hyprland/window"
-  ],
-  "modules-center": [
-    "clock",
-    "custom/cava"
-  ],
+  "modules-left": ["hyprland/workspaces", "hyprland/mode", "hyprland/window"],
+  "modules-center": ["clock", "custom/cava"],
   "modules-right": [
     // "custom/spotify",
     "mpris",
@@ -17,39 +10,25 @@
     "tray",
     "battery",
     "group/hardware",
-    "group/power"
+    "group/power",
   ],
   "group/power": {
     "orientation": "horizontal",
     "drawer": {
-      "transition-left-to-right": false
+      "transition-left-to-right": false,
     },
-    "modules": [
-      "custom/wlogout",
-      "network",
-      "bluetooth"
-    ]
+    "modules": ["custom/wlogout", "network", "bluetooth"],
   },
   "group/hardware": {
     "orientation": "horizontal",
     "drawer": {
-      "transition-left-to-right": false
+      "transition-left-to-right": false,
     },
-    "modules": [
-      "cpu",
-      "custom/disk_root",
-      "memory"
-    ]
+    "modules": ["cpu", "custom/disk_root", "memory"],
   },
   "battery": {
     "format": "{capacity}% {icon}",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      ""
-    ]
+    "format-icons": ["", "", "", "", ""],
   },
   "bluetooth": {
     "format": " {status}",
@@ -64,17 +43,17 @@
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
     "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
-    "on-click": "blueberry"
+    "on-click": "blueberry",
   },
   "clock": {
     "interval": 1,
     "format": " {:%I:%M:%S %p}",
     "format-alt": "{:%A, %B %d, %Y (%R:%S %p)}",
-    "tooltip": false
+    "tooltip": false,
   },
   "cpu": {
-    "format": "{usage}%",
-    "on-click": "kitty btop"
+    "format": " {usage}%",
+    "on-click": "kitty btop",
   },
   // "cava": {
   //   // "cava_config": "~/.config/cava/config",
@@ -113,19 +92,19 @@
     "tooltip": false,
     // "on-click": "swaymsg reload & pkill waybar & waybar",
     "layer": "top",
-    "output": "all"
+    "output": "all",
   },
   "custom/disk_home": {
     "format": "🏠{} ",
     "interval": 30,
-    "exec": "df -h --output=avail $HOME | tail -1 | tr -d ' '"
+    "exec": "df -h --output=avail $HOME | tail -1 | tr -d ' '",
   },
   "custom/disk_root": {
     // "format": "💽{}",
     "format": "{}",
     "interval": 30,
     "exec": "df -h --output=avail / | tail -1 | tr -d ' '",
-    "on-click": "nemo"
+    "on-click": "nemo",
   },
   "custom/spotify-metadata": {
     "format": "{}  ",
@@ -137,18 +116,18 @@
     "on-scroll-up": "~/.config/waybar/custom/spotify/controls.sh next",
     "on-scroll-down": "~/.config/waybar/custom/spotify/controls.sh previous",
     "signal": 5,
-    "smooth-scrolling-threshold": 1.0
+    "smooth-scrolling-threshold": 1.0,
   },
   "custom/wlogout": {
     "format": "󰐦 Power",
-    "on-click": "wlogout"
+    "on-click": "wlogout",
   },
   "hyprland/window": {
     "max-length": 30,
     // "format": "󱂬 {class}",
     "format": "| {class}",
     "icon": true,
-    "icon-size": 18
+    "icon-size": 18,
   },
   "hyprland/workspaces": {
     "active-only": false,
@@ -174,13 +153,13 @@
       "class<org.pulseaudio.pavucontrol>": " ",
       "class<com.stremio.stremio>": " ",
       "class<mpv>": " ",
-      "class<org.telegram.desktop": " "
-    }
+      "class<org.telegram.desktop": " ",
+    },
   },
   "memory": {
     // "format": "💾RAM:{used:0.1f}G"
     "format": "{used:0.1f}G",
-    "on-click": "kitty btop"
+    "on-click": "kitty btop",
   },
   "mpris": {
     "interval": 1,
@@ -189,14 +168,12 @@
     "player-icons": {
       "default": "▶",
       "spotify": " ",
-      "mpv": "🎵"
+      "mpv": "🎵",
     },
     "status-icons": {
-      "paused": "⏸"
+      "paused": "⏸",
     },
-    "ignored-players": [
-      "firefox"
-    ]
+    "ignored-players": [""],
   },
   "network": {
     "family": "ipv6",
@@ -207,10 +184,10 @@
     "format-disconnected": "Disconnected ⚠",
     // "format-alt": "{ifname}: {ipaddr}/{cidr}",
     "interval": 5,
-    "on-click": "iwgtk"
+    "on-click": "iwgtk",
   },
   "pulseaudio/slider": {
-    "orientation": "horizontal"
+    "orientation": "horizontal",
   },
   "pulseaudio": {
     "format": "{icon}{volume}%",
@@ -227,17 +204,13 @@
       "phone-muted": "",
       "portable": "",
       "car": "",
-      "default": [
-        "",
-        "",
-        ""
-      ]
-    }
+      "default": ["", "", ""],
+    },
   },
   "tray": {
     "icon-size": 18,
     "show-passive-items": false,
     "spacing": 6,
-    "reverse-direction": true
-  }
+    "reverse-direction": true,
+  },
 }
