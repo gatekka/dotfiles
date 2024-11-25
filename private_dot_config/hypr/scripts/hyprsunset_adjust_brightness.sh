@@ -41,11 +41,12 @@ decreaseTemperature() {
 }
 
 main() {
-
   # Create file if file doesn't exist
   if [[ ! -f "$TEMP_FILE" ]]; then
     echo "$DEFAULT_TEMP" >"$TEMP_FILE"
   fi
+
+  pkill -x "hyprsunset" # Kill any running hyprsunset processes
 
   case "$1" in
   "increase")
