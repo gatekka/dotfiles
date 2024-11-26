@@ -9,7 +9,7 @@ CURRENT_TEMP=$(cat "$TEMP_FILE")
 DEFAULT_TEMP=6500
 MAX_TEMP=20000
 MIN_TEMP=1000
-INCREMENT=500
+INCREMENT=100
 NOTIFY_ID=1
 NOTIFY_FGCOLOR="#888888"
 NOTIFY_BGCOLOR="#222222"
@@ -45,7 +45,10 @@ decreaseTemperature() {
 main() {
   # Create file if file doesn't exist
   if [[ ! -f "$TEMP_FILE" ]]; then
+    sendNotification "Creating file and setting temperature to 6500K..."
     echo "$DEFAULT_TEMP" >"$TEMP_FILE"
+    hyprsunset --temperature "$DEFAULT_TEMP"
+    exit 1
   fi
 
   case "$1" in
