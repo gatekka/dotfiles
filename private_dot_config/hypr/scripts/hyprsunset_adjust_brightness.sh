@@ -17,6 +17,7 @@ NOTIFY_FGCOLOR="#888888"
 NOTIFY_BGCOLOR="#222222"
 
 sendNotification() {
+  echo "$1"
   if [[ "$SHOW_NOTIFICATION" = true ]]; then
     notify-send -h string:fgcolor:"$NOTIFY_FGCOLOR" -h string:bgcolor:"$NOTIFY_BGCOLOR" -r "$NOTIFY_ID" "hyprsunset" "$1"
   fi
@@ -94,7 +95,6 @@ main() {
     watchTemperature
     ;;
   *)
-    echo "Commands: increase decrease restore off waybar"
     sendNotification "Commands: increase decrease restore off waybar"
     ;;
   esac
