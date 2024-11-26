@@ -3,6 +3,7 @@
 # Script to increase/decrease current temperature of hyprsunset. Made by Chris @11/25/2024 :)
 # Requires hyprsunset to work
 # Requires Dunstify to display notifications
+# Requires inotify-tools
 
 TEMP_FILE="$HOME/.hyprsunset_temp"
 CURRENT_TEMP=$(cat "$TEMP_FILE")
@@ -51,6 +52,14 @@ restoreTemperature() {
   hyprsunset --temperature "$CURRENT_TEMP"
 }
 
+watchTemperature() {
+  echo "$(cat "$TEMP_FILE")K"
+  while true; do
+    inotifywait -qq -e modify "$TEMP_FILE"
+    echo "$(cat "$TEMP_FILE")K"
+  done
+}
+
 main() {
   # Create file if file doesn't exist
   if [[ ! -f "$TEMP_FILE" ]]; then
@@ -77,7 +86,16 @@ main() {
   "restore")
     restoreTemperature
     ;;
+  "off")
+    pkill -x "hyprsunset" # Kill any running hyprsunset processes
+    sendNotification "Turned off Hyprsunset"
+    ;;
+  "waybar")
+    watchTemperature
+    ;;
   *)
+    echo "Commands: increase decrease restore off waybar"
+    sendNotification "Commands: increase decrease restore off waybar"
     ;;
   esac
 }

@@ -119,10 +119,12 @@
     "smooth-scrolling-threshold": 1.0,
   },
   "custom/hyprsunset": {
-    "format": " {}K",
+    "format": " {}",
     "tooltip-format": "Current temperature of \"Hyprsunset\" is {}",
-    "exec": "cat $HOME/.hyprsunset_temp",
-    "interval": 1,
+    "exec": "bash $HOME/.config/hypr/scripts/hyprsunset_adjust_brightness.sh waybar",
+    "on-click": "bash $HOME/.config/hypr/scripts/hyprsunset_adjust_brightness.sh off",
+    "on-scroll-up": "bash $HOME/.config/hypr/scripts/hyprsunset_adjust_brightness.sh increase --no-notify",
+    "on-scroll-down": "bash $HOME/.config/hypr/scripts/hyprsunset_adjust_brightness.sh decrease --no-notify",
   },
   "custom/wlogout": {
     "format": "󰐦 Power",
