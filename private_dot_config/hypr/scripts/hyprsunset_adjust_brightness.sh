@@ -42,12 +42,17 @@ decreaseTemperature() {
   hyprsunset --temperature "$NEW_TEMP"
 }
 
+restoreTemperature() {
+  sendNotification "Set temperature to: $CURRENT_TEMP\K"
+  pkill -x "hyprsunset" # Kill any running hyprsunset processes
+  hyprsunset --temperature "$CURRENT_TEMP"
+}
+
 main() {
   # Create file if file doesn't exist
   if [[ ! -f "$TEMP_FILE" ]]; then
     sendNotification "Creating file and setting temperature to 6500K..."
     echo "$DEFAULT_TEMP" >"$TEMP_FILE"
-    hyprsunset --temperature "$DEFAULT_TEMP"
     exit 1
   fi
 
@@ -59,10 +64,9 @@ main() {
     decreaseTemperature
     ;;
   "restore")
-    hyprsunset --temperature "$CURRENT_TEMP"
+    restoreTemperature
     ;;
   *)
-    hyprsunset --temperature "$DEFAULT_TEMP"
     ;;
   esac
 }
