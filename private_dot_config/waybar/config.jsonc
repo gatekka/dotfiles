@@ -4,7 +4,6 @@
   "modules-left": ["hyprland/workspaces", "hyprland/mode", "hyprland/window"],
   "modules-center": ["clock", "custom/cava"],
   "modules-right": [
-    // "custom/spotify",
     "mpris",
     "pulseaudio",
     "tray",
