@@ -10,12 +10,15 @@ DEFAULT_TEMP=6500
 MAX_TEMP=20000
 MIN_TEMP=1000
 INCREMENT=100
+SHOW_NOTIFICATION=true
 NOTIFY_ID=1
 NOTIFY_FGCOLOR="#888888"
 NOTIFY_BGCOLOR="#222222"
 
 sendNotification() {
-  notify-send -h string:fgcolor:"$NOTIFY_FGCOLOR" -h string:bgcolor:"$NOTIFY_BGCOLOR" -r "$NOTIFY_ID" "hyprsunset" "$1"
+  if [[ "$SHOW_NOTIFICATION" = true ]]; then
+    notify-send -h string:fgcolor:"$NOTIFY_FGCOLOR" -h string:bgcolor:"$NOTIFY_BGCOLOR" -r "$NOTIFY_ID" "hyprsunset" "$1"
+  fi
 }
 
 increaseTemperature() {
@@ -56,6 +59,14 @@ main() {
     exit 1
   fi
 
+  # Optional arguments
+  case "$2" in
+  "--no-notify")
+    SHOW_NOTIFICATION=false
+    ;;
+  *) ;;
+  esac
+
   case "$1" in
   "increase")
     increaseTemperature
@@ -71,4 +82,4 @@ main() {
   esac
 }
 
-main "$1"
+main "$1" "$2"
