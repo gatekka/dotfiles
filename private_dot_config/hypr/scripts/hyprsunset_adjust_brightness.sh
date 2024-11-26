@@ -26,6 +26,7 @@ increaseTemperature() {
   fi
   sendNotification "Set temperature to: $NEW_TEMP\K"
   echo "$NEW_TEMP" >"$TEMP_FILE"
+  pkill -x "hyprsunset" # Kill any running hyprsunset processes
   hyprsunset --temperature "$NEW_TEMP"
 }
 
@@ -37,6 +38,7 @@ decreaseTemperature() {
   fi
   sendNotification "Set temperature to: $NEW_TEMP\K"
   echo "$NEW_TEMP" >"$TEMP_FILE"
+  pkill -x "hyprsunset" # Kill any running hyprsunset processes
   hyprsunset --temperature "$NEW_TEMP"
 }
 
@@ -46,14 +48,15 @@ main() {
     echo "$DEFAULT_TEMP" >"$TEMP_FILE"
   fi
 
-  pkill -x "hyprsunset" # Kill any running hyprsunset processes
-
   case "$1" in
   "increase")
     increaseTemperature
     ;;
   "decrease")
     decreaseTemperature
+    ;;
+  "restore")
+    hyprsunset --temperature "$CURRENT_TEMP"
     ;;
   *)
     hyprsunset --temperature "$DEFAULT_TEMP"
