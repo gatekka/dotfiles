@@ -59,12 +59,22 @@ sketchybar --default "${default[@]}"
 
 sketchybar --add event aerospace_workspace_change
 for sid in $(aerospace list-workspaces --all); do
+
+    # window_count=$(aerospace list-windows --workspace "$sid" --count)
+    #
+    # # Check if the window count is 0
+    # if [ "$window_count" -eq 0 ]; then
+    #     echo "Skipping workspace $sid because it has no windows."
+    #     continue  # Skip to the next iteration of the loop
+    # fi
+
     sketchybar --add item space.$sid left \
         --subscribe space.$sid aerospace_workspace_change \
         --set space.$sid \
+        width=33 \
         background.color=0x44ffffff \
-        background.corner_radius=5 \
-        background.height=20 \
+        background.corner_radius=2 \
+        background.height=25 \
         background.drawing=off \
         label="$sid" \
         click_script="aerospace workspace $sid" \
