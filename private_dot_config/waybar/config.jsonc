@@ -162,6 +162,7 @@
       "class<com.stremio.stremio>": " ",
       "class<mpv>": " ",
       "class<org.telegram.desktop": " ",
+      "class<Google-chrome": " ",
     },
   },
   "memory": {
