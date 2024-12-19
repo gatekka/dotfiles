@@ -110,6 +110,7 @@ alias nvimconfig="nvim ~/.config/nvim"
 alias ls="ls --color -A"
 alias e="nvim"
 alias f="fzf"
+alias lg="lazygit"
 
 # Additional commands
 fastfetch
