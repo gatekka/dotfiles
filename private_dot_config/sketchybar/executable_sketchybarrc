@@ -32,14 +32,23 @@ sketchybar --default \
     background.padding_right=5 \
     background.height=26 \
     icon.font="$FONT_FACE:Medium:15.0" \
-    icon.padding_right=5 \
     icon.padding_left=5 \
+    icon.padding_right=5 \
     label.font="$FONT_FACE:Medium:12.0" \
     label.color=0xffcad3f5 \
     label.y_offset=0 \
     label.padding_left=5 \
     label.padding_right=5
 sketchybar --default "${default[@]}"
+
+sketchybar --add item apple left \
+    --set apple \
+    label.drawing=off \
+    icon.drawing=on \
+    background.drawing=off\
+    background.padding_right=13 \
+    icon='􀣺' \
+    icon.font="$FONT_FACE:Medium:18.0"\
 
 sketchybar --add event aerospace_workspace_change
 for sid in $(aerospace list-workspaces --all); do
