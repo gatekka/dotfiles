@@ -109,7 +109,7 @@ sketchybar \
   --subscribe volume volume_change \
 
 sketchybar --add item cpu_percent right \
-  --set cpu_percent icon=  icon.color="0xFFfab387"\
+  --set cpu_percent icon=􀫥 icon.font="$FONT_FACE:Bold:17.4" icon.color="0xFFfab387"\
   --set cpu_percent update_freq=2 \
   --set cpu_percent script="$PLUGIN_DIR/cpu.sh" \
 
