@@ -9,23 +9,23 @@ fi
 
 case ${PERCENTAGE} in
 [8-9][0-9] | 100)
-  ICON=""
+  ICON="􀛨  "
   ICON_COLOR=0xffa6da95
   ;;
 7[0-9])
-  ICON=""
+  ICON="􀺸  "
   ICON_COLOR=0xffeed49f
   ;;
 [4-6][0-9])
-  ICON=""
+  ICON="􀺶  "
   ICON_COLOR=0xfff5a97f
   ;;
 [1-3][0-9])
-  ICON=""
+  ICON="􀛩  "
   ICON_COLOR=0xffee99a0
   ;;
 [0-9])
-  ICON=""
+  ICON="􀛪  "
   ICON_COLOR=0xffed8796
   ;;
 esac
