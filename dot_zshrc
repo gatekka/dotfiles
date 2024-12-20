@@ -102,14 +102,15 @@ fi
 # - $ZSH_CUSTOM/aliases.zsh
 # - $ZSH_CUSTOM/macos.zsh
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
+
+# Aliases
 alias zshconfig="nvim ~/.zshrc"
 alias kittyconfig="nvim ~/.config/kitty/kitty.conf"
 alias nvimconfig="nvim ~/.config/nvim"
 alias ls="ls --color -A"
 alias e="nvim"
-alias f="fzf"
+alias f="fzf --height=50% --layout=reverse --border=rounded"
+alias fe='f=$(f) && [ -n "$f" ] && e "$f"'
 alias lg="lazygit"
 
 # Additional commands
