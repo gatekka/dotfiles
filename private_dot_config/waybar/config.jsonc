@@ -151,6 +151,7 @@
       "class<firefox> title<.*youtube.*>": " ", // Windows whose titles contain "youtube"
       "class<neovide>": " ",
       "class<kitty>": " ",
+      "class<com.mitchellh.ghostty>": " ",
       "class<kitty> title<.*nvim.*>": " ",
       "discord": " ",
       "class<spotify>": " ",
