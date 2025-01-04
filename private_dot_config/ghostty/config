@@ -1,8 +1,15 @@
 font-family = "Victor Mono"
 font-style = "Regular"
 font-thicken
-title = "Ghostty 👻"
+# title = "Ghostty 👻"
 theme = Sourcerer
 background-opacity = 0.9
 background-blur-radius = 64
+mouse-hide-while-typing
+window-padding-x = 0
+window-padding-y = 0
+window-padding-balance = true
+gtk-titlebar = false
+# window-decoration = false
+window-padding-color = extend
 # macos-titlebar-style = "transparent"
