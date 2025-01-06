@@ -6,7 +6,6 @@
 # Requires inotify-tools
 
 TEMP_FILE="$HOME/.hyprsunset_temp"
-CURRENT_TEMP=$(cat "$TEMP_FILE")
 DEFAULT_TEMP=6500
 MAX_TEMP=20000
 MIN_TEMP=1000
@@ -23,7 +22,16 @@ sendNotification() {
   fi
 }
 
+getCurrentTemperature() {
+  if [[ ! -f "$TEMP_FILE" || "$(cat "$TEMP_FILE")" == "Off" ]]; then
+    echo "$DEFAULT_TEMP"
+  else
+    cat "$TEMP_FILE"
+  fi
+}
+
 increaseTemperature() {
+  CURRENT_TEMP=$(getCurrentTemperature)
   NEW_TEMP=$((CURRENT_TEMP + INCREMENT))
   if [[ $NEW_TEMP -gt $MAX_TEMP ]]; then
     sendNotification "Temperature max limit. Temperature has to be between $MIN_TEMP\K and $MAX_TEMP\K"
@@ -36,6 +44,7 @@ increaseTemperature() {
 }
 
 decreaseTemperature() {
+  CURRENT_TEMP=$(getCurrentTemperature)
   NEW_TEMP=$((CURRENT_TEMP - INCREMENT))
   if [[ $NEW_TEMP -lt $MIN_TEMP ]]; then
     sendNotification "Temperature minimum limit. Temperature has to be between $MIN_TEMP\K and $MAX_TEMP\K"
@@ -48,16 +57,27 @@ decreaseTemperature() {
 }
 
 restoreTemperature() {
+  CURRENT_TEMP=$(getCurrentTemperature)
   sendNotification "Set temperature to: $CURRENT_TEMP\K"
   pkill -x "hyprsunset" # Kill any running hyprsunset processes
   hyprsunset --temperature "$CURRENT_TEMP"
 }
 
+turnOffTemperature() {
+  pkill -x "hyprsunset" # Kill any running hyprsunset processes
+  echo "Off" >"$TEMP_FILE"
+  sendNotification "Turned off Hyprsunset"
+}
+
 watchTemperature() {
-  echo "$(cat "$TEMP_FILE")K"
   while true; do
+    CURRENT_TEMP=$(getCurrentTemperature)
+    if grep -q "Off" "$TEMP_FILE"; then
+      echo "Off"
+    else
+      echo "${CURRENT_TEMP}K"
+    fi
     inotifywait -qq -e modify "$TEMP_FILE"
-    echo "$(cat "$TEMP_FILE")K"
   done
 }
 
@@ -88,8 +108,7 @@ main() {
     restoreTemperature
     ;;
   "off")
-    pkill -x "hyprsunset" # Kill any running hyprsunset processes
-    sendNotification "Turned off Hyprsunset"
+    turnOffTemperature
     ;;
   "waybar")
     watchTemperature
