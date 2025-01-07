@@ -1,6 +1,6 @@
 font-family = "Victor Mono"
-font-style = "Regular"
-font-thicken
+# font-style = "Regular"
+font-thicken = true
 # title = "Ghostty 👻"
 theme = Sourcerer
 background-opacity = 0.9
