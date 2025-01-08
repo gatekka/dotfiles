@@ -13,3 +13,4 @@ gtk-titlebar = false
 # window-decoration = false
 window-padding-color = extend
 # macos-titlebar-style = "transparent"
+link-url = true
