@@ -400,7 +400,7 @@ tmux_conf_urlscan_options="--compact --dedupe"
 #set -g status-position top
 
 bind m select-pane -m
-bind J join-pane
+bind C-j join-pane
 
 
 # -- tpm -----------------------------------------------------------------------
