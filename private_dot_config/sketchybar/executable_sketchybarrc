@@ -88,15 +88,15 @@ sketchybar --add item weather q \
     script="$PLUGIN_DIR/weather.sh" \
     --subscribe weather system_woke
 
-sketchybar \
---add item start_timer q \
---set start_timer \
-icon="􀐯 " \
-icon.font="$FONT_FACE:Bold:15.5" \
-icon.color="0xFF74c7ec" \
-label.padding_right=7 \
-click_script="$PLUGIN_DIR/start_timer.sh" \
-script="$PLUGIN_DIR/start_timer.sh reset"
+# sketchybar \
+# --add item start_timer q \
+# --set start_timer \
+# icon="􀐯 " \
+# icon.font="$FONT_FACE:Bold:15.5" \
+# icon.color="0xFF74c7ec" \
+# label.padding_right=7 \
+# click_script="$PLUGIN_DIR/start_timer.sh" \
+# script="$PLUGIN_DIR/start_timer.sh reset"
 
 
 sketchybar --add event spotify_change "com.spotify.client.PlaybackStateChanged" \
