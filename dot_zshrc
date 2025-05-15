@@ -111,7 +111,7 @@ alias ls="ls --color -A"
 alias e="nvim"
 alias f="fzf --height=50% --layout=reverse --border=rounded"
 alias fe='f=$(f) && [ -n "$f" ] && e "$f"'
-alias cdf='cd "$(fd -t d | fzf)"'
+alias cdf='cd "$(fd --hidden --no-ignore -t d | fzf)"'
 alias cdie='cdi && e .'
 alias lg="lazygit"
 
