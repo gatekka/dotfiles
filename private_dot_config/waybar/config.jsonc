@@ -1,7 +1,7 @@
 {
   "layer": "top",
   "reload_style_on_change": false,
-  "modules-left": ["custom/notification", "hyprland/workspaces", "hyprland/mode", "hyprland/window"],
+  "modules-left": ["hyprland/workspaces", "hyprland/mode", "hyprland/window"],
   "modules-center": ["mpris", "custom/cava"],
   "modules-right": [
     "battery",
@@ -10,21 +10,22 @@
     "custom/hyprsunset",
     "tray",
     "clock",
-    "group/power",
+    "custom/notification",
+    "custom/wlogout"
   ],
   "group/power": {
     "orientation": "horizontal",
     "drawer": {
       "transition-left-to-right": false,
     },
-    "modules": ["custom/wlogout", "network", "bluetooth"],
+    "modules": ["custom/wlogout", "custom/notification"],
   },
   "group/hardware": {
     "orientation": "horizontal",
     "drawer": {
       "transition-left-to-right": false,
     },
-    "modules": ["cpu", "custom/disk_root", "memory"],
+    "modules": ["cpu", "bluetooth", "network"],
   },
   "battery": {
     "format": "{capacity}% {icon}",
@@ -133,7 +134,7 @@
     "on-scroll-down": "bash $HOME/.config/hypr/scripts/hyprsunset_adjust_brightness.sh decrease --no-notify",
   },
   "custom/wlogout": {
-    "format": "󰐦 Power",
+    "format": "󰐦",
     "on-click": "wlogout",
   },
   "hyprland/window": {
