@@ -50,7 +50,7 @@ window#waybar.empty #window {
 }
 
 #workspaces button {
-  transition: all 0.1s ease;
+  transition: all 0s ease;
 }
 
 #workspaces button.active {
