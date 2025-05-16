@@ -31,6 +31,7 @@ window#waybar.empty #window {
 #clock,
 #custom-disk_root,
 #custom-cava,
+#custom-notification,
 #custom-wlogout,
 #custom-hyprsunset,
 #cava,
@@ -112,6 +113,10 @@ window#waybar.empty #window {
 /*  animation-iteration-count: infinite;*/
 /*  animation-direction: alternate;*/
 /*}*/
+
+#custom-notification {
+  padding-right: 13px;
+}
 
 #pulseaudio-slider slider {
   min-height: 0px;

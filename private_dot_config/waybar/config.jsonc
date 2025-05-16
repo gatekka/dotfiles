@@ -1,7 +1,7 @@
 {
   "layer": "top",
   "reload_style_on_change": false,
-  "modules-left": ["hyprland/workspaces", "hyprland/mode", "hyprland/window"],
+  "modules-left": ["custom/notification", "hyprland/workspaces", "hyprland/mode", "hyprland/window"],
   "modules-center": ["mpris", "custom/cava"],
   "modules-right": [
     "battery",
@@ -105,6 +105,12 @@
     "interval": 30,
     "exec": "df -h --output=avail / | tail -1 | tr -d ' '",
     "on-click": "nemo",
+  },
+  "custom/notification": {
+      "tooltip": false,
+      "format": "",
+      "on-click": "swaync-client -t -sw",
+      "escape": true
   },
   "custom/spotify-metadata": {
     "format": "{}  ",
