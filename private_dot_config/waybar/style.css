@@ -70,6 +70,7 @@ window#waybar.empty #window {
   padding: 0px 5px;
   margin: 2px;
   background: alpha(@background, 0.6);
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
 }
 #workspaces button {
   all:unset;
