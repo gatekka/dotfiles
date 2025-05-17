@@ -4,18 +4,20 @@
   "modules-left": [
     "clock",
     "custom/pacman",
-    "group/hardware",
+    "cpu",
+    "hyprland/workspaces",
     "hyprland/window",
 ],
   "modules-center": [
-    "hyprland/workspaces",
+    "mpris",
     "custom/cava",
   ],
   "modules-right": [
-    "mpris",
     "battery",
     "pulseaudio",
     "custom/hyprsunset",
+    "bluetooth",
+    "network",
     "tray",
     "custom/notification",
     "custom/wlogout",
@@ -30,7 +32,7 @@
   "group/hardware": {
     "orientation": "horizontal",
     "drawer": {
-      "transition-left-to-right": true,
+      "transition-left-to-right": false,
     },
     "modules": ["cpu", "bluetooth", "network"],
   },
