@@ -1,17 +1,24 @@
 {
   "layer": "top",
   "reload_style_on_change": false,
-  "modules-left": ["hyprland/workspaces", "hyprland/mode", "hyprland/window"],
-  "modules-center": ["mpris", "custom/cava"],
-  "modules-right": [
-    "battery",
+  "modules-left": [
+    "clock",
+    "custom/pacman",
     "group/hardware",
+    "hyprland/window",
+],
+  "modules-center": [
+    "hyprland/workspaces",
+    "custom/cava",
+  ],
+  "modules-right": [
+    "mpris",
+    "battery",
     "pulseaudio",
     "custom/hyprsunset",
     "tray",
-    "clock",
     "custom/notification",
-    "custom/wlogout"
+    "custom/wlogout",
   ],
   "group/power": {
     "orientation": "horizontal",
@@ -23,7 +30,7 @@
   "group/hardware": {
     "orientation": "horizontal",
     "drawer": {
-      "transition-left-to-right": false,
+      "transition-left-to-right": true,
     },
     "modules": ["cpu", "bluetooth", "network"],
   },
@@ -91,7 +98,6 @@
     "exec": "bash ~/.config/waybar/scripts/cava.sh",
     "format": "{}",
     "tooltip": false,
-    // "on-click": "swaymsg reload & pkill waybar & waybar",
     "layer": "top",
     "output": "all",
   },
@@ -108,10 +114,19 @@
     "on-click": "nemo",
   },
   "custom/notification": {
-      "tooltip": false,
-      "format": "",
-      "on-click": "swaync-client -t -sw",
-      "escape": true
+    "tooltip": false,
+    "format": "",
+    "on-click": "swaync-client -t -sw",
+    "escape": true
+  },
+  "custom/pacman": {
+    "format": "󰅢 {}",
+    "interval": 30,   
+    "exec": "checkupdates | wc -l",
+    "exec-if": "exit 0",
+    "signal": 8,
+    "tooltip-format": "{} packages to update.",
+    "tooltip": true,
   },
   "custom/spotify-metadata": {
     "format": "{}  ",
@@ -144,35 +159,48 @@
     "icon": true,
     "icon-size": 18,
   },
+
   "hyprland/workspaces": {
-    "active-only": false,
-    "format": "<i>{name}</i> {windows}",
-    "on-scroll-up": "hyprctl dispatch workspace e+1",
-    "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "format": "{icon}",
     "show-special": true,
-    "special-visible-only": false,
-    "window-rewrite-default": " ",
-    "window-rewrite": {
-      "class<firefox>": " ", // Windows whose classes are "firefox"
-      "class<firefox> title<.*github.*>": " ", // Windows whose class is "firefox" and title contains "github". Note that "class" always comes first.
-      "class<firefox> title<.*youtube.*>": " ", // Windows whose titles contain "youtube"
-      "class<neovide>": " ",
-      "class<kitty>": " ",
-      "class<com.mitchellh.ghostty>": " ",
-      "class<kitty> title<.*nvim.*>": " ",
-      "discord": " ",
-      "class<spotify>": " ",
-      "class<code>": "󰨞 ",
-      "class<com.obsproject.studio>": " ",
-      "class<nemo>": " ",
-      "class<nnyyxxxx.hyprwall>": " ",
-      "class<org.pulseaudio.pavucontrol>": " ",
-      "class<com.stremio.stremio>": " ",
-      "class<mpv>": " ",
-      "class<org.telegram.desktop": " ",
-      "class<Google-chrome": " ",
+    "format-icons": {
+      "active": "",
+      "default": "",
+      "empty": ""
     },
+    "persistent-workspaces": {
+      "*": [ 1,2,3,4,5 ]
+    }
   },
+  // "hyprland/workspaces": {
+  //   "active-only": false,
+  //   "format": "<i>{name}</i> {windows}",
+  //   "on-scroll-up": "hyprctl dispatch workspace e+1",
+  //   "on-scroll-down": "hyprctl dispatch workspace e-1",
+  //   "show-special": true,
+  //   "special-visible-only": false,
+  //   "window-rewrite-default": " ",
+  //   "window-rewrite": {
+  //     "class<firefox>": " ", // Windows whose classes are "firefox"
+  //     "class<firefox> title<.*github.*>": " ", // Windows whose class is "firefox" and title contains "github". Note that "class" always comes first.
+  //     "class<firefox> title<.*youtube.*>": " ", // Windows whose titles contain "youtube"
+  //     "class<neovide>": " ",
+  //     "class<kitty>": " ",
+  //     "class<com.mitchellh.ghostty>": " ",
+  //     "class<kitty> title<.*nvim.*>": " ",
+  //     "discord": " ",
+  //     "class<spotify>": " ",
+  //     "class<code>": "󰨞 ",
+  //     "class<com.obsproject.studio>": " ",
+  //     "class<nemo>": " ",
+  //     "class<nnyyxxxx.hyprwall>": " ",
+  //     "class<org.pulseaudio.pavucontrol>": " ",
+  //     "class<com.stremio.stremio>": " ",
+  //     "class<mpv>": " ",
+  //     "class<org.telegram.desktop": " ",
+  //     "class<Google-chrome": " ",
+  //   },
+  // },
   "memory": {
     // "format": "💾RAM:{used:0.1f}G"
     "format": "{used:0.1f}G",

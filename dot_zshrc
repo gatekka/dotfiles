@@ -114,9 +114,7 @@ alias fe='f=$(f) && [ -n "$f" ] && e "$f"'
 alias cdf='cd "$(fd --hidden --no-ignore -t d | fzf)"'
 alias cdie='cdi && e .'
 alias lg="lazygit"
-
-# Additional commands
-fastfetch
+alias cbonsaiPreset='cbonsai -li -L 50 -t 0.003 -w 2 -m "hello chris"'
 
 # # Import colorscheme from 'wal' asynchronously
 # # &   # Run the process in the background.
@@ -126,3 +124,6 @@ fastfetch
 # Alternative (blocks terminal for 0-3ms)
 # cat ~/.cache/wal/sequences
 [[ -f ~/.cache/wal/sequences ]] && cat ~/.cache/wal/sequences
+
+# Additional commands
+fastfetch

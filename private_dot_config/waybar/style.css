@@ -5,6 +5,7 @@
   border: none;
   border-radius: 10;
   font-family: FiracodeNerdFont;
+  font-family: CodeNewRoman Nerd Font Propo;
   min-height: 0;
 }
 
@@ -32,6 +33,7 @@ window#waybar.empty #window {
 #custom-disk_root,
 #custom-cava,
 #custom-notification,
+#custom-pacman,
 #custom-wlogout,
 #custom-hyprsunset,
 #cava,
@@ -52,71 +54,63 @@ window#waybar.empty #window {
   box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
 }
 
-#workspaces button {
+/* #workspaces button {
   transition: all 0s ease;
   color: alpha(@color7, 0.5);
 }
-
 #workspaces button.active {
   color: @color7;
 }
-
 #workspaces button.empty {
   padding-right: 2;
   padding-left: 10;
+} */
+
+#workspaces {
+  padding: 0px 5px;
+  margin: 2px;
+  /* background-color: @background; */
+  background: alpha(@background, 0.6);
+}
+#workspaces button {
+  all:unset;
+  padding: 0px 5px;
+  /* color: alpha(@color9,.4); */
+  color: alpha(@color7, 0.5);
+  transition: all .2s ease;
+}
+#workspaces button:hover {
+  /* color:rgba(0,0,0,0); */
+  color: @color7;
+  border: none;
+  text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .5);
+  transition: all 1s ease;
+}
+#workspaces button.active {
+  color: @color6;
+  border: none;
+  text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
+}
+#workspaces button.empty {
+  color: alpha(@background, 0.4);
+  border: none;
+  text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .2);
+}
+#workspaces button.empty:hover {
+  color: alpha(@color7, 0.75);
+  border: none;
+  text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .5);
+  transition: all 1s ease;
+}
+#workspaces button.empty.active {
+  color: alpha(@color6, 0.75);
+  border: none;
+  text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
 }
 
-/*#workspaces button {*/
-/*align-items: center;*/
-/*padding-right: 10px;*/
-/*padding-left: 10px;*/
-/*}*/
-
-/*#workspaces {*/
-/*  background-color: @base;*/
-/*}*/
-
-/*#mode {*/
-/*  background: #64727D;*/
-/*  border-bottom: 3px solid white;*/
-/*}*/
-
-/*#clock {*/
-/*background-color: #64727D;*/
-/*}*/
-
-/*Clock Module*/
-
-/*#battery {*/
-/*  background-color: #ffffff;*/
-/*  color: black;*/
-/*}*/
-
-/*#battery.charging {*/
-/*  color: white;*/
-/*  background-color: #26A65B;*/
-/*}*/
-
-/*@keyframes blink {*/
-/*  to {*/
-/*    background-color: #ffffff;*/
-/*    color: black;*/
-/*  }*/
-/*}*/
-
-/*#battery.warning:not(.charging) {*/
-/*  background: #f53c3c;*/
-/*  color: white;*/
-/*  animation-name: blink;*/
-/*  animation-duration: 0.5s;*/
-/*  animation-timing-function: steps(12);*/
-/*  animation-iteration-count: infinite;*/
-/*  animation-direction: alternate;*/
-/*}*/
-
-#custom-notification {
+/* #custom-notification {
   padding-right: 13px;
-}
+} */
 
 #pulseaudio-slider slider {
   min-height: 0px;
