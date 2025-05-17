@@ -124,4 +124,5 @@ fastfetch
 # (cat ~/.cache/wal/sequences &)
 
 # Alternative (blocks terminal for 0-3ms)
-cat ~/.cache/wal/sequences
+# cat ~/.cache/wal/sequences
+[[ -f ~/.cache/wal/sequences ]] && cat ~/.cache/wal/sequences
