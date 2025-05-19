@@ -32,6 +32,7 @@ window#waybar.empty #window {
 #clock,
 #custom-disk_root,
 #custom-cava,
+#custom-lyrics,
 #custom-notification,
 #custom-pacman,
 #custom-wlogout,
@@ -104,6 +105,19 @@ window#waybar.empty #window {
   color: alpha(@color6, 0.75);
   border: none;
   text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
+}
+#workspaces button.special {
+  color: alpha(@color5, 0.5);
+}
+#workspaces button.special:hover {
+  color: @color5;
+}
+#workspaces button.special.active {
+  color: @color5;
+}
+#workspaces button.special.empty {
+  color: alpha(@color5, 0.5);
+  text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .2);
 }
 
 /* #custom-notification {
