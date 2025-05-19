@@ -10,6 +10,7 @@
 ],
   "modules-center": [
     "mpris",
+    "custom/lyrics",
     "custom/cava",
   ],
   "modules-right": [
@@ -115,6 +116,9 @@
     "exec": "df -h --output=avail / | tail -1 | tr -d ' '",
     "on-click": "nemo",
   },
+  "custom/lyrics": {
+    "exec": "lrcsnc",
+  },
   "custom/notification": {
     "tooltip": false,
     "format": "",
@@ -172,7 +176,9 @@
     },
     "persistent-workspaces": {
       "*": [ 1,2,3,4,5 ]
-    }
+    },
+    "on-scroll-up": "hyprctl dispatch workspace e-1",
+    "on-scroll-down": "hyprctl dispatch workspace e+1",
   },
   // "hyprland/workspaces": {
   //   "active-only": false,
