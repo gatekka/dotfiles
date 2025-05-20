@@ -7,12 +7,8 @@
     "cpu",
     "hyprland/workspaces",
     "hyprland/window",
-],
-  "modules-center": [
-    "mpris",
-    "custom/lyrics",
-    "custom/cava",
   ],
+  "modules-center": ["mpris", "custom/lyrics", "custom/cava"],
   "modules-right": [
     "battery",
     "pulseaudio",
@@ -59,12 +55,11 @@
   "clock": {
     "interval": 1,
     "format": " {:%I:%M:%S %p}",
-    "format-alt": "{:%A, %B %d, %Y (%R:%S %p)}",
+    "format-alt": " {:%A, %B %d, %Y (%R:%S %p)}",
     "tooltip": false,
   },
   "cpu": {
     "format": " {usage}%",
-    "on-click": "kitty btop",
   },
   // "cava": {
   //   // "cava_config": "~/.config/cava/config",
@@ -123,16 +118,15 @@
     "tooltip": false,
     "format": "",
     "on-click": "swaync-client -t -sw",
-    "escape": true
+    "escape": true,
   },
   "custom/pacman": {
     "format": "󰅢 {}",
-    "interval": 30,   
-    "exec": "checkupdates | wc -l",
+    "interval": 30,
+    "exec": "bash ~/.config/waybar/scripts/packages_update.sh",
     "exec-if": "exit 0",
     "signal": 8,
-    "tooltip-format": "{} packages to update.",
-    "tooltip": true,
+    "return-type": "json",
   },
   "custom/spotify-metadata": {
     "format": "{}  ",
@@ -165,17 +159,16 @@
     "icon": true,
     "icon-size": 18,
   },
-
   "hyprland/workspaces": {
     "format": "{icon}",
     "show-special": true,
     "format-icons": {
       "active": "",
       "default": "",
-      "empty": ""
+      "empty": "",
     },
     "persistent-workspaces": {
-      "*": [ 1,2,3,4,5 ]
+      "*": [1, 2, 3, 4, 5],
     },
     "on-scroll-up": "hyprctl dispatch workspace e-1",
     "on-scroll-down": "hyprctl dispatch workspace e+1",
