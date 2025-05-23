@@ -115,6 +115,7 @@ alias cdf='cd "$(fd --hidden --no-ignore -t d | fzf)"'
 alias cdie='cdi && e .'
 alias lg="lazygit"
 alias cbonsaiPreset='cbonsai -li -L 50 -t 0.003 -w 2 -m "hello chris"'
+alias clear="clear && fastfetch"
 
 # # Import colorscheme from 'wal' asynchronously
 # # &   # Run the process in the background.
