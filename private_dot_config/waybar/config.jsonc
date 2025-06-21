@@ -1,262 +1,313 @@
 {
-  "layer": "top",
-  "reload_style_on_change": false,
-  "modules-left": [
-    "clock",
-    "custom/pacman",
-    "cpu",
-    "hyprland/workspaces",
-    "hyprland/window",
-  ],
-  "modules-center": ["mpris", "custom/lyrics", "custom/cava"],
-  "modules-right": [
-    "battery",
-    "pulseaudio",
-    "custom/hyprsunset",
-    "bluetooth",
-    "network",
-    "tray",
-    "custom/notification",
-    "custom/wlogout",
-  ],
-  "group/power": {
-    "orientation": "horizontal",
-    "drawer": {
-      "transition-left-to-right": false,
-    },
-    "modules": ["custom/wlogout", "custom/notification"],
-  },
-  "group/hardware": {
-    "orientation": "horizontal",
-    "drawer": {
-      "transition-left-to-right": false,
-    },
-    "modules": ["cpu", "bluetooth", "network"],
-  },
-  "battery": {
-    "format": "{capacity}% {icon}",
-    "format-icons": ["", "", "", "", ""],
-  },
-  "bluetooth": {
-    "format": " {status}",
-    // "format-connected": " {device_alias}",
-    "format-connected": " Connected",
-    "format-connected-battery": " {device_alias} {device_battery_percentage}%",
-    // "format-device-preference": [
-    //   "device1",
-    //   "device2"
-    // ], // preference list deciding the displayed device
-    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
-    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
-    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
-    "on-click": "blueberry",
-  },
-  "clock": {
-    "interval": 1,
-    "format": " {:%I:%M:%S %p}",
-    "format-alt": " {:%A, %B %d, %Y (%R:%S %p)}",
-    "tooltip": false,
-  },
-  "cpu": {
-    "format": " {usage}%",
-  },
-  // "cava": {
-  //   // "cava_config": "~/.config/cava/config",
-  //   "framerate": 30,
-  //   "autosens": 1,
-  //   "sensitivity": 100,
-  //   "bars": 14,
-  //   "lower_cutoff_freq": 50,
-  //   "higher_cutoff_freq": 10000,
-  //   "method": "raw",
-  //   "source": "auto",
-  //   "stereo": true,
-  //   "reverse": false,
-  //   "bar_delimiter": 0,
-  //   "monstercat": false,
-  //   "waves": false,
-  //   "noise_reduction": 0.77,
-  //   "input_delay": 2,
-  //   "format-icons": [
-  //     "▁",
-  //     "▂",
-  //     "▃",
-  //     "▄",
-  //     "▅",
-  //     "▆",
-  //     "▇",
-  //     "█"
-  //   ],
-  //   "actions": {
-  //     "on-click-right": "mode"
-  //   }
-  // },
-  "custom/cava": {
-    "exec": "bash ~/.config/waybar/scripts/cava.sh",
-    "format": "{}",
-    "tooltip": false,
     "layer": "top",
-    "output": "all",
-  },
-  "custom/disk_home": {
-    "format": "🏠{} ",
-    "interval": 30,
-    "exec": "df -h --output=avail $HOME | tail -1 | tr -d ' '",
-  },
-  "custom/disk_root": {
-    // "format": "💽{}",
-    "format": "{}",
-    "interval": 30,
-    "exec": "df -h --output=avail / | tail -1 | tr -d ' '",
-    "on-click": "nemo",
-  },
-  "custom/lyrics": {
-    "exec": "lrcsnc",
-  },
-  "custom/notification": {
-    "tooltip": false,
-    "format": "",
-    "on-click": "swaync-client -t -sw",
-    "escape": true,
-  },
-  "custom/pacman": {
-    "format": "󰅢 {}",
-    "interval": 30,
-    "exec": "bash ~/.config/waybar/scripts/packages_update.sh",
-    "exec-if": "exit 0",
-    "signal": 8,
-    "return-type": "json",
-  },
-  "custom/spotify-metadata": {
-    "format": "{}  ",
-    "max-length": 60,
-    "interval": 30,
-    "return-type": "json",
-    "exec": "~/.config/waybar/custom/spotify/metadata.sh",
-    "on-click": "~/.config/waybar/custom/spotify/controls.sh",
-    "on-scroll-up": "~/.config/waybar/custom/spotify/controls.sh next",
-    "on-scroll-down": "~/.config/waybar/custom/spotify/controls.sh previous",
-    "signal": 5,
-    "smooth-scrolling-threshold": 1.0,
-  },
-  "custom/hyprsunset": {
-    "format": " {}",
-    "tooltip-format": "Current temperature of \"Hyprsunset\" is {}",
-    "exec": "bash $HOME/.config/hypr/scripts/hyprsunset_adjust_brightness.sh waybar",
-    "on-click": "bash $HOME/.config/hypr/scripts/hyprsunset_adjust_brightness.sh off",
-    "on-scroll-up": "bash $HOME/.config/hypr/scripts/hyprsunset_adjust_brightness.sh increase --no-notify",
-    "on-scroll-down": "bash $HOME/.config/hypr/scripts/hyprsunset_adjust_brightness.sh decrease --no-notify",
-  },
-  "custom/wlogout": {
-    "format": "󰐦",
-    "on-click": "wlogout",
-  },
-  "hyprland/window": {
-    "max-length": 30,
-    // "format": "󱂬 {class}",
-    "format": "| {class}",
-    "icon": true,
-    "icon-size": 18,
-  },
-  "hyprland/workspaces": {
-    "format": "{icon}",
-    "show-special": true,
-    "format-icons": {
-      "active": "",
-      "default": "",
-      "empty": "",
+    "reload_style_on_change": false,
+    "modules-left": [
+        "clock",
+        "hyprland/workspaces",
+        "hyprland/window",
+    ],
+    "modules-center": [
+        "mpris",
+        "custom/lyrics",
+        "custom/cava"
+    ],
+    "modules-right": [
+        "group/expand",
+        "battery",
+        "pulseaudio",
+        "bluetooth",
+        "network",
+        "tray",
+        "custom/notification",
+        "custom/wlogout",
+    ],
+    "group/expand": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 600,
+            "transition-to-left": true,
+            "click-to-reveal": true
+        },
+        "modules": [
+            "custom/expand",
+            "custom/pacman",
+            "cpu",
+            "custom/hyprsunset",
+            "custom/wallpaper",
+        ],
     },
-    "persistent-workspaces": {
-      "*": [1, 2, 3, 4, 5],
+    "group/power": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-left-to-right": false,
+        },
+        "modules": [
+            "custom/wlogout",
+            "custom/notification"
+        ],
     },
-    "on-scroll-up": "hyprctl dispatch workspace e-1",
-    "on-scroll-down": "hyprctl dispatch workspace e+1",
-  },
-  // "hyprland/workspaces": {
-  //   "active-only": false,
-  //   "format": "<i>{name}</i> {windows}",
-  //   "on-scroll-up": "hyprctl dispatch workspace e+1",
-  //   "on-scroll-down": "hyprctl dispatch workspace e-1",
-  //   "show-special": true,
-  //   "special-visible-only": false,
-  //   "window-rewrite-default": " ",
-  //   "window-rewrite": {
-  //     "class<firefox>": " ", // Windows whose classes are "firefox"
-  //     "class<firefox> title<.*github.*>": " ", // Windows whose class is "firefox" and title contains "github". Note that "class" always comes first.
-  //     "class<firefox> title<.*youtube.*>": " ", // Windows whose titles contain "youtube"
-  //     "class<neovide>": " ",
-  //     "class<kitty>": " ",
-  //     "class<com.mitchellh.ghostty>": " ",
-  //     "class<kitty> title<.*nvim.*>": " ",
-  //     "discord": " ",
-  //     "class<spotify>": " ",
-  //     "class<code>": "󰨞 ",
-  //     "class<com.obsproject.studio>": " ",
-  //     "class<nemo>": " ",
-  //     "class<nnyyxxxx.hyprwall>": " ",
-  //     "class<org.pulseaudio.pavucontrol>": " ",
-  //     "class<com.stremio.stremio>": " ",
-  //     "class<mpv>": " ",
-  //     "class<org.telegram.desktop": " ",
-  //     "class<Google-chrome": " ",
-  //   },
-  // },
-  "memory": {
-    // "format": "💾RAM:{used:0.1f}G"
-    "format": "{used:0.1f}G",
-    "on-click": "kitty btop",
-  },
-  "mpris": {
-    "interval": 1,
-    "format": "{player_icon} {title}",
-    "title-len": 18,
-    "player-icons": {
-      "default": "▶",
-      "spotify": " ",
-      "mpv": "🎵",
+    "group/hardware": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-left-to-right": false,
+        },
+        "modules": [
+            "cpu",
+            "bluetooth",
+            "network"
+        ],
     },
-    "status-icons": {
-      "paused": "⏸",
+    "battery": {
+        "format": "{capacity}% {icon}",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
     },
-    "ignored-players": [""],
-  },
-  "network": {
-    "family": "ipv6",
-    // "interface": "wlp2*", // (Optional) To force the use of this interface
-    "format-wifi": "<span color='#589df6'></span> <span color='gray'>{essid}</span> {frequency} <span color='#589df6'>{signaldBm} dB</span> <span color='#589df6'>⇵</span> {bandwidthUpBits}/{bandwidthDownBits}",
-    "format-ethernet": "󰈀 Ethernet",
-    "format-linked": "{ifname} (No IP) ",
-    "format-disconnected": "Disconnected ⚠",
-    // "format-alt": "{ifname}: {ipaddr}/{cidr}",
-    "interval": 5,
-    "on-click": "iwgtk",
-  },
-  "pulseaudio/slider": {
-    "orientation": "horizontal",
-  },
-  "pulseaudio": {
-    "format": "{icon}{volume}%",
-    "format-muted": "{volume}%",
-    "format-bluetooth": "{volume}% {icon}",
-    "on-click": "pavucontrol",
-    "format-icons": {
-      "alsa_output.pci-0000_00_1f.3.analog-stereo": "",
-      "alsa_output.pci-0000_00_1f.3.analog-stereo-muted": "",
-      "headphone": "",
-      "hands-free": "",
-      "headset": "",
-      "phone": "",
-      "phone-muted": "",
-      "portable": "",
-      "car": "",
-      "default": ["", "", ""],
+    "bluetooth": {
+        "format": " {status}",
+        // "format-connected": " {device_alias}",
+        "format-connected": " Connected",
+        "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+        // "format-device-preference": [
+        //   "device1",
+        //   "device2"
+        // ], // preference list deciding the displayed device
+        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+        "on-click": "blueberry",
     },
-  },
-  "tray": {
-    "icon-size": 18,
-    "show-passive-items": false,
-    "spacing": 6,
-    "reverse-direction": true,
-  },
+    "clock": {
+        "interval": 1,
+        "format": " {:%I:%M:%S %p}",
+        "format-alt": " {:%A, %B %d, %Y (%R:%S %p)}",
+        "tooltip": false,
+    },
+    "cpu": {
+        "format": " {usage}%",
+    },
+    // "cava": {
+    //   // "cava_config": "~/.config/cava/config",
+    //   "framerate": 30,
+    //   "autosens": 1,
+    //   "sensitivity": 100,
+    //   "bars": 14,
+    //   "lower_cutoff_freq": 50,
+    //   "higher_cutoff_freq": 10000,
+    //   "method": "raw",
+    //   "source": "auto",
+    //   "stereo": true,
+    //   "reverse": false,
+    //   "bar_delimiter": 0,
+    //   "monstercat": false,
+    //   "waves": false,
+    //   "noise_reduction": 0.77,
+    //   "input_delay": 2,
+    //   "format-icons": [
+    //     "▁",
+    //     "▂",
+    //     "▃",
+    //     "▄",
+    //     "▅",
+    //     "▆",
+    //     "▇",
+    //     "█"
+    //   ],
+    //   "actions": {
+    //     "on-click-right": "mode"
+    //   }
+    // },
+    "custom/cava": {
+        "exec": "bash ~/.config/waybar/scripts/cava.sh",
+        "format": "{}",
+        "tooltip": false,
+        "layer": "top",
+        "output": "all",
+    },
+    "custom/disk_home": {
+        "format": "🏠{} ",
+        "interval": 30,
+        "exec": "df -h --output=avail $HOME | tail -1 | tr -d ' '",
+    },
+    "custom/disk_root": {
+        // "format": "💽{}",
+        "format": "{}",
+        "interval": 30,
+        "exec": "df -h --output=avail / | tail -1 | tr -d ' '",
+        "on-click": "nemo",
+    },
+    "custom/expand": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/lyrics": {
+        "exec": "lrcsnc",
+    },
+    "custom/notification": {
+        "tooltip": false,
+        "format": "",
+        "on-click": "swaync-client -t -sw",
+        "escape": true,
+    },
+    "custom/pacman": {
+        "format": "󰅢 {}",
+        "interval": 30,
+        "exec": "bash ~/.config/waybar/scripts/packages_update.sh",
+        "exec-if": "exit 0",
+        "signal": 8,
+        "return-type": "json",
+    },
+    "custom/spotify-metadata": {
+        "format": "{}  ",
+        "max-length": 60,
+        "interval": 30,
+        "return-type": "json",
+        "exec": "~/.config/waybar/custom/spotify/metadata.sh",
+        "on-click": "~/.config/waybar/custom/spotify/controls.sh",
+        "on-scroll-up": "~/.config/waybar/custom/spotify/controls.sh next",
+        "on-scroll-down": "~/.config/waybar/custom/spotify/controls.sh previous",
+        "signal": 5,
+        "smooth-scrolling-threshold": 1.0,
+    },
+    "custom/hyprsunset": {
+        "format": " {}",
+        "tooltip-format": "Current temperature of \"Hyprsunset\" is {}",
+        "exec": "bash $HOME/.config/hypr/scripts/hyprsunset_adjust_brightness.sh waybar",
+        "on-click": "bash $HOME/.config/hypr/scripts/hyprsunset_adjust_brightness.sh off",
+        "on-scroll-up": "bash $HOME/.config/hypr/scripts/hyprsunset_adjust_brightness.sh increase --no-notify",
+        "on-scroll-down": "bash $HOME/.config/hypr/scripts/hyprsunset_adjust_brightness.sh decrease --no-notify",
+    },
+    "custom/wallpaper": {
+        "format": "Waypaper 󰸉",
+        "tooltip-format": "Change wallpaper with Waypaper",
+        "on-click": "waypaper"
+    },
+    "custom/wlogout": {
+        "format": "󰐦",
+        "on-click": "wlogout",
+    },
+    "hyprland/window": {
+        "max-length": 30,
+        // "format": "󱂬 {class}",
+        "format": "| {class}",
+        "icon": true,
+        "icon-size": 18,
+    },
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "show-special": true,
+        "format-icons": {
+            "active": "",
+            "default": "",
+            "empty": "",
+        },
+        "persistent-workspaces": {
+            "*": [
+                1,
+                2,
+                3,
+                4,
+                5
+            ],
+        },
+        "on-scroll-up": "hyprctl dispatch workspace e-1",
+        "on-scroll-down": "hyprctl dispatch workspace e+1",
+    },
+    // "hyprland/workspaces": {
+    //   "active-only": false,
+    //   "format": "<i>{name}</i> {windows}",
+    //   "on-scroll-up": "hyprctl dispatch workspace e+1",
+    //   "on-scroll-down": "hyprctl dispatch workspace e-1",
+    //   "show-special": true,
+    //   "special-visible-only": false,
+    //   "window-rewrite-default": " ",
+    //   "window-rewrite": {
+    //     "class<firefox>": " ", // Windows whose classes are "firefox"
+    //     "class<firefox> title<.*github.*>": " ", // Windows whose class is "firefox" and title contains "github". Note that "class" always comes first.
+    //     "class<firefox> title<.*youtube.*>": " ", // Windows whose titles contain "youtube"
+    //     "class<neovide>": " ",
+    //     "class<kitty>": " ",
+    //     "class<com.mitchellh.ghostty>": " ",
+    //     "class<kitty> title<.*nvim.*>": " ",
+    //     "discord": " ",
+    //     "class<spotify>": " ",
+    //     "class<code>": "󰨞 ",
+    //     "class<com.obsproject.studio>": " ",
+    //     "class<nemo>": " ",
+    //     "class<nnyyxxxx.hyprwall>": " ",
+    //     "class<org.pulseaudio.pavucontrol>": " ",
+    //     "class<com.stremio.stremio>": " ",
+    //     "class<mpv>": " ",
+    //     "class<org.telegram.desktop": " ",
+    //     "class<Google-chrome": " ",
+    //   },
+    // },
+    "memory": {
+        // "format": "💾RAM:{used:0.1f}G"
+        "format": "{used:0.1f}G",
+        "on-click": "kitty btop",
+    },
+    "mpris": {
+        "interval": 1,
+        "format": "{player_icon} {title}",
+        "title-len": 18,
+        "player-icons": {
+            "default": "▶",
+            "spotify": " ",
+            "mpv": "🎵",
+        },
+        "status-icons": {
+            "paused": "⏸",
+        },
+        "ignored-players": [
+            ""
+        ],
+    },
+    "network": {
+        "family": "ipv6",
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "<span color='#589df6'></span> <span color='gray'>{essid}</span> {frequency} <span color='#589df6'>{signaldBm} dB</span> <span color='#589df6'>⇵</span> {bandwidthUpBits}/{bandwidthDownBits}",
+        "format-ethernet": "󰈀",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        // "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "interval": 5,
+        "on-click": "iwgtk",
+    },
+    "pulseaudio/slider": {
+        "orientation": "horizontal",
+    },
+    "pulseaudio": {
+        "format": "{icon}{volume}%",
+        "format-muted": "{volume}%",
+        "format-bluetooth": "{volume}% {icon}",
+        "on-click": "pavucontrol",
+        "format-icons": {
+            "alsa_output.pci-0000_00_1f.3.analog-stereo": "",
+            "alsa_output.pci-0000_00_1f.3.analog-stereo-muted": "",
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "phone-muted": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "",
+                "",
+                ""
+            ],
+        },
+    },
+    "tray": {
+        "icon-size": 18,
+        "show-passive-items": false,
+        "spacing": 6,
+        "reverse-direction": true,
+    },
 }
