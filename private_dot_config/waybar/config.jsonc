@@ -68,10 +68,11 @@
         ],
     },
     "bluetooth": {
-        "format": " {status}",
+        // "format": " {status}",
         // "format-connected": " {device_alias}",
-        "format-connected": " Connected",
+        "format-connected": "<span color='#589df6'></span> Connected",
         "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+        "format-no-controller": "<span color='#777777'></span>",
         // "format-device-preference": [
         //   "device1",
         //   "device2"
