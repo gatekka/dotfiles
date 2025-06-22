@@ -288,7 +288,7 @@
     "pulseaudio": {
         "format": "{icon}{volume}%",
         "format-muted": "{volume}%",
-        "format-bluetooth": "{volume}% {icon}",
+        "format-bluetooth": "{icon}{volume}%",
         "on-click": "pavucontrol",
         "format-icons": {
             "alsa_output.pci-0000_00_1f.3.analog-stereo": "",
