@@ -34,26 +34,28 @@ tooltip = "{artists} - {title} - {album}"
 class = "{playback-status} {lyrics-status}"
 
 [output.piped.text]
-format = "{icon} {lyric} {multiplier}"
+# format = "{icon} {lyric} {multiplier}"
+format = "{lyric} {multiplier}"
 
 [output.piped.multiplier]
 format = "(x{value})"
 
 [output.piped.lyric]
+enabled = false
 icon = "♫"
 
 [output.piped.not-playing]
 text = " Nothing is playing"
 
 [output.piped.song-not-found]
-enabled = true
+enabled = false
 icon = "⨯"
-text = ""
+# text = "Not found"
 
 [output.piped.no-synced-lyrics]
-enabled = true
+enabled = false
 icon = "󰦨"
-text = "Lyrics are not synced!"
+# text = "Lyrics are not synced!"
 
 [output.piped.loading-lyrics]
 enabled = true
@@ -67,5 +69,5 @@ text = "An error occured! Check logs for info!"
 
 [output.piped.instrumental]
 interval = 0.66
-symbol = "♪"
+# symbol = "♪"
 max-symbols = 3
