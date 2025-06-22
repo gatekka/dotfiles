@@ -279,7 +279,8 @@
         "format-disconnected": "<span color='gray'></span>",
         // "format-alt": "{ifname}: {ipaddr}/{cidr}",
         "interval": 5,
-        "on-click": "iwgtk",
+        // "on-click": "iwgtk",
+        // "on-click": "ghostty -e nmtui",
     },
     "pulseaudio/slider": {
         "orientation": "horizontal",
