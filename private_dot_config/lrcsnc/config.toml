@@ -45,6 +45,7 @@ enabled = false
 icon = "♫"
 
 [output.piped.not-playing]
+enabled = false
 text = " Nothing is playing"
 
 [output.piped.song-not-found]
