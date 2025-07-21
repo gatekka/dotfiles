@@ -81,45 +81,45 @@ tmux_conf_24b_colour=auto
 #   - tmux_conf_theme_mouse
 #   - tmux_conf_theme_root
 #   - tmux_conf_theme_synchronized
-tmux_conf_theme=enabled
+tmux_conf_theme=disabled
 
 # default theme
-tmux_conf_theme_colour_1="#080808" # Left side background
-tmux_conf_theme_colour_2="#303030" # Inactive window
-tmux_conf_theme_colour_3="#608040" # Idk what this is
-tmux_conf_theme_colour_4="#90b070" # Active Window
-tmux_conf_theme_colour_5="#6688aa"
-tmux_conf_theme_colour_6="#d3d3d3"
-tmux_conf_theme_colour_7="#080808"
-tmux_conf_theme_colour_8="#080808"
-tmux_conf_theme_colour_9="#9e3030"
-tmux_conf_theme_colour_10="#87875f"
-tmux_conf_theme_colour_11="#5fff00"
-tmux_conf_theme_colour_12="#8181a6"
-tmux_conf_theme_colour_13="#080808"
-tmux_conf_theme_colour_14="#080808"
-tmux_conf_theme_colour_15="#080808"
-tmux_conf_theme_colour_16="#87875f"
-tmux_conf_theme_colour_17="#87875f"
+# tmux_conf_theme_colour_1="#080808" # Left side background
+# tmux_conf_theme_colour_2="#303030" # Inactive window
+# tmux_conf_theme_colour_3="#608040" # Idk what this is
+# tmux_conf_theme_colour_4="#90b070" # Active Window
+# tmux_conf_theme_colour_5="#6688aa"
+# tmux_conf_theme_colour_6="#d3d3d3"
+# tmux_conf_theme_colour_7="#080808"
+# tmux_conf_theme_colour_8="#080808"
+# tmux_conf_theme_colour_9="#505050"
+# tmux_conf_theme_colour_10="#87875f"
+# tmux_conf_theme_colour_11="#5fff00"
+# tmux_conf_theme_colour_12="#8181a6"
+# tmux_conf_theme_colour_13="#080808"
+# tmux_conf_theme_colour_14="#080808"
+# tmux_conf_theme_colour_15="#080808"
+# tmux_conf_theme_colour_16="#87875f"
+# tmux_conf_theme_colour_17="#87875f"
 
 # default theme (ansi)
-#tmux_conf_theme_colour_1="colour0"
-#tmux_conf_theme_colour_2="colour8"
-#tmux_conf_theme_colour_3="colour8"
-#tmux_conf_theme_colour_4="colour14"
-#tmux_conf_theme_colour_5="colour11"
-#tmux_conf_theme_colour_6="colour0"
-#tmux_conf_theme_colour_7="colour15"
-#tmux_conf_theme_colour_8="colour0"
-#tmux_conf_theme_colour_9="colour11"
-#tmux_conf_theme_colour_10="colour13"
-#tmux_conf_theme_colour_11="colour10"
-#tmux_conf_theme_colour_12="colour8"
-#tmux_conf_theme_colour_13="colour15"
-#tmux_conf_theme_colour_14="colour0"
-#tmux_conf_theme_colour_15="colour0"
-#tmux_conf_theme_colour_16="colour1"
-#tmux_conf_theme_colour_17="colour15"
+tmux_conf_theme_colour_1="colour0"
+tmux_conf_theme_colour_2="colour8"
+tmux_conf_theme_colour_3="colour8"
+tmux_conf_theme_colour_4="colour14"
+tmux_conf_theme_colour_5="colour11"
+tmux_conf_theme_colour_6="colour0"
+tmux_conf_theme_colour_7="colour15"
+tmux_conf_theme_colour_8="colour0"
+tmux_conf_theme_colour_9="colour11"
+tmux_conf_theme_colour_10="colour13"
+tmux_conf_theme_colour_11="colour10"
+tmux_conf_theme_colour_12="colour8"
+tmux_conf_theme_colour_13="colour15"
+tmux_conf_theme_colour_14="colour0"
+tmux_conf_theme_colour_15="colour0"
+tmux_conf_theme_colour_16="colour1"
+tmux_conf_theme_colour_17="colour15"
 
 # window style
 tmux_conf_theme_window_fg="default"
@@ -128,7 +128,7 @@ tmux_conf_theme_window_bg="default"
 # highlight focused pane, possible values are:
 #   - true
 #   - false (default)
-tmux_conf_theme_highlight_focused_pane=false
+tmux_conf_theme_highlight_focused_pane=true
 
 # focused pane colours:
 tmux_conf_theme_focused_pane_bg="$tmux_conf_theme_colour_2"
@@ -267,9 +267,9 @@ tmux_conf_theme_right_separator_sub="|"
 #     - #{uptime_s}
 #     - #{username}
 #     - #{username_ssh}
-tmux_conf_theme_status_left=" ❐ #S | ↑#{?uptime_y, #{uptime_y}y,}#{?uptime_d, #{uptime_d}d,}#{?uptime_h, #{uptime_h}h,}#{?uptime_m, #{uptime_m}m,} "
+# tmux_conf_theme_status_left=" ❐ #S | ↑#{?uptime_y, #{uptime_y}y,}#{?uptime_d, #{uptime_d}d,}#{?uptime_h, #{uptime_h}h,}#{?uptime_m, #{uptime_m}m,} "
 #tmux_conf_theme_status_left=" ❐ #S | ↑#{?uptime_y, #{uptime_y}y,}#{?uptime_d, #{uptime_d}d,}#{?uptime_h, #{uptime_h}h,}#{?uptime_m, #{uptime_m}m,} | #{pretty_pane_current_path} "
-tmux_conf_theme_status_right=" #{prefix}#{mouse}#{pairing}#{synchronized}#{?battery_status,#{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},} , %R , %d %b | #{username}#{root} | #{hostname} "
+# tmux_conf_theme_status_right=" #{prefix}#{mouse}#{pairing}#{synchronized}#{?battery_status,#{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},} , %R , %d %b | #{username}#{root} | #{hostname} "
 
 # status left style
 tmux_conf_theme_status_left_fg="$tmux_conf_theme_colour_6,$tmux_conf_theme_colour_7,$tmux_conf_theme_colour_8"
@@ -362,7 +362,7 @@ tmux_conf_theme_clock_style="24"
 #   - false (default)
 #   - disabled
 # on Linux, this requires xsel, xclip or wl-copy
-tmux_conf_copy_to_os_clipboard=false
+tmux_conf_copy_to_os_clipboard=true
 
 
 # -- urlscan -------------------------------------------------------------------
@@ -438,12 +438,29 @@ tmux_conf_uninstall_plugins_on_reload=true
 
 # to enable a plugin, use the 'set -g @plugin' syntax:
 # visit https://github.com/tmux-plugins for available plugins
-#set -g @plugin 'tmux-plugins/tmux-copycat'
+# set -g @plugin 'tmux-plugins/tmux-copycat'
 #set -g @plugin 'tmux-plugins/tmux-cpu'
 #set -g @plugin 'tmux-plugins/tmux-resurrect'
 #set -g @plugin 'tmux-plugins/tmux-continuum'
 #set -g @continuum-restore 'on'
 
+
+set -g @plugin 'rose-pine/tmux'
+set -g @rose_pine_variant 'main' # Options are 'main', 'moon' or 'dawn'
+# set -g @rose_pine_date_time '%I:%M' # It accepts the date UNIX command format (man date for info)
+set -g @rose_pine_bar_bg_disable 'on'
+set -g @rose_pine_window_separator ' -> '
+# set -g @rose_pine_only_windows 'on'
+set -g @rose_pine_directory 'on' # Turn on the current folder component in the status bar
+set -g @rose_pine_user 'on' # Turn on the username component in the statusbar
+set -g @rose_pine_host 'off' # Enables hostname in the status bar
+set -g @rose_pine_disable_active_window_menu 'on' # Disables the menu that shows the active window on the left
+set -g @rose_pine_window_status_separator "  " # Changes the default icon that appears between window names
+set -g @rose_pine_username_icon '   |' # Changes the default icon to the right of the hostname
+set -g @rose_pine_session_icon '' # Changes the default icon to the left of the session name
+set -g @rose_pine_folder_icon ' ' # Changes the default icon to the left of the current directory folder
+set -g @rose_pine_field_separator ' | ' # Again, 1-space padding, it updates with prefix + I
+set -g @rose_pine_date_time_icon '|' # Changes the default icon to the right of the date module
 
 # -- custom variables ----------------------------------------------------------
 
