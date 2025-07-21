@@ -288,7 +288,7 @@
         "orientation": "horizontal",
     },
     "pulseaudio": {
-        "format": "{icon}{volume}%",
+        "format": "{icon} {volume}%",
         "format-muted": "{volume}%",
         "format-bluetooth": "{icon}{volume}%",
         "on-click": "pavucontrol",
