@@ -147,7 +147,7 @@
         "tooltip": false
     },
     "custom/lyrics": {
-        "exec": "lrcsnc",
+        "exec": "~/.config/waybar/scripts/lrcsnc.sh",
     },
     "custom/notification": {
         "tooltip": false,
