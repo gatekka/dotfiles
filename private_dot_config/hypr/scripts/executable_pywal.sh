@@ -13,7 +13,7 @@ main() {
         done
 
         wal -i "$wallpaperPath" -n
-        bash "$HOME/.config/hypr/scripts/pywal_update_apps.sh" # Update pywal color scheme in external apps
+        "$HOME/.config/hypr/scripts/pywal_update_apps.sh" # Update pywal color scheme in external apps
         inotifywait -e modify "$config_file"
     done
 }
