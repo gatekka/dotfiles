@@ -21,7 +21,7 @@ return {
     "LazyVim/LazyVim",
     opts = {
       -- colorscheme = "retrobox",
-      colorscheme = "carbonfox",
+      colorscheme = "nordfox",
     },
   },
 }
