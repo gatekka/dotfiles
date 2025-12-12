@@ -11,7 +11,7 @@ vim.g.snacks_animate = false
 
 local opt = vim.opt
 
-opt.shiftwidth = 4 -- Size of an indent
+opt.shiftwidth = 2 -- Size of an indent
 opt.relativenumber = true -- Relative line numbers
 
 -- Neovide Begin (More info at https://neovide.dev/configuration.html)
