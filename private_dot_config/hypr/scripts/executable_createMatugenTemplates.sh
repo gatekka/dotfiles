@@ -1,8 +1,9 @@
-# Requires waypaper
+# Requires matugen
 
 main() {
   while true; do
     config_file="$HOME/.config/waypaper/config.ini"
+    inotifywait -e modify "$config_file"
 
     # Wait for a valid file
     while true; do
@@ -11,9 +12,7 @@ main() {
       sleep 0.5
     done
 
-    wal -i "$wallpaperPath" -n
-    "$HOME/.config/hypr/scripts/pywal_update_apps.sh" # Update pywal color scheme in external apps
-    inotifywait -e modify "$config_file"
+    matugen image "$wallpaperPath"
   done
 }
 

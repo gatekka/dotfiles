@@ -2,7 +2,7 @@ font-family = "Victor Mono"
 # font-style = "Regular"
 font-thicken = true
 # title = "Ghostty 👻"
-theme = Sourcerer
+theme = "Matugen"
 background-opacity = 0.9
 background-blur-radius = 64
 mouse-hide-while-typing

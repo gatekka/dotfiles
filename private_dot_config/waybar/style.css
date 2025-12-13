@@ -1,5 +1,4 @@
 @import "colors.css";
-@import "../../.cache/wal/colors-waybar.css";
 
 * {
     border: none;
@@ -49,7 +48,7 @@ window#waybar.empty #window {
 #mpris,
 #workspaces button,
 #cpu {
-    color: @color7;
+    color: @primary_fixed;
     background: alpha(@background, 0.6);
     margin: 3px;
     padding: 5px 10px;
@@ -79,19 +78,19 @@ window#waybar.empty #window {
 #workspaces button {
     all: unset;
     padding: 0px 5px;
-    color: alpha(@color7, 0.5);
+    color: alpha(@primary_fixed, 0.5);
     transition: all .2s ease;
 }
 
 #workspaces button:hover {
-    color: @color7;
+    color: @primary_fixed;
     border: none;
     text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .5);
     transition: all 1s ease;
 }
 
 #workspaces button.active {
-    color: @color7;
+    color: @primary_fixed;
     border: none;
     text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
 }
@@ -103,32 +102,32 @@ window#waybar.empty #window {
 }
 
 #workspaces button.empty:hover {
-    color: alpha(@color7, 0.75);
+    color: alpha(@primary_fixed, 0.75);
     border: none;
     text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .5);
     transition: all 1s ease;
 }
 
 #workspaces button.empty.active {
-    color: alpha(@color6, 0.75);
+    color: alpha(@primary_fixed, 0.35);
     border: none;
     text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
 }
 
 #workspaces button.special {
-    color: alpha(@color5, 0.5);
+    color: alpha(@primary, 0.5);
 }
 
 #workspaces button.special:hover {
-    color: @color5;
+    color: @primary;
 }
 
 #workspaces button.special.active {
-    color: @color5;
+    color: @primary;
 }
 
 #workspaces button.special.empty {
-    color: alpha(@color5, 0.5);
+    color: alpha(@primary, 0.5);
     text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .2);
 }
 
