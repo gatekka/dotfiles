@@ -1,20 +1,5 @@
--- return {
---   {
---     "mason-org/mason.nvim",
---     opts = {
---       ui = {
---         icons = {
---           package_installed = "✓",
---           package_pending = "➜",
---           package_uninstalled = "✗",
---         },
---       },
---     },
---   },
--- }
-
 return {
-  "williamboman/mason.nvim",
+  "mason-org/mason.nvim",
   opts = {
     ensure_installed = {
       "bash-language-server",
@@ -39,12 +24,3 @@ return {
     },
   },
 }
-
--- return {
---   "williamboman/mason-lspconfig.nvim",
---   opts = {
---     ensure_installed = {
---       -- "eslint",
---     },
---   },
--- }
