@@ -204,6 +204,7 @@
     "show-special": true,
     "format-icons": {
       "active": "",
+      "visible": "",
       "default": "",
       "empty": "",
     },
