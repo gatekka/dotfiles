@@ -1,0 +1,24 @@
+nmap s <Action>(flash.search)
+xmap s <Action>(flash.search)
+
+" ===========================
+" CLIPBOARD CONFIGURATION
+" ===========================
+" Use system clipboard for all operations
+set clipboard=unnamedplus
+
+" ===========================
+" VISUAL LINE NAVIGATION
+" ===========================
+" Make all movement commands work on visual lines instead of logical lines
+nnoremap j gj
+nnoremap k gk
+nnoremap $ g$
+nnoremap ^ g^
+nnoremap 0 g0
+
+vnoremap j gj
+vnoremap k gk
+vnoremap $ g$
+vnoremap ^ g^
+vnoremap 0 g0
