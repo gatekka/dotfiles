@@ -1,0 +1,19 @@
+[core]
+  excludesfile = ~/.gitignore
+[gpg]
+  format = ssh
+[user]
+  name = {{ .git.name | quote }}
+  email = {{ .git.email | quote }}
+  signingkey =  {{ .git.signingkey | quote }}
+[commit]
+  gpgsign = true
+[gpg "ssh"]
+  allowedSignersFile = ~/.config/git/allowed_signers
+[alias]
+  lg = log --oneline --decorate --graph --all
+[filter "lfs"]
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+  clean = git-lfs clean -- %f

@@ -2,8 +2,11 @@
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
 # Bitwarden SSH agent
-export SSH_AUTH_SOCK=$HOME/.bitwarden-ssh-agent.sock
+if [ -z "$SSH_CONNECTION" ]; then
+  export SSH_AUTH_SOCK="$HOME/.bitwarden-ssh-agent.sock"
+fi
 
+{{ if .enableOhMyZsh -}}
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -87,6 +90,7 @@ source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
+{{ end -}}
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -95,6 +99,7 @@ else
   export EDITOR='nvim'
 fi
 
+{{ if .enableOhMyZsh -}}
 # Compilation flags
 # export ARCHFLAGS="-arch $(uname -m)"
 
@@ -104,9 +109,9 @@ fi
 # the $ZSH_CUSTOM folder, with .zsh extension. Examples:
 # - $ZSH_CUSTOM/aliases.zsh
 # - $ZSH_CUSTOM/macos.zsh
-# For a full list of active aliases, run `alias`.
+{{ end -}}
 
-# Aliases
+# Aliases (for a full list of active aliases, run `alias`)
 alias zshconfig="nvim ~/.zshrc"
 alias kittyconfig="nvim ~/.config/kitty/kitty.conf"
 alias nvimconfig="nvim ~/.config/nvim"

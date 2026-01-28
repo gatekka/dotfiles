@@ -1,0 +1,14 @@
+{{ $name := promptStringOnce . "name" "What is your name" -}}
+{{ $email := promptStringOnce . "email" "What is your email address" -}}
+{{ $signingkey := promptStringOnce . "signingkey" "Enter your public signing key for Git" -}}
+{{ $hyprland := promptBoolOnce . "hyprland" "Include Hyprland dotfiles" -}}
+{{ $ohmyzsh := promptBoolOnce . "ohmyzsh" "Install Oh My Zsh" -}}
+[git]
+autoCommit = false
+
+[data]
+git.name = {{ $name | quote }}
+git.email = {{ $email | quote }}
+git.signingkey = {{ $signingkey | quote }}
+includeHyprlandFiles = {{ $hyprland }}
+enableOhMyZsh = {{ $ohmyzsh }}

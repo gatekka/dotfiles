@@ -1,0 +1,7 @@
+README.md
+
+{{- if not .includeHyprlandFiles }}
+# Ignore Hyprland dotfiles if user said no
+.config/hypr
+.config/waybar
+{{- end }}
