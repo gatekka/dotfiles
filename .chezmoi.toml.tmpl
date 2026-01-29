@@ -2,7 +2,8 @@
 {{ $email := promptStringOnce . "email" "What is your email address" -}}
 {{ $signingkey := promptStringOnce . "signingkey" "Enter your public signing key for Git" -}}
 {{ $hyprland := promptBoolOnce . "hyprland" "Include Hyprland dotfiles" -}}
-{{ $ohmyzsh := promptBoolOnce . "ohmyzsh" "Install Oh My Zsh" -}}
+{{ $ohmyzsh := promptBoolOnce . "ohmyzsh" "Download Oh My Zsh" -}}
+{{ $lazygit := promptBoolOnce . "lazygit" "Download Lazygit" -}}
 [git]
 autoCommit = false
 
@@ -12,3 +13,4 @@ git.email = {{ $email | quote }}
 git.signingkey = {{ $signingkey | quote }}
 includeHyprlandFiles = {{ $hyprland }}
 enableOhMyZsh = {{ $ohmyzsh }}
+downloadLazygit = {{ $lazygit }}
