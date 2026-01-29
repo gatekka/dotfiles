@@ -69,3 +69,23 @@ executable = true
 path = "zoxide"
 
 {{- end }}
+
+{{- if .downloadNeovim }}
+
+{{- $os := .chezmoi.os }}
+  {{- if eq $os "darwin" }}
+    {{- $os = "macos" }}
+{{- end }}
+
+{{- $arch := .chezmoi.arch }}
+  {{- if eq $arch "amd64" }}
+    {{- $arch = "x86_64" }}
+{{- end }}
+
+[".local/opt/nvim"]
+type = "archive"
+url = "https://github.com/neovim/neovim/releases/download/v0.11.6/nvim-{{ $os }}-{{ $arch }}.tar.gz"
+stripComponents = 1
+exact = true
+
+{{- end }}

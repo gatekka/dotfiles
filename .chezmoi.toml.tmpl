@@ -6,6 +6,7 @@
 {{ $lazygit := promptBoolOnce . "lazygit" "Download Lazygit" -}}
 {{ $fzf := promptBoolOnce . "fzf" "Download fzf" -}}
 {{ $zoxide := promptBoolOnce . "zoxide" "Download Zoxide" -}}
+{{ $neovim := promptBoolOnce . "neovim" "Download Neovim" -}}
 [git]
 autoCommit = false
 
@@ -18,3 +19,4 @@ enableOhMyZsh = {{ $ohmyzsh }}
 downloadLazygit = {{ $lazygit }}
 downloadFzf = {{ $fzf }}
 downloadZoxide = {{ $zoxide }}
+downloadNeovim = {{ $neovim }}
