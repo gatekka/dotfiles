@@ -89,3 +89,10 @@ stripComponents = 1
 exact = true
 
 {{- end }}
+
+[".local/bin/delta"]
+type = "archive-file"
+url = "https://github.com/dandavison/delta/releases/download/0.18.2/delta-0.18.2-{{ if eq .chezmoi.arch "arm64" }}aarch64{{ end }}-{{ if eq .chezmoi.os "darwin" }}apple-darwin{{ else if eq .chezmoi.os "linux"}}unknown-linux-gnu{{ end }}.tar.gz"
+executable = true
+stripComponents = 1
+path = "delta"
