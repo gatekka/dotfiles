@@ -4,6 +4,7 @@
 {{ $hyprland := promptBoolOnce . "hyprland" "Include Hyprland dotfiles" -}}
 {{ $ohmyzsh := promptBoolOnce . "ohmyzsh" "Download Oh My Zsh" -}}
 {{ $lazygit := promptBoolOnce . "lazygit" "Download Lazygit" -}}
+{{ $fzf := promptBoolOnce . "fzf" "Download fzf" -}}
 [git]
 autoCommit = false
 
@@ -14,3 +15,4 @@ git.signingkey = {{ $signingkey | quote }}
 includeHyprlandFiles = {{ $hyprland }}
 enableOhMyZsh = {{ $ohmyzsh }}
 downloadLazygit = {{ $lazygit }}
+downloadFzf = {{ $fzf }}

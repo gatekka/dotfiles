@@ -38,3 +38,13 @@ executable = true
 path = "lazygit"
 
 {{ end -}}
+
+{{ if .downloadFzf -}}
+
+[".local/bin/fzf"]
+type = "archive-file"
+url = "https://github.com/junegunn/fzf/releases/download/v0.67.0/fzf-0.67.0-{{ .chezmoi.os }}_{{ .chezmoi.arch }}.tar.gz"
+executable = true
+path = "fzf"
+
+{{ end -}}
