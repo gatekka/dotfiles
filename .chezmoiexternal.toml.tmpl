@@ -1,4 +1,4 @@
-{{ if .enableOhMyZsh -}}
+{{- if .enableOhMyZsh }}
 
 [".oh-my-zsh"]
 type = "archive"
@@ -27,9 +27,9 @@ url = "https://github.com/Aloxaf/fzf-tab/archive/refs/tags/v1.2.0.tar.gz"
 exact = true
 stripComponents = 1
 
-{{ end -}}
+{{- end }}
 
-{{ if .downloadLazygit -}}
+{{- if .downloadLazygit }}
 
 [".local/bin/lazygit"]
 type = "archive-file"
@@ -37,9 +37,9 @@ url = "https://github.com/jesseduffield/lazygit/releases/download/v0.58.1/lazygi
 executable = true
 path = "lazygit"
 
-{{ end -}}
+{{- end }}
 
-{{ if .downloadFzf -}}
+{{- if .downloadFzf }}
 
 [".local/bin/fzf"]
 type = "archive-file"
@@ -47,4 +47,25 @@ url = "https://github.com/junegunn/fzf/releases/download/v0.67.0/fzf-0.67.0-{{ .
 executable = true
 path = "fzf"
 
-{{ end -}}
+{{- end }}
+
+{{- if .downloadZoxide }}
+
+{{- $arch := .chezmoi.arch }}
+  {{- if eq $arch "amd64" }}
+    {{- $arch = "x86_64" }}
+  {{- else if eq $arch "arm64" }}
+    {{- $arch = "aarch64" }}
+{{- end }}
+
+[".local/bin/zoxide"]
+type = "archive-file"
+{{- if eq .chezmoi.os "darwin" }}
+url = "https://github.com/ajeetdsouza/zoxide/releases/download/v0.9.8/zoxide-0.9.8-{{ $arch }}-apple-darwin.tar.gz"
+{{- else if eq .chezmoi.os "linux" }}
+url = "https://github.com/ajeetdsouza/zoxide/releases/download/v0.9.8/zoxide-0.9.8-{{ $arch }}-unknown-linux-musl.tar.gz"
+{{- end }}
+executable = true
+path = "zoxide"
+
+{{- end }}

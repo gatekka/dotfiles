@@ -5,6 +5,7 @@
 {{ $ohmyzsh := promptBoolOnce . "ohmyzsh" "Download Oh My Zsh" -}}
 {{ $lazygit := promptBoolOnce . "lazygit" "Download Lazygit" -}}
 {{ $fzf := promptBoolOnce . "fzf" "Download fzf" -}}
+{{ $zoxide := promptBoolOnce . "zoxide" "Download Zoxide" -}}
 [git]
 autoCommit = false
 
@@ -16,3 +17,4 @@ includeHyprlandFiles = {{ $hyprland }}
 enableOhMyZsh = {{ $ohmyzsh }}
 downloadLazygit = {{ $lazygit }}
 downloadFzf = {{ $fzf }}
+downloadZoxide = {{ $zoxide }}
