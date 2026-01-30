@@ -33,7 +33,7 @@ stripComponents = 1
 
 [".local/bin/lazygit"]
 type = "archive-file"
-url = "https://github.com/jesseduffield/lazygit/releases/download/v0.58.1/lazygit_0.58.1_{{ .chezmoi.os }}_{{ .chezmoi.arch }}.tar.gz"
+url = "https://github.com/jesseduffield/lazygit/releases/download/v0.58.1/lazygit_0.58.1_{{ .chezmoi.os }}_{{ if eq .chezmoi.arch "amd64" }}x86_64{{else}}{{ .chezmoi.arch }}{{ end }}.tar.gz"
 executable = true
 path = "lazygit"
 
@@ -92,7 +92,7 @@ exact = true
 
 [".local/bin/delta"]
 type = "archive-file"
-url = "https://github.com/dandavison/delta/releases/download/0.18.2/delta-0.18.2-{{ if eq .chezmoi.arch "arm64" }}aarch64{{ end }}-{{ if eq .chezmoi.os "darwin" }}apple-darwin{{ else if eq .chezmoi.os "linux"}}unknown-linux-gnu{{ end }}.tar.gz"
+url = "https://github.com/dandavison/delta/releases/download/0.18.2/delta-0.18.2-{{ if eq .chezmoi.arch "arm64" }}aarch64{{ else if eq .chezmoi.arch "amd64" }}x86_64{{ end }}-{{ if eq .chezmoi.os "darwin" }}apple-darwin{{ else if eq .chezmoi.os "linux"}}unknown-linux-gnu{{ end }}.tar.gz"
 executable = true
 stripComponents = 1
 path = "delta"
