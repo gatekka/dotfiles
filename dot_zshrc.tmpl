@@ -6,6 +6,9 @@ if [ -z "$SSH_CONNECTION" ]; then
   export SSH_AUTH_SOCK="$HOME/.bitwarden-ssh-agent.sock"
 fi
 
+# Set the base directory for user configuration files (XDG standard)
+export XDG_CONFIG_HOME="$HOME/.config"
+
 {{ if .enableOhMyZsh -}}
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
