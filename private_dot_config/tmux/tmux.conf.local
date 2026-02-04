@@ -401,7 +401,10 @@ set -g mouse on
 
 bind m select-pane -m
 bind C-j join-pane
-
+bind-key h select-pane -L
+bind-key j select-pane -D
+bind-key k select-pane -U
+bind-key l select-pane -R
 
 # -- tpm -----------------------------------------------------------------------
 
