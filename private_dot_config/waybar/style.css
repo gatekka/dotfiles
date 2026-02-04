@@ -18,7 +18,10 @@ tooltip label {
 }
 
 window#waybar {
-  background: transparent;
+  /* background: transparent; */
+  /* background: alpha(@on_secondary, 0.5); */
+  background: alpha(@surface_variant, 0.5);
+  /* background: alpha(@on_secondary_fixed, 0.4); */
   color: white;
 }
 
