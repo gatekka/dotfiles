@@ -127,6 +127,9 @@ alias zshconfig="nvim ~/.zshrc"
 alias kittyconfig="nvim ~/.config/kitty/kitty.conf"
 alias nvimconfig="nvim ~/.config/nvim"
 alias ls="ls --color -A"
+{{- if .bat }}
+alias cat="bat"
+{{- end}}
 alias e="nvim"
 alias f="fzf --height=50% --layout=reverse --border=rounded"
 alias fe='f=$(f) && [ -n "$f" ] && e "$f"'
