@@ -1,6 +1,9 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
+# Mise activation
+eval "$(mise activate zsh)"
+
 # Bitwarden SSH agent
 if [ -z "$SSH_CONNECTION" ]; then
   export SSH_AUTH_SOCK="$HOME/.bitwarden-ssh-agent.sock"
@@ -79,7 +82,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(chezmoi mise fzf fzf-tab nvm starship zoxide zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(chezmoi fzf fzf-tab nvm starship zoxide zsh-autosuggestions zsh-syntax-highlighting)
 ZOXIDE_CMD_OVERRIDE="cd"
 
 source $ZSH/oh-my-zsh.sh
