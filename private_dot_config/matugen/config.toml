@@ -1,9 +1,9 @@
 [config]
 
-[config.wallpaper]
-command = "swww"
-arguments = ["img", "--transition-type", "simple"]
-set = true
+# [config.wallpaper]
+# command = "swww"
+# arguments = ["img", "--transition-type", "simple"]
+# set = true
 
 [templates.waybar]
 input_path = './templates/waybar.css'
