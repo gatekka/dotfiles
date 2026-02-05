@@ -90,9 +90,24 @@ exact = true
 
 {{- end }}
 
+{{- if not (lookPath "mise") }}
+
+{{- $os := .chezmoi.os }}
+  {{- if eq $os "darwin" }}
+    {{- $os = "macos" }}
+{{- end }}
+
+[".local/bin/mise"]
+type = "file"
+executable = true
+url = "https://mise.jdx.dev/mise-latest-{{$os}}-{{.chezmoi.arch}}"
+
+{{- end }}
+
 [".local/bin/delta"]
 type = "archive-file"
 url = "https://github.com/dandavison/delta/releases/download/0.18.2/delta-0.18.2-{{ if eq .chezmoi.arch "arm64" }}aarch64{{ else if eq .chezmoi.arch "amd64" }}x86_64{{ end }}-{{ if eq .chezmoi.os "darwin" }}apple-darwin{{ else if eq .chezmoi.os "linux"}}unknown-linux-gnu{{ end }}.tar.gz"
 executable = true
 stripComponents = 1
 path = "delta"
+
