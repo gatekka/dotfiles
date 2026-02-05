@@ -4,11 +4,11 @@
   "modules-left": [
     "clock",
     "hyprland/workspaces",
-    "hyprland/window",
-  ],
-  "modules-center": [
     "mpris",
     "custom/lyrics",
+  ],
+  "modules-center": [
+    "hyprland/window",
     "custom/cava"
   ],
   "modules-right": [
@@ -274,7 +274,8 @@
       "paused": "⏸",
     },
     "ignored-players": [
-      ""
+      "zen",
+      "firefox",
     ],
   },
   "network": {
