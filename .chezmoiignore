@@ -2,10 +2,18 @@ README.md
 
 {{- if not .includeHyprlandFiles }}
 # Ignore Hyprland dotfiles if user said no
+.config/cava
+.config/gtk-3.0
 .config/hypr
-.config/waybar
+.config/lrcsnc
 .config/matugen
+.config/rofi
+.config/swaync
 .config/vicinae
+.config/wal
+.config/waybar
+.config/wlogout
+.config/xsettingsd
 {{- end }}
 
 {{- if eq .chezmoi.os "linux" }}
@@ -16,11 +24,5 @@ README.md
 
 {{- if eq .chezmoi.os "darwin" }}
 # Ignore these linux config files on macos
-.config/gtk-3.0
-.config/lrcsnc
 .config/mpv
-.config/rofi
-.config/swaync
-.config/wlogout
-.config/xsettingsd
 {{- end }}
