@@ -1,0 +1,4 @@
+#!/bin/bash
+# Mise packages hash: {{ include "private_dot_config/mise/config.toml.tmpl" | sha256sum }}
+$HOME/.local/bin/mise trust $HOME/.config/mise/config.toml
+$HOME/.local/bin/mise install
