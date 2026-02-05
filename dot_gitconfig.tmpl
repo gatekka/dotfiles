@@ -13,8 +13,8 @@
 [gpg]
   format = ssh
 [user]
-  name = {{ .git.name | quote }}
-  email = {{ .git.email | quote }}
+  name = {{ .name | quote }}
+  email = {{ .email | quote }}
   signingkey =  {{ .git.signingkey | quote }}
 [commit]
   gpgsign = true

@@ -9,7 +9,7 @@ fi
 # Set the base directory for user configuration files (XDG standard)
 export XDG_CONFIG_HOME="$HOME/.config"
 
-{{ if .enableOhMyZsh -}}
+{{ if .ohmyzsh -}}
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -102,12 +102,12 @@ else
   export EDITOR='nvim'
 fi
 
-{{ if .downloadNeovim -}}
+{{ if .neovim -}}
 # Path to Neovim
 export PATH="$HOME/.local/opt/nvim/bin:$PATH"
 {{- end }}
 
-{{ if .enableOhMyZsh -}}
+{{ if .ohmyzsh -}}
 # Compilation flags
 # export ARCHFLAGS="-arch $(uname -m)"
 

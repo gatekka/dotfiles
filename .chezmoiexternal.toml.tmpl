@@ -1,4 +1,4 @@
-{{- if .enableOhMyZsh }}
+{{- if .ohmyzsh }}
 
 [".oh-my-zsh"]
 type = "archive"
@@ -29,7 +29,7 @@ stripComponents = 1
 
 {{- end }}
 
-{{- if .downloadLazygit }}
+{{- if .lazygit }}
 
 [".local/bin/lazygit"]
 type = "archive-file"
@@ -39,7 +39,7 @@ path = "lazygit"
 
 {{- end }}
 
-{{- if .downloadFzf }}
+{{- if .fzf }}
 
 [".local/bin/fzf"]
 type = "archive-file"
@@ -49,7 +49,7 @@ path = "fzf"
 
 {{- end }}
 
-{{- if .downloadZoxide }}
+{{- if .zoxide }}
 
 {{- $arch := .chezmoi.arch }}
   {{- if eq $arch "amd64" }}
@@ -70,7 +70,7 @@ path = "zoxide"
 
 {{- end }}
 
-{{- if .downloadNeovim }}
+{{- if .neovim }}
 
 {{- $os := .chezmoi.os }}
   {{- if eq $os "darwin" }}

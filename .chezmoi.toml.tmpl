@@ -1,25 +1,22 @@
+{{ $choices := list "Oh My Zsh" "Lazygit" "fzf" "Zoxide" "Neovim" -}}
+{{ $tools := promptMultichoiceOnce . "tools" "What tools do you want to download" $choices (list) -}}
 {{ $name := promptStringOnce . "name" "What is your name" -}}
 {{ $email := promptStringOnce . "email" "What is your email address" -}}
 {{ $signingkey := promptStringOnce . "signingkey" "Enter your public signing key for Git" -}}
-{{ $hyprland := promptBoolOnce . "hyprland" "Include Hyprland dotfiles" -}}
-{{ $ohmyzsh := promptBoolOnce . "ohmyzsh" "Download Oh My Zsh" -}}
-{{ $lazygit := promptBoolOnce . "lazygit" "Download Lazygit" -}}
-{{ $fzf := promptBoolOnce . "fzf" "Download fzf" -}}
-{{ $zoxide := promptBoolOnce . "zoxide" "Download Zoxide" -}}
-{{ $neovim := promptBoolOnce . "neovim" "Download Neovim" -}}
+{{ $hyprland := promptBoolOnce . "hyprland" "Include Hyprland dotfiles? Y/N" -}}
 [git]
 autoCommit = false
 
 [diff]
-  pager = "delta"
+pager = "delta"
 
 [data]
-git.name = {{ $name | quote }}
-git.email = {{ $email | quote }}
+name = {{ $name | quote }}
+email = {{ $email | quote }}
 git.signingkey = {{ $signingkey | quote }}
 includeHyprlandFiles = {{ $hyprland }}
-enableOhMyZsh = {{ $ohmyzsh }}
-downloadLazygit = {{ $lazygit }}
-downloadFzf = {{ $fzf }}
-downloadZoxide = {{ $zoxide }}
-downloadNeovim = {{ $neovim }}
+ohmyzsh = {{ has "Oh My Zsh" $tools }}
+lazygit = {{ has "Lazygit" $tools }}
+fzf = {{ has "fzf" $tools }}
+zoxide = {{ has "Zoxide" $tools }}
+neovim = {{ has "Neovim" $tools }}
