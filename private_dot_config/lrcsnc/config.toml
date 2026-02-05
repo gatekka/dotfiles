@@ -2,73 +2,47 @@
 # https://github.com/Endg4meZer0/lrcsnc/wiki/Configuration
 
 [player]
-included-players = ["cmus", "spotify"]
-excluded-players = []
+included-players = ["spotify"]
+excluded-players = ["firefox", "zen"]
+
+[net]
+is-server = false
+protocol = ""
+listen-at = ""
 
 [lyrics]
 provider = "lrclib"
-timestamp-offset = 0.0
+timing-offset = 0.0
 
 [lyrics.romanization]
-japanese = true
-chinese = true
-korean = true
+korean = false
+chinese = false
 
 [cache]
 enabled = true
 dir = "$HOME/.cache/lrcsnc"
-life-span = 168
-store-condition = 100
+life-span = 720
 
-[output]
-type = "piped"
+[cache.store-condition]
+if-synced = true
+if-plain = false
+if-instrumental = true
 
-[output.piped]
+[client]
 destination = "stdout"
-json = "none"
+template = "%text%"
 insert-newline = true
 
-[output.piped.json-waybar]
-alt = ""
-tooltip = "{artists} - {title} - {album}"
-class = "{playback-status} {lyrics-status}"
+[client.format]
+lyric = "%lyric%%multiplier%"
+multiplier = " (x%value%)"
+not-playing = " Nothing is playing"
+no-lyrics = "⨯ No lyrics!"
+no-synced-lyrics = "󰦨 No synced lyrics!"
+loading-lyrics = "󱥸 Loading..."
+error-message = " An error occured! Check logs for info!"
 
-[output.piped.text]
-# format = "{icon} {lyric} {multiplier}"
-format = "{lyric} {multiplier}"
-
-[output.piped.multiplier]
-format = "(x{value})"
-
-[output.piped.lyric]
-enabled = false
-icon = "♫"
-
-[output.piped.not-playing]
-enabled = false
-text = " Nothing is playing"
-
-[output.piped.song-not-found]
-enabled = false
-icon = "⨯"
-# text = "Not found"
-
-[output.piped.no-synced-lyrics]
-enabled = false
-icon = "󰦨"
-# text = "Lyrics are not synced!"
-
-[output.piped.loading-lyrics]
-enabled = true
-icon = "󱥸"
-text = "Loading..."
-
-[output.piped.error-message]
-enabled = true
-icon = ""
-text = "An error occured! Check logs for info!"
-
-[output.piped.instrumental]
+[client.format.instrumental]
 interval = 0.66
-# symbol = "♪"
+# symbol = "󰎇"
 max-symbols = 3
