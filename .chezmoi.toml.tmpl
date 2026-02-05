@@ -5,7 +5,7 @@
 {{ $signingkey := promptStringOnce . "git.signingkey" "Enter your public signing key for Git" -}}
 {{ $hyprland := false -}}
 {{ if eq .chezmoi.os "linux" -}}
-{{ $hyprland := promptBoolOnce . "includeHyprlandFiles" "Include Hyprland related dotfiles? Y/N" -}}
+  {{ $hyprland = promptBoolOnce . "includeHyprlandFiles" "Include Hyprland related dotfiles? Y/N" -}}
 {{ end }}
 [git]
 autoCommit = false
