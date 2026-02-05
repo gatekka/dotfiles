@@ -1,5 +1,5 @@
 {{ $choices := list "Oh My Zsh" "bat" "delta" "fzf" "lazygit" "neovim" "zoxide" -}}
-{{ $tools := promptMultichoiceOnce . "tools" "What tools do you want to download" $choices (list) -}}
+{{ $tools := promptMultichoice "What tools do you want to download" $choices (list) -}}
 {{ $name := promptStringOnce . "name" "What is your name" -}}
 {{ $email := promptStringOnce . "email" "What is your email address" -}}
 {{ $signingkey := promptStringOnce . "git.signingkey" "Enter your public signing key for Git" -}}
