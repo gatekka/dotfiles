@@ -7,3 +7,20 @@ README.md
 .config/matugen
 .config/vicinae
 {{- end }}
+
+{{- if eq .chezmoi.os "linux" }}
+# Ignore these macos config files on linux
+.config/aerospace
+.config/sketchybar
+{{- end }}
+
+{{- if eq .chezmoi.os "darwin" }}
+# Ignore these linux config files on macos
+.config/gtk-3.0
+.config/lrcsnc
+.config/mpv
+.config/rofi
+.config/swaync
+.config/wlogout
+.config/xsettingsd
+{{- end }}
