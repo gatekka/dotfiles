@@ -2,8 +2,11 @@
 {{ $tools := promptMultichoiceOnce . "tools" "What tools do you want to download" $choices (list) -}}
 {{ $name := promptStringOnce . "name" "What is your name" -}}
 {{ $email := promptStringOnce . "email" "What is your email address" -}}
-{{ $signingkey := promptStringOnce . "signingkey" "Enter your public signing key for Git" -}}
-{{ $hyprland := promptBoolOnce . "hyprland" "Include Hyprland dotfiles? Y/N" -}}
+{{ $signingkey := promptStringOnce . "git.signingkey" "Enter your public signing key for Git" -}}
+{{ $hyprland := false -}}
+{{ if eq .chezmoi.os "linux" -}}
+{{ $hyprland := promptBoolOnce . "includeHyprlandFiles" "Include Hyprland related dotfiles? Y/N" -}}
+{{ end }}
 [git]
 autoCommit = false
 
