@@ -274,7 +274,6 @@
       "paused": "⏸",
     },
     "ignored-players": [
-      "zen",
       "firefox",
     ],
   },
