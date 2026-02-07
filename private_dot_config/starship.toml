@@ -11,10 +11,10 @@
 # Commands may be slower in restricted environments, e.g. containers
 command_timeout = 10000
 
-format = """$sudo$username$hostname$directory$git_branch$git_commit$git_state$git_status\
+format = """$os$sudo$username$hostname$directory$git_branch$git_commit$git_state$git_status\
 $fill\
 $jobs$status$cmd_duration\
-$nix_shell$terraform${custom.terraform}${custom.terragrunt}$kubernetes$python$aws$nodejs$docker_context$golang${custom.loadavg-linux}${custom.loadavg-mac}${custom.disk-linux}${custom.disk-mac}$memory_usage$time$os
+$nix_shell$terraform${custom.terraform}${custom.terragrunt}$kubernetes$python$aws$nodejs$docker_context$golang${custom.loadavg-linux}${custom.loadavg-mac}${custom.disk-linux}${custom.disk-mac}$memory_usage$time
 $character"""
 
 # TODO: transient prompt released in v1.10.1
@@ -39,7 +39,7 @@ format = "[$symbol]($style)"
 
 [username]
 # Don't display for normal logged in user
-disabled = true
+disabled = false
 style_user = "#d3b987"
 format = "[$user]($style)"
 
@@ -47,7 +47,7 @@ format = "[$user]($style)"
 disabled = true
 ssh_only = true
 style = "#d3b987"
-format = "[@$hostname]($style)[ ❯](#767676)"
+format = "[@$hostname]($style)[❯](#767676)"
 
 [directory]
 read_only = " "
@@ -154,20 +154,20 @@ disabled = false
 format = "[ ❮ ](#767676)[$symbol]($style)"
 
 [os.symbols]
-"Alpine" = ""
-"Arch" =  ""
-"CentOS" = ""
-"Debian" = ""
-"Fedora" = ""
-"Gentoo" = ""
-"Linux" =  ""
-"Macos" = ""
-"Manjaro" = ""
-"Mint" =  ""
-"NixOS" =  ""
-"Raspbian" =  ""
-"Ubuntu" = ""
-"Windows" = ""
+"Alpine" = " "
+"Arch" =  " "
+"CentOS" = " "
+"Debian" = " "
+"Fedora" = " "
+"Gentoo" = " "
+"Linux" = " "
+"Macos" = " "
+"Manjaro" = " "
+"Mint" = " "
+"NixOS" = " "
+"Raspbian" = " "
+"Ubuntu" = " "
+"Windows" = " "
 
 ### Custom plugins
 
