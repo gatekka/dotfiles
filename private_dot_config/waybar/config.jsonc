@@ -1,16 +1,8 @@
 {
   "layer": "top",
   "reload_style_on_change": false,
-  "modules-left": [
-    "clock",
-    "hyprland/workspaces",
-    "mpris",
-    "custom/lyrics",
-  ],
-  "modules-center": [
-    "hyprland/window",
-    "custom/cava"
-  ],
+  "modules-left": ["clock", "hyprland/workspaces", "mpris", "custom/lyrics"],
+  "modules-center": ["hyprland/window", "custom/cava"],
   "modules-right": [
     "group/expand",
     "battery",
@@ -27,45 +19,27 @@
     "drawer": {
       "transition-duration": 600,
       "transition-to-left": true,
-      "click-to-reveal": true
+      "click-to-reveal": true,
     },
-    "modules": [
-      "custom/expand",
-      "cpu",
-      "custom/hyprsunset",
-      "custom/wallpaper",
-    ],
+    "modules": ["custom/expand", "cpu"],
   },
   "group/power": {
     "orientation": "horizontal",
     "drawer": {
       "transition-left-to-right": false,
     },
-    "modules": [
-      "custom/wlogout",
-      "custom/notification"
-    ],
+    "modules": ["custom/wlogout", "custom/notification"],
   },
   "group/hardware": {
     "orientation": "horizontal",
     "drawer": {
       "transition-left-to-right": false,
     },
-    "modules": [
-      "cpu",
-      "bluetooth",
-      "network"
-    ],
+    "modules": ["cpu", "bluetooth", "network"],
   },
   "battery": {
     "format": "{capacity}% {icon}",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
+    "format-icons": ["", "", "", "", ""],
   },
   "bluetooth": {
     // "format": " {status}",
@@ -144,7 +118,7 @@
   },
   "custom/expand": {
     "format": "",
-    "tooltip": false
+    "tooltip": false,
   },
   "custom/lyrics": {
     "exec": "lrcsnc",
@@ -186,7 +160,7 @@
   "custom/wallpaper": {
     "format": "Waypaper 󰸉",
     "tooltip-format": "Change wallpaper with Waypaper",
-    "on-click": "waypaper"
+    "on-click": "waypaper",
   },
   "custom/wlogout": {
     "format": "󰐦",
@@ -209,20 +183,8 @@
       "empty": "",
     },
     "persistent-workspaces": {
-      "HDMI-A-1": [
-        1,
-        2,
-        3,
-        4,
-        5
-      ],
-      "DP-3": [
-        6,
-        7,
-        8,
-        9,
-        10
-      ]
+      "HDMI-A-1": [1, 2, 3, 4, 5],
+      "DP-3": [6, 7, 8, 9, 10],
     },
     "on-scroll-up": "hyprctl dispatch workspace e+1",
     "on-scroll-down": "hyprctl dispatch workspace e-1",
@@ -273,9 +235,7 @@
     "status-icons": {
       "paused": "⏸",
     },
-    "ignored-players": [
-      "firefox",
-    ],
+    "ignored-players": ["firefox"],
   },
   "network": {
     "family": "ipv6",
@@ -311,11 +271,7 @@
       "phone-muted": "",
       "portable": "",
       "car": "",
-      "default": [
-        "",
-        "",
-        ""
-      ],
+      "default": ["", "", ""],
     },
   },
   "tray": {
