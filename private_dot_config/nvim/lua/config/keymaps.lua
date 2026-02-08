@@ -13,8 +13,8 @@
 -- vim.keymap.set("v", "<A-Up>", ":m '<-2<CR>gv=gv", { desc = "Move line up" })
 
 -- Switch between buffers
-vim.keymap.set("n", "<Tab>", "<CMD>bnext<CR>", { desc = "Next buffer" })
-vim.keymap.set("n", "<S-Tab>", "<CMD>bprevious<CR>", { desc = "Previous buffer" })
+-- vim.keymap.set("n", "<Tab>", "<CMD>bnext<CR>", { desc = "Next buffer" })
+-- vim.keymap.set("n", "<S-Tab>", "<CMD>bprevious<CR>", { desc = "Previous buffer" })
 
 -- Moving between words
 -- vim.keymap.set("n", "L", "w", { desc = "Move to next word" })
@@ -24,6 +24,6 @@ vim.keymap.set("n", "<S-Tab>", "<CMD>bprevious<CR>", { desc = "Previous buffer" 
 -- vim.keymap.set("v", "H", "b", { desc = "Move to previous word" })
 
 -- Plugins
-vim.keymap.set("n", "<leader>pmd", ":MarkdownPreviewToggle<CR>", { desc = "Toggle Markdown Preview" })
-vim.keymap.set("n", "<leader>pfs", ":FiveServer start<CR>", { desc = "Start FiveServer" })
-vim.keymap.set("n", "<leader>rn", ":IncRename ", { desc = "Inc Rename w/ LSP" })
+-- vim.keymap.set("n", "<leader>pmd", ":MarkdownPreviewToggle<CR>", { desc = "Toggle Markdown Preview" })
+-- vim.keymap.set("n", "<leader>pfs", ":FiveServer start<CR>", { desc = "Start FiveServer" })
+-- vim.keymap.set("n", "<leader>rn", ":IncRename ", { desc = "Inc Rename w/ LSP" })

@@ -1,0 +1,145 @@
+return {
+  -- {
+  --   "mason-org/mason.nvim",
+  --   opts = {
+  --     ensure_installed = {
+  --       "bash-language-server",
+  --       "css-lsp",
+  --       "flake8",
+  --       "html-lsp",
+  --       "json-lsp",
+  --       "lua-language-server",
+  --       "marksman",
+  --       "prettier",
+  --       "shellcheck",
+  --       "shfmt",
+  --       "stylua",
+  --       "tailwindcss-language-server",
+  --       "taplo",
+  --       "typescript-language-server",
+  --
+  --       -- Java Stuff
+  --       -- "java-debug-adapter",
+  --       -- "java-test",
+  --       -- "jdtls",
+  --     },
+  --   },
+  -- },
+  -- {
+  --   "smjonas/inc-rename.nvim",
+  --   config = function()
+  --     require("inc_rename").setup()
+  --   end,
+  -- },
+  -- {
+  --   "brenoprata10/nvim-highlight-colors",
+  --   config = function()
+  --     vim.opt.termguicolors = true
+  --     require("nvim-highlight-colors").setup({})
+  --   end,
+  -- },
+  -- {
+  --   "vyfor/cord.nvim",
+  --   build = ":Cord update",
+  --   opts = {
+  --     variables = {
+  --       problems = function()
+  --         return #vim.diagnostic.get(0)
+  --       end,
+  --     },
+  --     editor = {
+  --       tooltip = "Neovim",
+  --     },
+  --     text = {
+  --       default = nil,
+  --       workspace = "In workspace - ${cursor_line}:${cursor_char}",
+  --       viewing = "Viewing ${filetype} file",
+  --       editing = "Editing ${filetype} file - ${problems} problems",
+  --       file_browser = "Browsing files in ${name}",
+  --       plugin_manager = "Managing plugins in ${name}",
+  --       lsp = "Configuring LSP in ${name}",
+  --       docs = "Reading ${name}",
+  --       vcs = "Committing changes in ${name}",
+  --       notes = "Taking notes in ${name}",
+  --       debug = "Debugging in ${name}",
+  --       test = "Testing in ${name}",
+  --       diagnostics = "Fixing problems in ${name}",
+  --       games = "Playing ${name}",
+  --       dashboard = "Home",
+  --     },
+  --   },
+  -- },
+  -- {
+  --   "stevearc/conform.nvim",
+  --   opts = {},
+  -- },
+  --
+  -- {
+  --   "max397574/colortils.nvim",
+  --   cmd = "Colortils",
+  --   config = function()
+  --     require("colortils").setup()
+  --   end,
+  -- },
+  --
+  -- {
+  --   "xiyaowong/transparent.nvim",
+  --   config = function()
+  --     -- Optional, you don't have to run setup.
+  --     -- require("transparent").clear_prefix("NeoTree")
+  --     require("transparent").setup({
+  --       -- table: default groups
+  --       groups = {
+  --         "Normal",
+  --         "NormalNC",
+  --         "Comment",
+  --         "Constant",
+  --         "Special",
+  --         "Identifier",
+  --         "Statement",
+  --         "PreProc",
+  --         "Type",
+  --         "Underlined",
+  --         "Todo",
+  --         "String",
+  --         "Function",
+  --         "Conditional",
+  --         "Repeat",
+  --         "Operator",
+  --         "Structure",
+  --         "LineNr",
+  --         "NonText",
+  --         "SignColumn",
+  --         "CursorLine",
+  --         "CursorLineNr",
+  --         "StatusLine",
+  --         "StatusLineNC",
+  --         "EndOfBuffer",
+  --       },
+  --       -- table: additional groups that should be cleared
+  --       extra_groups = {},
+  --       -- table: groups you don't want to clear
+  --       exclude_groups = {},
+  --       -- function: code to be executed after highlight groups are cleared
+  --       -- Also the user event "TransparentClear" will be triggered
+  --       on_clear = function() end,
+  --     })
+  --   end,
+  -- },
+  -- {
+  --   "folke/twilight.nvim",
+  --   opts = {
+  --     -- your configuration comes here
+  --     -- or leave it empty to use the default settings
+  --     -- refer to the configuration section below
+  --   },
+  -- },
+  -- {
+  --   "b0o/incline.nvim",
+  --   config = function()
+  --     require("incline").setup()
+  --   end,
+  --   -- Optional: Lazy load Incline
+  --   event = "VeryLazy",
+  -- },
+}
