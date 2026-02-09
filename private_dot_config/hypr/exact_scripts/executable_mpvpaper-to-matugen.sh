@@ -27,6 +27,6 @@ pkill -x mpvpaper
 echo "Starting new video wallpaper..."
 mpvpaper -f -o "loop" ALL "$1"
 
-$HOME/.config/matugen/scripts/video-to-matugen.sh "$1"
+$HOME/.config/hypr/scripts/video-to-matugen.sh "$1"
 
 echo "Done!"

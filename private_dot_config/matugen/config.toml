@@ -1,9 +1,10 @@
 [config]
 
-# [config.wallpaper]
-# command = "swww"
-# arguments = ["img", "--transition-type", "simple"]
-# set = true
+[config.wallpaper]
+set = true
+command = ""
+pre_hook = "$HOME/.config/hypr/scripts/make-static-wallpaper.sh $($HOME/.config/hypr/scripts/get-current-swww-wallpaper.sh)"
+
 
 [templates.waybar]
 input_path = './templates/waybar.css'
