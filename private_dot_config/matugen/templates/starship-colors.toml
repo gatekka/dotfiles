@@ -158,7 +158,7 @@ format = "[${symbol}nix ${state} ]($style)"
 disabled = false
 threshold = -1
 symbol = ""
-style = "#5f8787"
+style = "primary"
 format = "([ ❮ ](#767676)[$ram_pct $symbol]($style))"
 
 [time]
@@ -190,25 +190,10 @@ format = "[ ❮ ](#767676)[$symbol](tertiary_fixed_dim)"
 
 ### Custom plugins
 
-[custom.terragrunt]
-description = "Shows the currently active tgenv Terragrunt version"
-command = "cat $(pwd)/.terragrunt-version || cat $(git rev-parse --show-toplevel)/.terragrunt-version || cat ~/.tgenv/version"
-files = ["terragrunt.hcl"]
-style = "#0bb9f2"
-format = "([ ❮ ](#767676)[tg $output]($style))"
-
-[custom.terraform]
-description = "Shows the currently active tfenv Terraform version"
-command = "cat $(pwd)/.terraform-version || cat $(git rev-parse --show-toplevel)/.terraform-version || cat ~/.tfenv/version"
-extensions = ["tf"]
-files = ["terragrunt.hcl"]
-style = "#7b42bc"
-format = "([ ❮ ](#767676)[tf $output]($style))"
-
 [custom.disk-linux]
 description = "Show disk used"
 command = 'df -h --output=avail "$PWD" | tail -n 1'
-style = "#00af5f"
+style = "tertiary_fixed_dim"
 format = "[ ❮ ](#767676)[$output ]($style)"
 when = "true"
 os = "linux"
@@ -216,7 +201,7 @@ os = "linux"
 [custom.disk-mac]
 description = "Show % of disk used"
 command = "df -k | grep -E '/dev/disk(1|3)s(3|4)' | awk '{ print $5 }' | head -n 1 | sed 's/%//'"
-style = "#00af5f"
+style = "primary_fixed_dim"
 format = "[ ❮ ](#767676)[$output% ]($style)"
 when = "true"
 os = "macos"
@@ -224,7 +209,7 @@ os = "macos"
 [custom.loadavg-linux]
 description = "Show load average"
 command = "cat /proc/loadavg | cut -d' ' -f 2"
-style = "#5f8787"
+style = "tertiary_fixed"
 format = "([ ❮ ](#767676)[$output ]($style))"
 when = "true"
 os = "linux"
@@ -232,7 +217,7 @@ os = "linux"
 [custom.loadavg-mac]
 description = "Show load average"
 command = "sysctl -n vm.loadavg | cut -d' ' -f 2"
-style = "#5f8787"
+style = "tertiary_fixed"
 format = "([ ❮ ](#767676)[$output ]($style))"
 when = "true"
 os = "macos"
