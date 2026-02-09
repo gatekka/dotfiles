@@ -25,6 +25,6 @@ input_path = './templates/swaync-colors.css'
 output_path = '~/.config/swaync/colors.css'
 post_hook = 'swaync-client -rs'
 
-# [templates.starship]
-# input_path = './templates/startship-colors.toml'
-# output_path = '~/.config/starship.toml'
+[templates.starship]
+input_path = './templates/starship-colors.toml'
+output_path = '~/.config/starship.toml'
