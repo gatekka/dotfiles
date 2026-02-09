@@ -4,3 +4,20 @@ cursor-color = {{colors.on_surface.default.hex}}
 cursor-text = {{colors.on_surface_variant.default.hex}}
 selection-background = {{colors.secondary_fixed_dim.default.hex}}
 selection-foreground = {{colors.on_secondary.default.hex}}
+
+palette = 0=#111111
+palette = 1=#aa4450
+palette = 2=#719611
+palette = 3=#ff9800
+palette = 4=#6688aa
+palette = 5=#8f6f8f
+palette = 6=#528b8b
+palette = 7=#d3d3d3
+palette = 8=#686868
+palette = 9=#ff6a6a
+palette = 10=#b1d631
+palette = 11=#87875f
+palette = 12=#90b0d1
+palette = 13=#8181a6
+palette = 14=#87ceeb
+palette = 15=#c1cdc1
