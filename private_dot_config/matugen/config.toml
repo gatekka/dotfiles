@@ -29,3 +29,7 @@ post_hook = 'swaync-client -rs'
 [templates.starship]
 input_path = './templates/starship-colors.toml'
 output_path = '~/.config/starship.toml'
+
+[templates.obsidian]
+input_path = './templates/obsidian-minimal-colors.css'
+output_path = './output/obsidian-minimal-colors.css'
