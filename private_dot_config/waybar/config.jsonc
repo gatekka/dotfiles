@@ -1,19 +1,15 @@
 {
   "layer": "top",
   "reload_style_on_change": false,
-  "modules-left": ["clock", "hyprland/workspaces", "mpris", "custom/lyrics"],
-  "modules-center": ["hyprland/window", "custom/cava"],
-  "modules-right": [
-    "group/expand",
-    "battery",
-    "pulseaudio",
-    "bluetooth",
-    "network",
+  "modules-left": [
+    "cpu",
     "custom/pacman",
-    "tray",
-    "custom/notification",
-    "custom/wlogout",
+    "mpris",
+    "custom/lyrics",
+    "custom/cava",
   ],
+  "modules-center": ["hyprland/workspaces"],
+  "modules-right": ["group/expand", "battery", "tray", "pulseaudio", "clock"],
   "group/expand": {
     "orientation": "horizontal",
     "drawer": {
@@ -21,7 +17,7 @@
       "transition-to-left": true,
       "click-to-reveal": true,
     },
-    "modules": ["custom/expand", "cpu"],
+    "modules": ["custom/expand", "bluetooth", "network"],
   },
   "group/power": {
     "orientation": "horizontal",
@@ -57,11 +53,47 @@
     "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
     "on-click": "blueberry",
   },
+  // "clock": {
+  //   "interval": 1,
+  //   "format": " {:%I:%M:%S %p}",
+  //   // "format-alt": " {:%A, %B %d, %Y (%R:%S %p)}",
+  //   "tooltip": false,
+  //   "on-click": "swaync-client -t -sw",
+  //   "calendar": {
+  //     "mode": "calendar",
+  //     "interval": 60,
+  //     "tooltip": true,
+  //     "format": " {:%A, %B %d, %Y (%R:%S %p)}",
+  //   },
+  //   "actions": {
+  //     "on-click-right": "mode",
+  //   },
+  // },
   "clock": {
-    "interval": 1,
     "format": " {:%I:%M:%S %p}",
-    "format-alt": " {:%A, %B %d, %Y (%R:%S %p)}",
-    "tooltip": false,
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "on-click": "swaync-client -t -sw",
+    "calendar": {
+      "mode": "year",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "on-click-right": "mode",
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "days": "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>",
+      },
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-click-forward": "tz_up",
+      "on-click-backward": "tz_down",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down",
+    },
   },
   "cpu": {
     "format": " {usage}%",
