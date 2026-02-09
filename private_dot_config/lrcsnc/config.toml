@@ -36,10 +36,10 @@ insert-newline = true
 [client.format]
 lyric = "%lyric%%multiplier%"
 multiplier = " (x%value%)"
-not-playing = " Nothing is playing"
-no-lyrics = "⨯ No lyrics!"
-no-synced-lyrics = "󰦨 No synced lyrics!"
-loading-lyrics = "󱥸 Loading..."
+not-playing = ""
+no-lyrics = ""
+no-synced-lyrics = ""
+loading-lyrics = ""
 error-message = " An error occured! Check logs for info!"
 
 [client.format.instrumental]
