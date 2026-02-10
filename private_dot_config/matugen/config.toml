@@ -30,6 +30,34 @@ post_hook = 'swaync-client -rs'
 input_path = './templates/starship-colors.toml'
 output_path = '~/.config/starship.toml'
 
-[templates.obsidian]
-input_path = './templates/obsidian-minimal-colors.css'
-output_path = './output/obsidian-minimal-colors.css'
+# [templates.obsidian]
+# input_path = './templates/obsidian-matugen-colors.css'
+# output_path = './output/obsidian-minimal-colors.css'
+
+[config.custom_colors.red]
+color = "#FF0000"
+blend = true
+
+[config.custom_colors.green]
+color = "#00FF00"
+blend = true
+
+[config.custom_colors.yellow]
+color = "#FFFF00"
+blend = true
+
+[config.custom_colors.blue]
+color = "#0000FF"
+blend = true
+
+[config.custom_colors.magenta]
+color = "#FF00FF"
+blend = true
+
+[config.custom_colors.cyan]
+color = "#00FFFF"
+blend = true
+
+[config.custom_colors.white]
+color = "#FFFFFF"
+blend = true
