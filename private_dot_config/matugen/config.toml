@@ -30,6 +30,10 @@ post_hook = 'swaync-client -rs'
 input_path = './templates/starship-colors.toml'
 output_path = '~/.config/starship.toml'
 
+[templates.wlogout]
+input_path = './templates/waybar.css'
+output_path = '~/.config/wlogout/matugen-colors.css'
+
 # [templates.obsidian]
 # input_path = './templates/obsidian-matugen-colors.css'
 # output_path = './output/obsidian-minimal-colors.css'
