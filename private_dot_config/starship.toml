@@ -1,4 +1,6 @@
-### Prompt
+# Colors generated with Matugen
+
+## Prompt
 
 # The format layout for the prompt is as follows:
 
@@ -21,6 +23,207 @@ $character"""
 
 # Additional padding between newlines
 add_newline = true
+
+palette = 'colors'
+
+[palettes.colors]
+mustard = '#af8700' # example
+color1 = '#f0b3e7'
+color2 = '#4b1f4a'
+color3 = '#d1c3cb'
+color4 = '#241e22'
+color5 = '#4b1f4a'
+color6 = '#171216'
+color7 = '#171216'
+color8 = '#f0b3e7'
+color9 = '#f6b8a8'
+
+
+background = '#171216'
+
+blue = '#cebdfe'
+
+blue_container = '#4c3e76'
+
+blue_source = '#0000ff'
+
+blue_value = '#0000ff'
+
+cyan = '#82d3e2'
+
+cyan_container = '#004e59'
+
+cyan_source = '#00ffff'
+
+cyan_value = '#00ffff'
+
+error = '#ffb4ab'
+
+error_container = '#93000a'
+
+green = '#b7d085'
+
+green_container = '#3a4d10'
+
+green_source = '#00ff00'
+
+green_value = '#00ff00'
+
+inverse_on_surface = '#352e33'
+
+inverse_primary = '#7f4d7a'
+
+inverse_surface = '#ebdfe6'
+
+magenta = '#f1b3e7'
+
+magenta_container = '#653661'
+
+magenta_source = '#ff00ff'
+
+magenta_value = '#ff00ff'
+
+on_background = '#ebdfe6'
+
+on_blue = '#35275e'
+
+on_blue_container = '#e8ddff'
+
+on_cyan = '#00363e'
+
+on_cyan_container = '#9eefff'
+
+on_error = '#690005'
+
+on_error_container = '#ffdad6'
+
+on_green = '#253600'
+
+on_green_container = '#d3ec9e'
+
+on_magenta = '#4c1f49'
+
+on_magenta_container = '#ffd7f6'
+
+on_primary = '#4b1f4a'
+
+on_primary_container = '#ffd7f6'
+
+on_primary_fixed = '#330833'
+
+on_primary_fixed_variant = '#653661'
+
+on_red = '#561d26'
+
+on_red_container = '#ffdadc'
+
+on_secondary = '#3d2b3a'
+
+on_secondary_container = '#f7daef'
+
+on_secondary_fixed = '#261625'
+
+on_secondary_fixed_variant = '#544151'
+
+on_surface = '#ebdfe6'
+
+on_surface_variant = '#d1c3cb'
+
+on_tertiary = '#4c261b'
+
+on_tertiary_container = '#ffdbd1'
+
+on_tertiary_fixed = '#321209'
+
+on_tertiary_fixed_variant = '#663b30'
+
+on_white = '#00363d'
+
+on_white_container = '#9eeffd'
+
+on_yellow = '#3b2f00'
+
+on_yellow_container = '#fce186'
+
+outline = '#9a8d95'
+
+outline_variant = '#4e444b'
+
+primary = '#f0b3e7'
+
+primary_container = '#653661'
+
+primary_fixed = '#ffd7f6'
+
+primary_fixed_dim = '#f0b3e7'
+
+red = '#ffb2b9'
+
+red_container = '#72333b'
+
+red_source = '#ff0000'
+
+red_value = '#ff0000'
+
+scrim = '#000000'
+
+secondary = '#dabfd3'
+
+secondary_container = '#544151'
+
+secondary_fixed = '#f7daef'
+
+secondary_fixed_dim = '#dabfd3'
+
+shadow = '#000000'
+
+source_color = '#4d2d4a'
+
+surface = '#171216'
+
+surface_bright = '#3e373c'
+
+surface_container = '#241e22'
+
+surface_container_high = '#2f282d'
+
+surface_container_highest = '#3a3338'
+
+surface_container_low = '#201a1e'
+
+surface_container_lowest = '#120d11'
+
+surface_dim = '#171216'
+
+surface_tint = '#f0b3e7'
+
+surface_variant = '#4e444b'
+
+tertiary = '#f6b8a8'
+
+tertiary_container = '#663b30'
+
+tertiary_fixed = '#ffdbd1'
+
+tertiary_fixed_dim = '#f6b8a8'
+
+white = '#82d3e0'
+
+white_container = '#004f58'
+
+white_source = '#ffffff'
+
+white_value = '#ffffff'
+
+yellow = '#dec56e'
+
+yellow_container = '#554500'
+
+yellow_source = '#ffff00'
+
+yellow_value = '#ffff00'
+
+
 
 [fill]
 symbol = " "
@@ -53,9 +256,9 @@ format = "[@$hostname]($style)[❯](#767676)"
 read_only = " "
 truncation_length = 2
 truncate_to_repo = false
-repo_root_style = "#0087af"
+repo_root_style = "yellow"
 fish_style_pwd_dir_length = 2
-style = "#00afff"
+style = "primary"
 # Repo format
 repo_root_format = "[ $before_root_path]($style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) "
 # Non repo format
@@ -139,7 +342,7 @@ format = "[${symbol}nix ${state} ]($style)"
 disabled = false
 threshold = -1
 symbol = ""
-style = "#5f8787"
+style = "primary"
 format = "([ ❮ ](#767676)[$ram_pct $symbol]($style))"
 
 [time]
@@ -151,7 +354,7 @@ disabled = true
 
 [os]
 disabled = false
-format = "[ ❮ ](#767676)[$symbol]($style)"
+format = "[ ❮ ](#767676)[$symbol](tertiary_fixed_dim)"
 
 [os.symbols]
 "Alpine" = " "
@@ -171,25 +374,10 @@ format = "[ ❮ ](#767676)[$symbol]($style)"
 
 ### Custom plugins
 
-[custom.terragrunt]
-description = "Shows the currently active tgenv Terragrunt version"
-command = "cat $(pwd)/.terragrunt-version || cat $(git rev-parse --show-toplevel)/.terragrunt-version || cat ~/.tgenv/version"
-files = ["terragrunt.hcl"]
-style = "#0bb9f2"
-format = "([ ❮ ](#767676)[tg $output]($style))"
-
-[custom.terraform]
-description = "Shows the currently active tfenv Terraform version"
-command = "cat $(pwd)/.terraform-version || cat $(git rev-parse --show-toplevel)/.terraform-version || cat ~/.tfenv/version"
-extensions = ["tf"]
-files = ["terragrunt.hcl"]
-style = "#7b42bc"
-format = "([ ❮ ](#767676)[tf $output]($style))"
-
 [custom.disk-linux]
 description = "Show disk used"
 command = 'df -h --output=avail "$PWD" | tail -n 1'
-style = "#00af5f"
+style = "tertiary_fixed_dim"
 format = "[ ❮ ](#767676)[$output ]($style)"
 when = "true"
 os = "linux"
@@ -197,7 +385,7 @@ os = "linux"
 [custom.disk-mac]
 description = "Show % of disk used"
 command = "df -k | grep -E '/dev/disk(1|3)s(3|4)' | awk '{ print $5 }' | head -n 1 | sed 's/%//'"
-style = "#00af5f"
+style = "primary_fixed_dim"
 format = "[ ❮ ](#767676)[$output% ]($style)"
 when = "true"
 os = "macos"
@@ -205,7 +393,7 @@ os = "macos"
 [custom.loadavg-linux]
 description = "Show load average"
 command = "cat /proc/loadavg | cut -d' ' -f 2"
-style = "#5f8787"
+style = "tertiary_fixed"
 format = "([ ❮ ](#767676)[$output ]($style))"
 when = "true"
 os = "linux"
@@ -213,7 +401,7 @@ os = "linux"
 [custom.loadavg-mac]
 description = "Show load average"
 command = "sysctl -n vm.loadavg | cut -d' ' -f 2"
-style = "#5f8787"
+style = "tertiary_fixed"
 format = "([ ❮ ](#767676)[$output ]($style))"
 when = "true"
 os = "macos"
