@@ -25,7 +25,7 @@ button:focus {
   background-size: 30%;
   outline-style: none;
   background-color: alpha(@primary_fixed, 0.3);
-  color: black;
+  color: @primary;
   transition: all 0.1s cubic-bezier(0.15, 0, 1, 1);
 }
 
@@ -33,40 +33,40 @@ button:focus {
   background-image: image(url("./icons/power.png"));
 }
 #shutdown:focus {
-  background-image: image(url("./icons/power-hover.png"));
+  background-image: image(url("./icons-hover/power_hover.png"));
 }
 
 #logout {
   background-image: image(url("./icons/logout.png"));
 }
 #logout:focus {
-  background-image: image(url("./icons/logout-hover.png"));
+  background-image: image(url("./icons-hover/logout_hover.png"));
 }
 
 #reboot {
   background-image: image(url("./icons/restart.png"));
 }
 #reboot:focus {
-  background-image: image(url("./icons/restart-hover.png"));
+  background-image: image(url("./icons-hover/restart_hover.png"));
 }
 
 #lock {
   background-image: image(url("./icons/lock.png"));
 }
 #lock:focus {
-  background-image: image(url("./icons/lock-hover.png"));
+  background-image: image(url("./icons-hover/lock_hover.png"));
 }
 
 #suspend {
   background-image: image(url("./icons/lock.png"));
 }
 #suspend:focus {
-  background-image: image(url("./icons/lock-hover.png"));
+  background-image: image(url("./icons-hover/lock_hover.png"));
 }
 
 #sleep {
   background-image: image(url("./icons/hibernate.png"));
 }
 #sleep:focus {
-  background-image: image(url("./icons/hibernate-hover.png"));
+  background-image: image(url("./icons-hover/hibernate_hover.png"));
 }
