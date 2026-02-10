@@ -1,4 +1,9 @@
 README.md
+.config/ghostty/themes/Matugen
+.config/matugen/matugen-colors.json
+.config/wlogout/matugen-colors.css
+.config/wlogout/icons-hover/
+.oh-my-zsh
 
 {{- if not .includeHyprlandFiles }}
 # Ignore Hyprland dotfiles if user said no
@@ -17,12 +22,12 @@ README.md
 {{- end }}
 
 {{- if eq .chezmoi.os "linux" }}
-# Ignore these macos config files on linux
+# Ignore on linux
 .config/aerospace
 .config/sketchybar
 {{- end }}
 
 {{- if eq .chezmoi.os "darwin" }}
-# Ignore these linux config files on macos
+# Ignore on macos
 .config/mpv
 {{- end }}
