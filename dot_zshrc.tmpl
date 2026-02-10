@@ -38,7 +38,6 @@ fi
 alias zshconfig="nvim ~/.zshrc"
 alias kittyconfig="nvim ~/.config/kitty/kitty.conf"
 alias nvimconfig="nvim ~/.config/nvim"
-alias ls="ls --color -A"
 {{- if .bat }}
 alias cat="bat"
 {{- end}}
@@ -51,6 +50,15 @@ alias lg="lazygit"
 alias cbonsaiPreset='cbonsai -li -L 50 -t 0.003 -w 2'
 alias weather="curl wttr.in"
 alias moon="curl wttr.in/moon"
+{{- if .lsd }}
+alias l='lsd -l'
+alias ls='lsd'
+alias la='lsd -a'
+alias lla='lsd -la'
+alias lt='lsd --tree'
+{{- else }}
+alias ls="ls --color -A"
+{{- end }}
 
 {{ if eq .chezmoi.os "linux" -}}
 nemo() {
