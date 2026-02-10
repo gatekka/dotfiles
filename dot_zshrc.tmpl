@@ -52,8 +52,10 @@ alias cbonsaiPreset='cbonsai -li -L 50 -t 0.003 -w 2'
 alias weather="curl wttr.in"
 alias moon="curl wttr.in/moon"
 
+{{ if eq .chezmoi.os "linux" -}}
 nemo() {
     command nemo --existing-window "$@" & disown
 }
+{{- end }}
 
 # alias clear="clear && fastfetch"
