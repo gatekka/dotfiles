@@ -1,3 +1,5 @@
+/* Colors generated with Matugen */
+
 .theme-dark {
 	--accent-h:calc({{colors.primary.dark.hue}}/255*360);
 	--accent-s:calc({{colors.primary.dark.saturation}}/255*100%);
