@@ -1,4 +1,4 @@
-{{ $choices := list "Oh My Zsh" "bat" "delta" "dust" "fzf" "lazygit" "neovim" "starship" "zoxide" -}}
+{{ $choices := list "Oh My Zsh" "bat" "delta" "dust" "fzf" "lazygit" "lsd" "neovim" "starship" "zoxide" -}}
 {{ $tools := promptMultichoice "What tools do you want to download" $choices (list) -}}
 {{ $name := promptStringOnce . "name" "What is your name" -}}
 {{ $email := promptStringOnce . "email" "What is your email address" -}}
@@ -25,6 +25,7 @@ delta = {{ has "delta" $tools }}
 dust = {{ has "dust" $tools }}
 fzf = {{ has "fzf" $tools }}
 lazygit = {{ has "lazygit" $tools }}
+lsd = {{ has "lsd" $tools }}
 neovim = {{ has "neovim" $tools }}
 starship = {{ has "starship" $tools }}
 zoxide = {{ has "zoxide" $tools }}
