@@ -37,7 +37,7 @@ for img in "$ICONS"/*.png; do
   out="$OUTPUT_DIR/${name}_hover.${ext}"
 
   # colorize with magick
-  magick "$img" -fill "$color" -colorize 100% "$out"
+  magick "$img" -fill "$color" -colorize 100% "$out" &
 
   echo "Created $out"
 done
