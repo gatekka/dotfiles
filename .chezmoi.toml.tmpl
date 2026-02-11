@@ -1,12 +1,22 @@
 {{ $choices := list "Oh My Zsh" "bat" "delta" "dust" "fzf" "lazygit" "lsd" "neovim" "starship" "zoxide" -}}
-{{ $tools := promptMultichoice "What tools do you want to download" $choices (list) -}}
+{{ $defaultTools := list -}}
+{{ if hasKey . "tools" -}}
+  {{ if .tools -}}
+    {{ range .tools -}}
+      {{ if has . $choices -}}
+        {{ $defaultTools = append $defaultTools . -}}
+      {{ end -}}
+    {{ end -}}
+  {{ end -}}
+{{ end -}}
+{{ $tools := promptMultichoice "What tools do you want to download" $choices $defaultTools -}}
 {{ $name := promptStringOnce . "name" "What is your name" -}}
 {{ $email := promptStringOnce . "email" "What is your email address" -}}
 {{ $signingkey := promptStringOnce . "git.signingkey" "Enter your public signing key for Git" -}}
 {{ $hyprland := false -}}
 {{ if eq .chezmoi.os "linux" -}}
   {{ $hyprland = promptBoolOnce . "includeHyprlandFiles" "Include Hyprland related dotfiles? Y/N" -}}
-{{ end }}
+{{ end -}}
 [git]
 autoCommit = false
 
@@ -20,13 +30,6 @@ email = {{ $email | quote }}
 git.signingkey = {{ $signingkey | quote }}
 includeHyprlandFiles = {{ $hyprland }}
 tools = {{ $tools | toToml }}
-ohmyzsh = {{ has "Oh My Zsh" $tools }}
-bat = {{ has "bat" $tools }}
-delta = {{ has "delta" $tools }}
-dust = {{ has "dust" $tools }}
-fzf = {{ has "fzf" $tools }}
-lazygit = {{ has "lazygit" $tools }}
-lsd = {{ has "lsd" $tools }}
-neovim = {{ has "neovim" $tools }}
-starship = {{ has "starship" $tools }}
-zoxide = {{ has "zoxide" $tools }}
+{{ range $choices -}}
+  {{ . | lower | replace " " "" }} = {{ has . $tools }}
+{{ end -}}
