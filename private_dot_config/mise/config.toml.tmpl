@@ -23,6 +23,9 @@ lsd = "1.2.0"
 {{- if .neovim }}
 neovim = "0.11.6"
 {{- end }}
+{{- if .node }}
+node = "25.6.1"
+{{- end }}
 {{- if .ripgrep }}
 rg = "15.1.0"
 {{- end }}
@@ -31,4 +34,7 @@ starship = "1.24.2"
 {{- end }}
 {{- if .zoxide }}
 zoxide = "0.9.9"
+{{- end }}
+{{- if .npm }}
+npm = "11.10.0"
 {{- end }}
