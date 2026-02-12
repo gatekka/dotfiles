@@ -3,5 +3,9 @@
 $HOME/.local/bin/mise trust $HOME/.config/mise/config.toml
 $HOME/.local/bin/mise install
 
-echo "✓ Mise tools installed. Reloading shell..."
-exec zsh -l
+if command -v zsh >/dev/null 2>&1; then
+  echo "✓ Mise tools installed. Reloading shell..."
+  exec zsh -l
+else
+  echo "✓ Mise tools installed."
+fi
