@@ -26,7 +26,7 @@ fi
 extension="${1##*.}"
 extension_lower=$(echo "$extension" | tr '[:upper:]' '[:lower:]')
 
-if [[ ! "$extension_lower" =~ ^(mp4|gif|png|jpg|jpeg)$ ]]; then
+if [[ ! "$extension_lower" =~ ^(mp4|gif|png|jpg|jpeg|webp)$ ]]; then
   echo "Error: unsupported file type: .$extension" >&2
   echo "Supported formats: mp4, gif, png, jpg, jpeg" >&2
   exit 1
