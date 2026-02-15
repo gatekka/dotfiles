@@ -38,8 +38,9 @@ main() {
   pacman_packages=$(checkupdates 2>/dev/null | wc -l)
   aur_packages=$(yay -Qua 2>/dev/null | wc -l)
   total_updates=$(($pacman_packages + $aur_packages))
+  current_time=$(date "+%I:%M %p")
   text="$total_updates"
-  tooltip="Pacman: $pacman_packages updates\nAUR: $aur_packages updates"
+  tooltip="Pacman: $pacman_packages updates\nAUR: $aur_packages updates\nLast Checked: $current_time"
 
   # Must return as json format https://man.archlinux.org/man/extra/waybar/waybar-custom.5.en#RETURN-TYPE
   result="{\"text\": \"$text\", \"tooltip\": \"$tooltip\"}"
