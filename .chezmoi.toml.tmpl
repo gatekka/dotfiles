@@ -17,6 +17,7 @@
 {{ if eq .chezmoi.os "linux" -}}
   {{ $hyprland = promptBoolOnce . "includeHyprlandFiles" "Include Hyprland related dotfiles? Y/N" -}}
 {{ end -}}
+{{ $setZshDefault := promptBoolOnce . "setZshDefault" "Do you want to set Zsh as your default shell? Y/N" -}}
 [git]
 autoCommit = false
 
@@ -29,6 +30,7 @@ name = {{ $name | quote }}
 email = {{ $email | quote }}
 git.signingkey = {{ $signingkey | quote }}
 includeHyprlandFiles = {{ $hyprland }}
+setZshDefault = {{ $setZshDefault }}
 tools = {{ $tools | toToml }}
 {{ range $choices -}}
   {{ . | lower | replace " " "" }} = {{ has . $tools }}
