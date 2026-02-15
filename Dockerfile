@@ -4,6 +4,7 @@ RUN apt-get update && apt-get install -y \
   git \
   curl \
   zsh \
+  vim \
   sudo
 
 RUN useradd -m -s /bin/bash testuser && \
