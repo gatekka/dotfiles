@@ -164,7 +164,7 @@
   },
   "custom/pacman": {
     "format": "󰅢 {}",
-    "interval": 900,
+    "interval": 60,
     "exec": "bash ~/.config/waybar/scripts/packages_update.sh",
     "exec-if": "exit 0",
     "signal": 8,
