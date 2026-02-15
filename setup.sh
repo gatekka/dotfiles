@@ -12,5 +12,5 @@ if command -v mise >/dev/null; then
   exit 0
 fi
 
-sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply --source $PWD
+sh -c "$(curl -fsLS get.chezmoi.io)" -- -b $HOME/.local/bin init --apply --source $PWD
 exit 0
