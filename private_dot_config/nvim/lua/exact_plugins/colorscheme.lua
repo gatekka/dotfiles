@@ -1,6 +1,7 @@
 return {
   {
     --   { "rose-pine/neovim", name = "rose-pine" },
+    { "savq/melange-nvim" },
     --   { "rebelot/kanagawa.nvim" },
     --   { "EdenEast/nightfox.nvim" },
     --   { "navarasu/onedark.nvim" },
@@ -18,12 +19,11 @@ return {
     --   },
     --
     --   -- Configure LazyVim to load colorscheme
-    --   {
-    --     "LazyVim/LazyVim",
-    --     opts = {
-    --       -- colorscheme = "retrobox",
-    --       colorscheme = "nordfox",
-    --     },
-    --   },
+    {
+      "LazyVim/LazyVim",
+      opts = {
+        colorscheme = "melange",
+      },
+    },
   },
 }

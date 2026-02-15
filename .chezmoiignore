@@ -1,4 +1,6 @@
 README.md
+Dockerfile
+setup.sh
 .config/ghostty/themes/Matugen
 .config/matugen/matugen-colors.json
 .config/wlogout/matugen-colors.css

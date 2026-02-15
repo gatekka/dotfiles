@@ -1,4 +1,4 @@
-{{ $choices := list "Oh My Zsh" "bat" "delta" "dust" "fd" "fzf" "lazygit" "lsd" "neovim" "node" "ripgrep" "starship" "zoxide" "npm" -}}
+{{ $choices := list "Oh My Zsh" "bat" "delta" "dust" "fd" "fzf" "lazygit" "lsd" "neovim" "node" "ripgrep" "starship" "zoxide" -}}
 {{ $defaultTools := list -}}
 {{ if hasKey . "tools" -}}
   {{ if .tools -}}
@@ -17,6 +17,7 @@
 {{ if eq .chezmoi.os "linux" -}}
   {{ $hyprland = promptBoolOnce . "includeHyprlandFiles" "Include Hyprland related dotfiles? Y/N" -}}
 {{ end -}}
+{{ $setZshDefault := promptBoolOnce . "setZshDefault" "Do you want to set Zsh as your default shell? Y/N" -}}
 [git]
 autoCommit = false
 
@@ -29,6 +30,7 @@ name = {{ $name | quote }}
 email = {{ $email | quote }}
 git.signingkey = {{ $signingkey | quote }}
 includeHyprlandFiles = {{ $hyprland }}
+setZshDefault = {{ $setZshDefault }}
 tools = {{ $tools | toToml }}
 {{ range $choices -}}
   {{ . | lower | replace " " "" }} = {{ has . $tools }}
