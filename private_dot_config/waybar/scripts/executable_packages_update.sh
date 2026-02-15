@@ -4,6 +4,7 @@
 
 LOCK_FILE="/tmp/waybar-package-updates.lock"
 CACHE_FILE="/tmp/waybar-package-updates.cache"
+CACHE_MAX_AGE=1800 # in seconds
 
 return_cached() {
   if [[ -f "$CACHE_FILE" ]]; then
@@ -27,6 +28,18 @@ if [[ -f "$LOCK_FILE" ]]; then
     rm -f "$LOCK_FILE"
   fi
 fi
+
+# if cache is not older than $CACHE_MAX_AGE, return cached
+if [[ -f "$CACHE_FILE" ]]; then
+  current_time=$(date +%s)                    # seconds in epoch
+  cache_file_time=$(stat -c %Y "$CACHE_FILE") # seconds in epoch
+  cache_age=$(($current_time - $cache_file_time))
+  if [[ "$cache_age" -lt "$CACHE_MAX_AGE" ]]; then
+    return_cached
+    exit 0
+  fi
+fi
+
 echo $$ >"$LOCK_FILE" # create $LOCK_FILE with PID
 
 cleanup() {
