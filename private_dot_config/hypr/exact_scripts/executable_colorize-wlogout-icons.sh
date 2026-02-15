@@ -1,12 +1,12 @@
 #!/bin/bash
 set -eu
 
-# colorizes all wlogout icons based off wallpaper colors with magick and outputs to same directory with _hover suffixed - Chris @2026-02-10 03:08 :)
+# creates colorized versions of wlogout icons using Magick and colors extracted from my wallpaper via Matugen. - Chris @2026-02-10 03:08 :)
 
 ICONS="$HOME/.config/wlogout/icons"
 OUTPUT_DIR="$HOME/.config/wlogout/icons-hover"
 COLORS="$HOME/.config/matugen/matugen-colors.json"
-COLOR=".colors.primary.default"
+COLOR=".colors.primary.default" # json dot notation path
 
 command -v magick >/dev/null 2>&1 || {
   echo "Error: magick is required but not installed." >&2
