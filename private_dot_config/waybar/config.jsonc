@@ -9,7 +9,13 @@
     "custom/cava",
   ],
   "modules-center": ["hyprland/workspaces"],
-  "modules-right": ["group/expand", "battery", "tray", "pulseaudio", "clock"],
+  "modules-right": [
+    "group/expand",
+    "tray",
+    "custom/weather",
+    "pulseaudio",
+    "clock",
+  ],
   "group/expand": {
     "orientation": "horizontal",
     "drawer": {
@@ -194,6 +200,12 @@
     "format": "Waypaper 󰸉",
     "tooltip-format": "Change wallpaper with Waypaper",
     "on-click": "waypaper",
+  },
+  "custom/weather": {
+    "format": "{}",
+    "exec": "$HOME/.config/waybar/scripts/custom-weather-module.sh",
+    "return-type": "json",
+    "interval": 60,
   },
   "custom/wlogout": {
     "format": "󰐦",
