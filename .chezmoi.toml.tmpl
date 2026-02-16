@@ -1,11 +1,9 @@
 {{ $choices := list "Oh My Zsh" "bat" "delta" "dust" "fd" "fzf" "lazygit" "lsd" "neovim" "node" "ripgrep" "starship" "zoxide" -}}
 {{ $defaultTools := list -}}
-{{ if hasKey . "tools" -}}
-  {{ if .tools -}}
-    {{ range .tools -}}
-      {{ if has . $choices -}}
-        {{ $defaultTools = append $defaultTools . -}}
-      {{ end -}}
+{{ if and (hasKey . "tools") .tools -}}
+  {{ range .tools -}}
+    {{ if has . $choices -}}
+      {{ $defaultTools = append $defaultTools . -}}
     {{ end -}}
   {{ end -}}
 {{ end -}}
