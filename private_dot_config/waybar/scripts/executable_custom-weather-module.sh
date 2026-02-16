@@ -43,9 +43,9 @@ trap cleanup EXIT INT TERM
 echo $$ >"$LOCK_FILE"
 
 current_time=$(date "+%I:%M %p")
-weather=$(curl -s 'wttr.in?format=%t\n%C\nTemperature:+%t\nHumidity:+%h\nWind:+%w\nPrecipitation:+%p\nDawn:+%D\nSunrise:+%S\nZenith:+%z\nSunset:+%s\nDusk:+%d')
-weather_2=$(curl -s "v2d.wttr.in" | sed -n '39,42p')      # data rich output format (v2)
-weather_icon=$(echo "$weather_2" | awk 'NR==1{print $2}') # get nerd-font icon from v2
+weather=$(curl -sf 'wttr.in?format=%t\n%C\nTemperature:+%t\nHumidity:+%h\nWind:+%w\nPrecipitation:+%p\nDawn:+%D\nSunrise:+%S\nZenith:+%z\nSunset:+%s\nDusk:+%d') || return_cached
+weather_2=$(curl -sf "v2d.wttr.in" | sed -n '39,42p') || return_cached # data rich output format (v2)
+weather_icon=$(echo "$weather_2" | awk 'NR==1{print $2}')              # get nerd-font icon from v2
 weather_tooltip=$(printf "%s" "$weather" | awk '{printf "%s\\n", $0}')
 text="$weather_icon $(echo "$weather" | head -n 1 | sed 's/  */ /g')"
 tooltip="$weather_tooltip\nLast Checked: $current_time"
