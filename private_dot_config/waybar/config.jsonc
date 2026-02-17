@@ -77,7 +77,7 @@
   // },
   "clock": {
     "interval": 1,
-    "format": " {:%I:%M %p | %m/%d}",
+    "format": " {:%a %m/%d |  %I:%M %p}",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "on-click": "swaync-client -t -sw",
     "calendar": {
