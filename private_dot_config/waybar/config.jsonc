@@ -163,7 +163,7 @@
     "escape": true,
   },
   "custom/pacman": {
-    "format": "󰅢 {}",
+    "format": "󰮯 {}",
     "interval": 60,
     "exec": "bash ~/.config/waybar/scripts/packages_update.sh",
     "exec-if": "exit 0",
