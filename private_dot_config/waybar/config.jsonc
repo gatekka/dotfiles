@@ -1,14 +1,7 @@
 {
   "layer": "top",
   "reload_style_on_change": false,
-  "modules-left": [
-    "cpu",
-    "memory",
-    "custom/pacman",
-    "mpris",
-    "custom/lyrics",
-    "custom/cava",
-  ],
+  "modules-left": ["cpu", "memory", "custom/pacman", "mpris", "custom/lyrics"],
   "modules-center": ["hyprland/workspaces"],
   "modules-right": ["group/expand", "custom/weather", "pulseaudio", "clock"],
   "group/expand": {
