@@ -25,7 +25,7 @@ echo "Stopping existing mpvpaper instances..."
 pkill -x mpvpaper
 
 echo "Starting new video wallpaper..."
-mpvpaper -f -o "loop" ALL "$1"
+mpvpaper -f -o "no-audio loop" ALL "$1"
 
 $HOME/.config/hypr/scripts/video-to-matugen.sh "$1"
 
