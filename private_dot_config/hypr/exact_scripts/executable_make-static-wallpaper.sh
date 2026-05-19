@@ -7,7 +7,7 @@ OUTPUT_DIR="$HOME/.cache"
 OUTPUT_FILE="$OUTPUT_DIR/current_wallpaper.png"
 
 command -v ffmpeg >/dev/null 2>&1 || {
-  echo "Error: swww is required but not installed." >&2
+  echo "Error: ffmpeg is required but not installed." >&2
   exit 1
 }
 

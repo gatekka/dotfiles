@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 main() {
-  swww-daemon # start wallpaper daemon
+  awww-daemon # start wallpaper daemon
   matugen image "$wallpaperPath"
 }
 

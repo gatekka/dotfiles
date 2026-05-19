@@ -5,7 +5,7 @@ set -eu
 
 JSON_OUTPUT_FILE="$HOME/.config/matugen/matugen-colors.json"
 
-current_wallpaper=$($HOME/.config/hypr/scripts/get-current-swww-wallpaper.sh)
+current_wallpaper=$($HOME/.config/hypr/scripts/get-current-awww-wallpaper.sh)
 "$HOME/.config/hypr/scripts/make-static-wallpaper.sh" "$current_wallpaper"
 
 echo "Outputting json to $JSON_OUTPUT_FILE"
