@@ -9,7 +9,8 @@ current_wallpaper=$($HOME/.config/hypr/scripts/get-current-awww-wallpaper.sh)
 "$HOME/.config/hypr/scripts/make-static-wallpaper.sh" "$current_wallpaper"
 
 echo "Outputting json to $JSON_OUTPUT_FILE"
-matugen image "$current_wallpaper" --json hex --dry-run >"$JSON_OUTPUT_FILE"
+matugen image "$current_wallpaper" --source-color-index 0
+matugen image "$current_wallpaper" --old-json-output --json hex --source-color-index 0 --dry-run >"$JSON_OUTPUT_FILE"
 echo "Created $JSON_OUTPUT_FILE successfully."
 "$HOME/.config/hypr/scripts/colorize-wlogout-icons.sh"
 echo "Finished."
