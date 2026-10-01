@@ -45,6 +45,7 @@ alias nvimconfig="nvim ~/.config/nvim"
 alias cat="bat"
 {{- end}}
 alias e="nvim"
+# alias em="emacsclient -c -a 'emacs'"
 alias f="fzf --height=50% --layout=reverse --border=rounded"
 alias fe='f=$(f) && [ -n "$f" ] && e "$f"'
 alias cdf='cd "$(fd --hidden --no-ignore -t d | fzf)"'
