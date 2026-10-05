@@ -1,0 +1,11 @@
+require("UserConfigs/UserDefaultPrograms")
+require("UserConfigs/UserPaths")
+
+require("UserConfigs/UserAnimations")
+require("UserConfigs/UserAutostart")
+require("UserConfigs/UserDecorations")
+require("UserConfigs/UserEnvVariables")
+require("UserConfigs/UserKeybinds")
+require("UserConfigs/UserMonitors")
+require("UserConfigs/UserSettings")
+require("UserConfigs/UserWindowAndLayerRules")

@@ -10,8 +10,8 @@ output_path = '~/.config/waybar/colors.css'
 post_hook = 'pkill -SIGUSR2 waybar'
 
 [templates.hyprland]
-input_path = './templates/hyprland-colors.conf'
-output_path = '~/.config/hypr/colors.conf'
+input_path = './templates/hyprland-lua'
+output_path = '~/.config/hypr/colors.lua'
 post_hook = 'hyprctl reload'
 
 [templates.ghostty]
